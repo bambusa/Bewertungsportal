@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1= Login
+
+    div#head
+        p Header
+        if message
+            div.message
+                p.message #{message}
+    div#main
+        p Main
+            form(action="/login", method="post")
+                p Username:
+                    input(type="text", name="username")
+                p Passwort
+                    input(type="text", name="password")
+                br
+                br
+                button(type="submit") Anmelden
+    div#bottom
+        p Bottom
