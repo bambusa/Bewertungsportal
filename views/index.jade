@@ -1,11 +1,10 @@
 extends layout
 
 block content
-    h1= title
-    p Welcome to #{title}
 
     div#head
-        p Header
+        //p Header
+        h1= title
         if user
             div#user
                 p Hallo #{user.username}
@@ -13,7 +12,44 @@ block content
         else
             div#login
                 a(href='/login') Login
+
+        if errMessage
+            div.errMessage
+                p.errMessage= errMessage
+
     div#main
-        p Main
+        //p Main
+        div#left.floatLeft
+            div.padding
+                div#mainMenu
+                    h3 Main Menu
+                    ul
+                        li Nutzer erstellen
+                        li Nutzergruppe erstellen
+                        li Nutzer zu Gruppen zuordnen
+
+        div#middle.floatLeft
+            div.padding
+                div#groupData
+                    if groupData
+                        if groupData.users
+                            h2 Neueste Benutzer
+                            div#users.groupDataTable
+                                ul
+                                    each user in groupData.users
+                                        li= user.username
+
+                        if groupData.userGroups
+                            h2 Neueste Nutzergruppen
+                            div#userGroups.groupDataTable
+                                ul
+                                    each group in groupData.userGroups
+                                        li= group.name
+
+        div#right.floatLeft
+            div.padding
+                div#contextMenu
+                    h3 Context Menu
+
     div#bottom
-        p Bottom
+        //p Bottom

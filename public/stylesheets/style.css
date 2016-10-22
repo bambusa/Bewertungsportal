@@ -1,8 +1,64 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*
+Main Layout
+*/
+
+body, div {
+    margin: 0;
+    padding: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
 }
 
-a {
-  color: #00B7FF;
+p {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    margin-bottom: 10px;
+}
+
+div#head {
+    /*background-color: #00A000;*/
+    height: auto;
+    width: 100%;
+    clear: both;
+}
+
+div#main {
+    /*background-color: #1d3e81;*/
+    height: auto;
+    width: 100%;
+    clear: both;
+}
+
+div#bottom {
+    /*background-color: #880000;*/
+    height: auto;
+    width: 100%;
+    clear: both;
+}
+
+div#left {
+    width: 20%;
+    min-width: 100px;
+}
+
+div#middle {
+    width: 60%;
+    min-width: 300px;
+}
+
+div#right {
+    width: 20%;
+    min-width: 100px;
+}
+
+div > div.padding {
+    padding: 5px;
+}
+
+.floatLeft {
+    float: left;
 }

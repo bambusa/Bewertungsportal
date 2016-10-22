@@ -5,9 +5,10 @@ block content
 
     div#head
         p Header
-        if message
-            div.message
-                p.message #{message}
+        if errMessage
+            div.errMessage
+                p.errMessage #{errMessage}
+
     div#main
         p Main
             form(action="/login", method="post")
@@ -18,5 +19,6 @@ block content
                 br
                 br
                 button(type="submit") Anmelden
+
     div#bottom
         p Bottom

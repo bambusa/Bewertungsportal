@@ -6,14 +6,28 @@ var configs = {
         secret: "yVk!1rskSW9J!pq4rMq6",
         baseDir: "C:/Users/BSD/IdeaProjects/Bewertungsportal",
         port: 4000,
-        hostAddress: "https://localhost:4000/"
+        hostAddress: "https://localhost:4000/",
+        authCookieExpiration: 1
     },
-    dbConfigV1: {
+    dbConfig: {
         host: 'localhost',
         user: 'benjamin',
         password: '0000',
         database: 'bewertungsportal'
     },
+    dataConfig: {
+        userRoleNames: {
+            publicUser: "Privater Nutzer",
+            privateUser: "Öffentlicher Nutzer",
+            admin: "Admin",
+            auditor: "Auditor",
+            expert: "Experte"
+        }
+    },
+    debugConfig: {
+        consoleLevel: 'debug',
+        logSql: true
+    }
     //smtpConfig: {
     //    host: 'mail.agenturserver.de',
     //    port: 465,
@@ -23,8 +37,8 @@ var configs = {
     //        pass: 'agaxEsip!757'
     //    }
     //}
-}
-module.exports.configs = configs
+};
+module.exports.configs = configs;
 
 /**
  * response
@@ -52,8 +66,8 @@ var response = {
         token_note_verified: "Sorry, your authentication token could not be verified or is expired, please authenticate yourself first.",
         radio_credentials_id_exists: "radio_credentials_id already exists"
     }
-}
-module.exports.response = response
+};
+module.exports.response = response;
 
 /**
  * Strings
@@ -62,5 +76,5 @@ var strings = {
     german: {
         defaultCampaign: "Standard"
     }
-}
-module.exports.strings = strings
+};
+module.exports.strings = strings;
