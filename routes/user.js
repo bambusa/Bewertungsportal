@@ -8,6 +8,7 @@ var logger = require('../logger');
 var config = require('../config');
 
 
+
 /*
  Start Page
  */
@@ -27,7 +28,7 @@ var getIndex = function (req, res) {
 
                 mysql.getStartPageData(user, function (groupData) {
                     logger.debug(groupData)
-                    res.render('index', {title: 'Start' + userRoleTitle, user: user, groupData: groupData});
+                    res.render('index', {title: 'Start' + userRoleTitle, user: user, userRoles: userRoles, groupData: groupData, errMessage: req.flash('errMessage')});
                 });
             }
             else {
@@ -37,24 +38,25 @@ var getIndex = function (req, res) {
         }
         else {
             logger.debug("no user authenticated", "user.getIndex");
-            res.render('index', {title: 'Start', user: user});
+            res.render('index', {title: 'Start', user: user, errMessage: req.flash('errMessage')});
         }
     })
 };
 exports.getIndex = getIndex;
 
 
+
 /*
  Authentication
  */
 var getLogin = function (req, res) {
-    res.render('login')
+    res.render('login', {errMessage: req.flash('errMessage')});
 };
 exports.getLogin = getLogin;
 
 var postLogin = function (req, res, next) {
     if (req.body.username && req.body.password) {
-        mysql.getUserForUsername(req, res, next, req.body.username, function (req, res, next, result) {
+        mysql.selectUserForUsername(req, res, next, req.body.username, function (req, res, next, result) {
             if (result) {
                 if (bcrypt.compareSync(req.body.password, result.password)) {
                     logger.debug("Basic authenticated", "app.BasicStrategy");
@@ -97,7 +99,7 @@ exports.getLogout = getLogout;
 
 var basicAuth = function (req, res, next) {
     if (req.body.username && req.body.password) {
-        mysql.getUserForUsername(req, res, next, req.body.username, basicAuthCallback)
+        mysql.selectUserForUsername(req, res, next, req.body.username, basicAuthCallback)
     }
     else {
         logger.debug("No body data");
@@ -143,7 +145,7 @@ var verifyToken = function (authCookie, callback) {
 
     if (decoded && decoded.username) {
         logger.debug("search user", "user.verifyToken");
-        mysql.getUserForUsername(null, null, null, decoded.username, function (req, res, next, user) {
+        mysql.selectUserForUsername(null, null, null, decoded.username, function (req, res, next, user) {
             if (user && user.username) {
                 callback(user)
             }
@@ -158,6 +160,36 @@ var verifyToken = function (authCookie, callback) {
 };
 exports.verifyToken = verifyToken;
 
+var isUserRole = function (req, res, next, isRole) {
+    if (isRole && isRole.id) {
+        var user = verifyToken(req.cookies.auth, function (user) {
+            if (user) {
+                req.user = user;
+                if (user.user_role_id == isRole.id) {
+                    next(req, res)
+                }
+                else {
+                    logger.warn("Wrong user role", user, isRole, "user.isUserRole");
+                    req.flash('errMessage', 'Zugriff verweigert');
+                    res.redirect('/');
+                }
+            }
+            else {
+                logger.debug("no user authenticated", "user.isUserRole");
+                req.flash('errMessage', 'Zugriff verweigert');
+                res.redirect('/');
+            }
+        });
+    }
+    else {
+        logger.error("no valid isRole object provided", "user.isUserRole");
+        req.flash('errMessage', 'Zugriff verweigert');
+        res.redirect('/');
+    }
+};
+exports.isUserRole = isUserRole;
+
+
 
 /*
  Functions
@@ -165,7 +197,7 @@ exports.verifyToken = verifyToken;
 var initializeUserRoles = function (callback) {
     var userRoleNames = config.configs.dataConfig.userRoleNames;
     var userRoles = {publicUser: null, privateUser: null, admin: null, auditor: null, expert: null};
-    mysql.getAllUserRoles(function (rows) {
+    mysql.selectAllUserRoles(function (rows) {
         if (rows) {
             rows.forEach(function (row) {
                 if (row.user_role_id || row.name) {

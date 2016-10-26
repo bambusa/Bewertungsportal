@@ -1168,3 +1168,2070 @@
 2016-10-22T19:36:24.256Z - debug:  users=[user_id=1, user_role_id=3, username=admin, password=$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e, email=ad@min, created=Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit)], userGroups=[]
 2016-10-22T19:36:24.641Z - info: ::1 - - [22/Oct/2016:19:36:24 +0000] "GET / HTTP/1.1" 304 - "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
 
+2016-10-23T13:23:46.586Z - info: Server is running @ http://localhost:4000 [2016-10-23 15:23:46 | app.listen]
+2016-10-23T13:23:46.715Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 15:23:46 | mysql.getAllUserRoles]'
+2016-10-23T13:23:52.564Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-23 15:23:52 | user.verifyToken]'
+2016-10-23T13:23:52.564Z - debug: no user authenticated [2016-10-23 15:23:52 | user.getIndex]
+2016-10-23T13:23:53.297Z - info: ::1 - - [23/Oct/2016:13:23:53 +0000] "GET / HTTP/1.1" 200 716 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:23:53.300Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-23 15:23:53 | user.verifyToken]'
+2016-10-23T13:23:53.300Z - debug: no user authenticated [2016-10-23 15:23:53 | user.getIndex]
+2016-10-23T13:23:53.358Z - info: ::1 - - [23/Oct/2016:13:23:53 +0000] "GET / HTTP/1.1" 200 716 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:23:53.571Z - info: ::1 - - [23/Oct/2016:13:23:53 +0000] "GET /favicon.ico HTTP/1.1" 404 122 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:29:51.496Z - info: Server is running @ http://localhost:4000 [2016-10-23 15:29:51 | app.listen]
+2016-10-23T13:29:51.569Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 15:29:51 | mysql.getAllUserRoles]'
+2016-10-23T13:29:52.175Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-23 15:29:52 | user.verifyToken]'
+2016-10-23T13:29:52.178Z - debug: no user authenticated [2016-10-23 15:29:52 | user.getIndex]
+2016-10-23T13:29:52.623Z - info: ::1 - - [23/Oct/2016:13:29:52 +0000] "GET / HTTP/1.1" 200 644 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:29:55.281Z - info: ::1 - - [23/Oct/2016:13:29:55 +0000] "GET /login HTTP/1.1" 200 424 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:30:00.643Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 15:30:00 | mysql.getUserForUsername]'
+2016-10-23T13:30:00.659Z - debug: Basic authenticated [2016-10-23 15:30:00 | app.BasicStrategy]
+2016-10-23T13:30:00.662Z - info: Signed new token [2016-10-23 15:30:00 | user.basicAuthCallback]
+2016-10-23T13:30:00.668Z - info: ::1 - - [23/Oct/2016:13:30:00 +0000] "POST /login HTTP/1.1" 302 46 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:30:00.671Z - debug: search user [2016-10-23 15:30:00 | user.verifyToken]
+2016-10-23T13:30:00.672Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 15:30:00 | mysql.getUserForUsername]'
+2016-10-23T13:30:00.672Z - debug: Load start page for  Admin [2016-10-23 15:30:00 | user.getIndex]
+2016-10-23T13:30:00.675Z - debug: { users: 
+   [ RowDataPacket {
+       user_id: 1,
+       user_role_id: 3,
+       username: 'admin',
+       password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+       email: 'ad@min',
+       created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ],
+  userGroups: [] } '[2016-10-23 15:30:00 | mysql.getStartPageData]'
+2016-10-23T13:30:00.676Z - debug:  users=[user_id=1, user_role_id=3, username=admin, password=$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e, email=ad@min, created=Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit)], userGroups=[]
+2016-10-23T13:30:00.725Z - info: ::1 - - [23/Oct/2016:13:30:00 +0000] "GET / HTTP/1.1" 200 952 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:32:31.826Z - info: Server is running @ http://localhost:4000 [2016-10-23 15:32:31 | app.listen]
+2016-10-23T13:32:31.892Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 15:32:31 | mysql.getAllUserRoles]'
+2016-10-23T13:32:33.380Z - debug: search user [2016-10-23 15:32:33 | user.verifyToken]
+2016-10-23T13:32:33.383Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 15:32:33 | mysql.getUserForUsername]'
+2016-10-23T13:32:33.383Z - debug: Load start page for  Admin [2016-10-23 15:32:33 | user.getIndex]
+2016-10-23T13:32:33.386Z - debug: { users: 
+   [ RowDataPacket {
+       user_id: 1,
+       user_role_id: 3,
+       username: 'admin',
+       password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+       email: 'ad@min',
+       created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ],
+  userGroups: [] } '[2016-10-23 15:32:33 | mysql.getStartPageData]'
+2016-10-23T13:32:33.387Z - debug:  users=[user_id=1, user_role_id=3, username=admin, password=$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e, email=ad@min, created=Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit)], userGroups=[]
+2016-10-23T13:32:33.777Z - info: ::1 - - [23/Oct/2016:13:32:33 +0000] "GET / HTTP/1.1" 200 1041 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:32:35.212Z - info: ::1 - - [23/Oct/2016:13:32:35 +0000] "GET /createUser HTTP/1.1" 404 122 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:34:21.963Z - info: Server is running @ http://localhost:4000 [2016-10-23 15:34:21 | app.listen]
+2016-10-23T13:34:22.029Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 15:34:22 | mysql.getAllUserRoles]'
+2016-10-23T13:34:23.925Z - info: ::1 - - [23/Oct/2016:13:34:23 +0000] "GET /createUser HTTP/1.1" 200 706 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:35:33.744Z - error: uncaughtException: req is not defined date=Sun Oct 23 2016 15:35:33 GMT+0200 (Mitteleuropäische Sommerzeit), pid=2856, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=44736512, heapTotal=31953920, heapUsed=20887528, loadavg=[0, 0, 0], uptime=228057.0507521, trace=[column=26, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\routes.js, function=, line=24, method=null, native=false, column=26, file=module.js, function=Module._compile, line=435, method=_compile, native=false, column=10, file=module.js, function=Object.Module._extensions..js, line=442, method=Module._extensions..js, native=false, column=32, file=module.js, function=Module.load, line=356, method=load, native=false, column=12, file=module.js, function=Function.Module._load, line=311, method=Module._load, native=false, column=17, file=module.js, function=Module.require, line=366, method=require, native=false, column=17, file=module.js, function=require, line=385, method=null, native=false, column=14, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js, function=, line=19, method=null, native=false, column=26, file=module.js, function=Module._compile, line=435, method=_compile, native=false, column=10, file=module.js, function=Object.Module._extensions..js, line=442, method=Module._extensions..js, native=false], stack=[ReferenceError: req is not defined,     at Object.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\routes.js:24:26),     at Module._compile (module.js:435:26),     at Object.Module._extensions..js (module.js:442:10),     at Module.load (module.js:356:32),     at Function.Module._load (module.js:311:12),     at Module.require (module.js:366:17),     at require (module.js:385:17),     at Object.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js:19:14),     at Module._compile (module.js:435:26),     at Object.Module._extensions..js (module.js:442:10)]
+2016-10-23T13:36:06.610Z - info: Server is running @ http://localhost:4000 [2016-10-23 15:36:06 | app.listen]
+2016-10-23T13:36:06.679Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 15:36:06 | mysql.getAllUserRoles]'
+2016-10-23T13:36:10.243Z - info: ::1 - - [23/Oct/2016:13:36:10 +0000] "GET /createUser HTTP/1.1" 500 1277 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:36:28.737Z - info: Server is running @ http://localhost:4000 [2016-10-23 15:36:28 | app.listen]
+2016-10-23T13:36:28.809Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 15:36:28 | mysql.getAllUserRoles]'
+2016-10-23T13:36:29.758Z - debug: search user [2016-10-23 15:36:29 | user.verifyToken]
+2016-10-23T13:36:29.760Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 15:36:29 | mysql.getUserForUsername]'
+2016-10-23T13:36:29.771Z - info: ::1 - - [23/Oct/2016:13:36:29 +0000] "GET /createUser HTTP/1.1" 500 16 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:38:36.777Z - info: Server is running @ http://localhost:4000 [2016-10-23 15:38:36 | app.listen]
+2016-10-23T13:38:36.854Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 15:38:36 | mysql.getAllUserRoles]'
+2016-10-23T13:38:37.491Z - debug: search user [2016-10-23 15:38:37 | user.verifyToken]
+2016-10-23T13:38:37.494Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 15:38:37 | mysql.getUserForUsername]'
+2016-10-23T13:38:37.494Z - debug: next
+2016-10-23T13:38:37.507Z - info: ::1 - - [23/Oct/2016:13:38:37 +0000] "GET /createUser HTTP/1.1" 500 16 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:40:28.419Z - info: Server is running @ http://localhost:4000 [2016-10-23 15:40:28 | app.listen]
+2016-10-23T13:40:28.491Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 15:40:28 | mysql.getAllUserRoles]'
+2016-10-23T13:40:29.280Z - debug: search user [2016-10-23 15:40:29 | user.verifyToken]
+2016-10-23T13:40:29.282Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 15:40:29 | mysql.getUserForUsername]'
+2016-10-23T13:40:29.288Z - info: ::1 - - [23/Oct/2016:13:40:29 +0000] "GET /createUser HTTP/1.1" 500 16 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:41:31.581Z - info: Server is running @ http://localhost:4000 [2016-10-23 15:41:31 | app.listen]
+2016-10-23T13:41:31.651Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 15:41:31 | mysql.getAllUserRoles]'
+2016-10-23T13:41:33.635Z - debug: getCreateUser
+2016-10-23T13:41:34.047Z - info: ::1 - - [23/Oct/2016:13:41:34 +0000] "GET /createUser HTTP/1.1" 200 706 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:42:13.084Z - error: uncaughtException: req is not defined date=Sun Oct 23 2016 15:42:13 GMT+0200 (Mitteleuropäische Sommerzeit), pid=14552, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=42250240, heapTotal=31953920, heapUsed=15998128, loadavg=[0, 0, 0], uptime=228456.3911849, trace=[column=26, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\routes.js, function=, line=24, method=null, native=false, column=26, file=module.js, function=Module._compile, line=435, method=_compile, native=false, column=10, file=module.js, function=Object.Module._extensions..js, line=442, method=Module._extensions..js, native=false, column=32, file=module.js, function=Module.load, line=356, method=load, native=false, column=12, file=module.js, function=Function.Module._load, line=311, method=Module._load, native=false, column=17, file=module.js, function=Module.require, line=366, method=require, native=false, column=17, file=module.js, function=require, line=385, method=null, native=false, column=14, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js, function=, line=19, method=null, native=false, column=26, file=module.js, function=Module._compile, line=435, method=_compile, native=false, column=10, file=module.js, function=Object.Module._extensions..js, line=442, method=Module._extensions..js, native=false], stack=[ReferenceError: req is not defined,     at Object.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\routes.js:24:26),     at Module._compile (module.js:435:26),     at Object.Module._extensions..js (module.js:442:10),     at Module.load (module.js:356:32),     at Function.Module._load (module.js:311:12),     at Module.require (module.js:366:17),     at require (module.js:385:17),     at Object.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js:19:14),     at Module._compile (module.js:435:26),     at Object.Module._extensions..js (module.js:442:10)]
+2016-10-23T13:42:57.320Z - info: Server is running @ http://localhost:4000 [2016-10-23 15:42:57 | app.listen]
+2016-10-23T13:42:57.384Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 15:42:57 | mysql.getAllUserRoles]'
+2016-10-23T13:42:59.128Z - debug: search user [2016-10-23 15:42:59 | user.verifyToken]
+2016-10-23T13:42:59.135Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 15:42:59 | mysql.getUserForUsername]'
+2016-10-23T13:42:59.135Z - debug: next
+2016-10-23T13:42:59.142Z - info: ::1 - - [23/Oct/2016:13:42:59 +0000] "GET /createUser HTTP/1.1" 500 16 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:43:40.401Z - info: Server is running @ http://localhost:4000 [2016-10-23 15:43:40 | app.listen]
+2016-10-23T13:43:40.464Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 15:43:40 | mysql.getAllUserRoles]'
+2016-10-23T13:43:42.651Z - debug: search user [2016-10-23 15:43:42 | user.verifyToken]
+2016-10-23T13:43:42.655Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 15:43:42 | mysql.getUserForUsername]'
+2016-10-23T13:43:42.660Z - debug: next
+2016-10-23T13:43:42.661Z - debug: getCreateUser
+2016-10-23T13:43:43.090Z - info: ::1 - - [23/Oct/2016:13:43:43 +0000] "GET /createUser HTTP/1.1" 200 706 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:46:21.349Z - info: Server is running @ http://localhost:4000 [2016-10-23 15:46:21 | app.listen]
+2016-10-23T13:46:21.420Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 15:46:21 | mysql.getAllUserRoles]'
+2016-10-23T13:46:23.022Z - debug: search user [2016-10-23 15:46:23 | user.verifyToken]
+2016-10-23T13:46:23.027Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 15:46:23 | mysql.getUserForUsername]'
+2016-10-23T13:46:23.028Z - warn: Wrong user role RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } { id: 4, name: 'Auditor', description: null } [2016-10-23 15:46:23 | user.isUserRole]
+2016-10-23T13:48:23.009Z - info: ::1 - - [23/Oct/2016:13:48:23 +0000] "GET /createUser HTTP/1.1" - - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T13:48:23.015Z - debug: search user [2016-10-23 15:48:23 | user.verifyToken]
+2016-10-23T13:48:23.035Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 15:48:23 | mysql.getUserForUsername]'
+2016-10-23T13:48:23.036Z - warn: Wrong user role RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } { id: 4, name: 'Auditor', description: null } [2016-10-23 15:48:23 | user.isUserRole]
+2016-10-23T13:50:23.013Z - info: ::1 - - [23/Oct/2016:13:50:23 +0000] "GET /createUser HTTP/1.1" - - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T14:02:38.006Z - info: Server is running @ http://localhost:4000 [2016-10-23 16:02:38 | app.listen]
+2016-10-23T14:02:38.074Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 16:02:38 | mysql.getAllUserRoles]'
+2016-10-23T14:02:40.878Z - debug: search user [2016-10-23 16:02:40 | user.verifyToken]
+2016-10-23T14:02:40.883Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 16:02:40 | mysql.getUserForUsername]'
+2016-10-23T14:02:40.884Z - warn: Wrong user role RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } { id: 4, name: 'Auditor', description: null } [2016-10-23 16:02:40 | user.isUserRole]
+2016-10-23T14:02:40.894Z - info: ::1 - - [23/Oct/2016:14:02:40 +0000] "GET /createUser HTTP/1.1" 302 46 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T14:02:40.902Z - debug: search user [2016-10-23 16:02:40 | user.verifyToken]
+2016-10-23T14:02:40.903Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 16:02:40 | mysql.getUserForUsername]'
+2016-10-23T14:02:40.903Z - debug: Load start page for  Admin [2016-10-23 16:02:40 | user.getIndex]
+2016-10-23T14:02:40.905Z - debug: { users: 
+   [ RowDataPacket {
+       user_id: 1,
+       user_role_id: 3,
+       username: 'admin',
+       password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+       email: 'ad@min',
+       created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ],
+  userGroups: [] } '[2016-10-23 16:02:40 | mysql.getStartPageData]'
+2016-10-23T14:02:40.906Z - debug:  users=[user_id=1, user_role_id=3, username=admin, password=$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e, email=ad@min, created=Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit)], userGroups=[]
+2016-10-23T14:02:41.302Z - info: ::1 - - [23/Oct/2016:14:02:41 +0000] "GET / HTTP/1.1" 200 1115 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T14:02:45.099Z - debug: search user [2016-10-23 16:02:45 | user.verifyToken]
+2016-10-23T14:02:45.102Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 16:02:45 | mysql.getUserForUsername]'
+2016-10-23T14:02:45.103Z - debug: Load start page for  Admin [2016-10-23 16:02:45 | user.getIndex]
+2016-10-23T14:02:45.104Z - debug: { users: 
+   [ RowDataPacket {
+       user_id: 1,
+       user_role_id: 3,
+       username: 'admin',
+       password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+       email: 'ad@min',
+       created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ],
+  userGroups: [] } '[2016-10-23 16:02:45 | mysql.getStartPageData]'
+2016-10-23T14:02:45.105Z - debug:  users=[user_id=1, user_role_id=3, username=admin, password=$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e, email=ad@min, created=Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit)], userGroups=[]
+2016-10-23T14:02:45.150Z - info: ::1 - - [23/Oct/2016:14:02:45 +0000] "GET / HTTP/1.1" 200 1097 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T14:02:48.947Z - debug: search user [2016-10-23 16:02:48 | user.verifyToken]
+2016-10-23T14:02:48.948Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 16:02:48 | mysql.getUserForUsername]'
+2016-10-23T14:02:48.949Z - warn: Wrong user role RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } { id: 4, name: 'Auditor', description: null } [2016-10-23 16:02:48 | user.isUserRole]
+2016-10-23T14:02:48.950Z - info: ::1 - - [23/Oct/2016:14:02:48 +0000] "GET /createUser HTTP/1.1" 302 46 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T14:02:48.953Z - debug: search user [2016-10-23 16:02:48 | user.verifyToken]
+2016-10-23T14:02:48.954Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 16:02:48 | mysql.getUserForUsername]'
+2016-10-23T14:02:48.954Z - debug: Load start page for  Admin [2016-10-23 16:02:48 | user.getIndex]
+2016-10-23T14:02:48.956Z - debug: { users: 
+   [ RowDataPacket {
+       user_id: 1,
+       user_role_id: 3,
+       username: 'admin',
+       password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+       email: 'ad@min',
+       created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ],
+  userGroups: [] } '[2016-10-23 16:02:48 | mysql.getStartPageData]'
+2016-10-23T14:02:48.961Z - debug:  users=[user_id=1, user_role_id=3, username=admin, password=$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e, email=ad@min, created=Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit)], userGroups=[]
+2016-10-23T14:02:49.001Z - info: ::1 - - [23/Oct/2016:14:02:49 +0000] "GET / HTTP/1.1" 200 1115 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T14:02:56.390Z - debug: search user [2016-10-23 16:02:56 | user.verifyToken]
+2016-10-23T14:02:56.391Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 16:02:56 | mysql.getUserForUsername]'
+2016-10-23T14:02:56.392Z - debug: Load start page for  Admin [2016-10-23 16:02:56 | user.getIndex]
+2016-10-23T14:02:56.394Z - debug: { users: 
+   [ RowDataPacket {
+       user_id: 1,
+       user_role_id: 3,
+       username: 'admin',
+       password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+       email: 'ad@min',
+       created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ],
+  userGroups: [] } '[2016-10-23 16:02:56 | mysql.getStartPageData]'
+2016-10-23T14:02:56.399Z - debug:  users=[user_id=1, user_role_id=3, username=admin, password=$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e, email=ad@min, created=Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit)], userGroups=[]
+2016-10-23T14:02:56.428Z - info: ::1 - - [23/Oct/2016:14:02:56 +0000] "GET / HTTP/1.1" 200 1097 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T14:03:21.928Z - info: Server is running @ http://localhost:4000 [2016-10-23 16:03:21 | app.listen]
+2016-10-23T14:03:21.999Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-23 16:03:21 | mysql.getAllUserRoles]'
+2016-10-23T14:03:23.547Z - debug: search user [2016-10-23 16:03:23 | user.verifyToken]
+2016-10-23T14:03:23.549Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 16:03:23 | mysql.getUserForUsername]'
+2016-10-23T14:03:23.549Z - debug: Load start page for  Admin [2016-10-23 16:03:23 | user.getIndex]
+2016-10-23T14:03:23.552Z - debug: { users: 
+   [ RowDataPacket {
+       user_id: 1,
+       user_role_id: 3,
+       username: 'admin',
+       password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+       email: 'ad@min',
+       created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ],
+  userGroups: [] } '[2016-10-23 16:03:23 | mysql.getStartPageData]'
+2016-10-23T14:03:23.553Z - debug:  users=[user_id=1, user_role_id=3, username=admin, password=$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e, email=ad@min, created=Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit)], userGroups=[]
+2016-10-23T14:03:23.946Z - info: ::1 - - [23/Oct/2016:14:03:23 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T14:03:25.232Z - debug: search user [2016-10-23 16:03:25 | user.verifyToken]
+2016-10-23T14:03:25.233Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-23 16:03:25 | mysql.getUserForUsername]'
+2016-10-23T14:03:25.234Z - debug: next
+2016-10-23T14:03:25.234Z - debug: getCreateUser
+2016-10-23T14:03:25.290Z - info: ::1 - - [23/Oct/2016:14:03:25 +0000] "GET /createUser HTTP/1.1" 200 706 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-23T22:03:25.265Z - error: Error: Connection lost: The server closed the connection.
+    at Protocol.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:109:13)
+    at Socket.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:115:28)
+    at emitNone (events.js:72:20)
+    at Socket.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:905:12)
+    at doNTCallback2 (node.js:441:9)
+    at process._tickCallback (node.js:355:17) [2016-10-24 00:03:25 | mysql.initializeConnection]
+2016-10-23T22:03:25.268Z - info: Lost database connection. Reconnecting... [2016-10-24 00:03:25 | mysql.initializeConnection]
+2016-10-24T15:16:51.710Z - info: Server is running @ http://localhost:4000 [2016-10-24 17:16:51 | app.listen]
+2016-10-24T15:16:51.846Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-24 17:16:51 | mysql.getAllUserRoles]'
+2016-10-24T15:16:56.323Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-24 17:16:56 | user.verifyToken]'
+2016-10-24T15:16:56.323Z - debug: no user authenticated [2016-10-24 17:16:56 | user.getIndex]
+2016-10-24T15:16:56.985Z - info: ::1 - - [24/Oct/2016:15:16:56 +0000] "GET / HTTP/1.1" 200 700 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T15:16:57.169Z - info: ::1 - - [24/Oct/2016:15:16:57 +0000] "GET /favicon.ico HTTP/1.1" 404 122 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T15:16:58.648Z - info: ::1 - - [24/Oct/2016:15:16:58 +0000] "GET /login HTTP/1.1" 200 424 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T15:17:01.021Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-24 17:17:01 | mysql.getUserForUsername]'
+2016-10-24T15:17:01.036Z - debug: Basic authenticated [2016-10-24 17:17:01 | app.BasicStrategy]
+2016-10-24T15:17:01.039Z - info: Signed new token [2016-10-24 17:17:01 | user.basicAuthCallback]
+2016-10-24T15:17:01.045Z - info: ::1 - - [24/Oct/2016:15:17:01 +0000] "POST /login HTTP/1.1" 302 46 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T15:17:01.050Z - debug: search user [2016-10-24 17:17:01 | user.verifyToken]
+2016-10-24T15:17:01.050Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-24 17:17:01 | mysql.getUserForUsername]'
+2016-10-24T15:17:01.050Z - debug: Load start page for  Admin [2016-10-24 17:17:01 | user.getIndex]
+2016-10-24T15:17:01.051Z - debug: [ RowDataPacket {
+    user_id: 1,
+    user_role_id: 3,
+    username: 'admin',
+    password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+    email: 'ad@min',
+    created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ] '[2016-10-24 17:17:01 | mysql.getAllUsers]'
+2016-10-24T15:17:01.064Z - error: uncaughtException: err is not defined date=Mon Oct 24 2016 17:17:01 GMT+0200 (Mitteleuropäische Sommerzeit), pid=8252, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=79396864, heapTotal=63895808, heapUsed=44356816, loadavg=[0, 0, 0], uptime=320544.3742633, trace=[column=25, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=122, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=94, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false, column=28, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=, line=109, method=null, native=false, column=13, file=events.js, function=emitOne, line=77, method=null, native=false], stack=[ReferenceError: err is not defined,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:122:25,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:94:9),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16),     at Socket.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:109:28),     at emitOne (events.js:77:13)]
+2016-10-24T15:19:01.046Z - info: ::1 - - [24/Oct/2016:15:19:01 +0000] "GET / HTTP/1.1" - - "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T15:19:01.051Z - debug: search user [2016-10-24 17:19:01 | user.verifyToken]
+2016-10-24T15:19:01.052Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-24 17:19:01 | mysql.getUserForUsername]'
+2016-10-24T15:19:01.052Z - debug: Load start page for  Admin [2016-10-24 17:19:01 | user.getIndex]
+2016-10-24T15:19:01.053Z - debug: [ RowDataPacket {
+    user_id: 1,
+    user_role_id: 3,
+    username: 'admin',
+    password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+    email: 'ad@min',
+    created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ] '[2016-10-24 17:19:01 | mysql.getAllUsers]'
+2016-10-24T15:19:01.057Z - error: uncaughtException: err is not defined date=Mon Oct 24 2016 17:19:01 GMT+0200 (Mitteleuropäische Sommerzeit), pid=8252, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=80650240, heapTotal=63895808, heapUsed=45065696, loadavg=[0, 0, 0], uptime=320664.3686525, trace=[column=25, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=122, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=94, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false, column=28, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=, line=109, method=null, native=false, column=13, file=events.js, function=emitOne, line=77, method=null, native=false], stack=[ReferenceError: err is not defined,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:122:25,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:94:9),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16),     at Socket.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:109:28),     at emitOne (events.js:77:13)]
+2016-10-24T15:21:01.050Z - info: ::1 - - [24/Oct/2016:15:21:01 +0000] "GET / HTTP/1.1" - - "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T15:21:01.131Z - debug: search user [2016-10-24 17:21:01 | user.verifyToken]
+2016-10-24T15:21:01.146Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-24 17:21:01 | mysql.getUserForUsername]'
+2016-10-24T15:21:01.150Z - debug: Load start page for  Admin [2016-10-24 17:21:01 | user.getIndex]
+2016-10-24T15:21:01.151Z - debug: [ RowDataPacket {
+    user_id: 1,
+    user_role_id: 3,
+    username: 'admin',
+    password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+    email: 'ad@min',
+    created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ] '[2016-10-24 17:21:01 | mysql.getAllUsers]'
+2016-10-24T15:21:01.155Z - error: uncaughtException: err is not defined date=Mon Oct 24 2016 17:21:01 GMT+0200 (Mitteleuropäische Sommerzeit), pid=8252, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=61120512, heapTotal=39212544, heapUsed=35025592, loadavg=[0, 0, 0], uptime=320784.4662371, trace=[column=25, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=122, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=94, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false, column=28, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=, line=109, method=null, native=false, column=13, file=events.js, function=emitOne, line=77, method=null, native=false], stack=[ReferenceError: err is not defined,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:122:25,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:94:9),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16),     at Socket.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:109:28),     at emitOne (events.js:77:13)]
+2016-10-24T15:21:18.127Z - info: Server is running @ http://localhost:4000 [2016-10-24 17:21:18 | app.listen]
+2016-10-24T15:21:18.194Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-24 17:21:18 | mysql.getAllUserRoles]'
+2016-10-24T15:21:20.031Z - debug: search user [2016-10-24 17:21:20 | user.verifyToken]
+2016-10-24T15:21:20.040Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-24 17:21:20 | mysql.getUserForUsername]'
+2016-10-24T15:21:20.047Z - debug: Load start page for  Admin [2016-10-24 17:21:20 | user.getIndex]
+2016-10-24T15:21:20.048Z - debug: [ RowDataPacket {
+    user_id: 1,
+    user_role_id: 3,
+    username: 'admin',
+    password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+    email: 'ad@min',
+    created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ] '[2016-10-24 17:21:20 | mysql.getAllUsers]'
+2016-10-24T15:21:20.054Z - debug: [] '[2016-10-24 17:21:20 | mysql.getAllUserGroups]'
+2016-10-24T15:21:20.055Z - debug: { users: 
+   [ RowDataPacket {
+       user_id: 1,
+       user_role_id: 3,
+       username: 'admin',
+       password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+       email: 'ad@min',
+       created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ],
+  userGroups: [] } '[2016-10-24 17:21:20 | mysql.getStartPageData]'
+2016-10-24T15:21:20.055Z - debug:  users=[user_id=1, user_role_id=3, username=admin, password=$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e, email=ad@min, created=Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit)], userGroups=[]
+2016-10-24T15:21:20.487Z - info: ::1 - - [24/Oct/2016:15:21:20 +0000] "GET / HTTP/1.1" 200 1097 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T15:32:09.032Z - debug: search user [2016-10-24 17:32:09 | user.verifyToken]
+2016-10-24T15:32:09.034Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-24 17:32:09 | mysql.getUserForUsername]'
+2016-10-24T15:32:09.034Z - debug: next
+2016-10-24T15:32:09.034Z - debug: getCreateUser
+2016-10-24T15:32:09.035Z - debug: [] '[2016-10-24 17:32:09 | mysql.getAllUserGroups]'
+2016-10-24T15:32:09.094Z - info: ::1 - - [24/Oct/2016:15:32:09 +0000] "GET /createUser HTTP/1.1" 500 2222 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T15:34:13.414Z - info: Server is running @ http://localhost:4000 [2016-10-24 17:34:13 | app.listen]
+2016-10-24T15:34:13.480Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-24 17:34:13 | mysql.getAllUserRoles]'
+2016-10-24T15:34:15.358Z - debug: search user [2016-10-24 17:34:15 | user.verifyToken]
+2016-10-24T15:34:15.362Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-24 17:34:15 | mysql.getUserForUsername]'
+2016-10-24T15:34:15.362Z - debug: getCreateUser
+2016-10-24T15:34:15.364Z - debug: [] '[2016-10-24 17:34:15 | mysql.getAllUserGroups]'
+2016-10-24T15:34:15.788Z - info: ::1 - - [24/Oct/2016:15:34:15 +0000] "GET /createUser HTTP/1.1" 200 1325 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T15:42:54.061Z - info: Server is running @ http://localhost:4000 [2016-10-24 17:42:54 | app.listen]
+2016-10-24T15:42:54.130Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-24 17:42:54 | mysql.getAllUserRoles]'
+2016-10-24T15:42:55.668Z - debug: search user [2016-10-24 17:42:55 | user.verifyToken]
+2016-10-24T15:42:55.672Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-24 17:42:55 | mysql.getUserForUsername]'
+2016-10-24T15:42:55.673Z - debug: getCreateUser
+2016-10-24T15:42:55.674Z - debug: [] '[2016-10-24 17:42:55 | mysql.getAllUserGroups]'
+2016-10-24T15:42:56.079Z - info: ::1 - - [24/Oct/2016:15:42:56 +0000] "GET /createUser HTTP/1.1" 304 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T16:30:48.973Z - info: Server is running @ http://localhost:4000 [2016-10-24 18:30:48 | app.listen]
+2016-10-24T16:30:49.041Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-24 18:30:49 | mysql.getAllUserRoles]'
+2016-10-24T16:30:50.470Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-24 18:30:50 | user.verifyToken]'
+2016-10-24T16:30:50.475Z - debug: no user authenticated [2016-10-24 18:30:50 | user.isUserRole]
+2016-10-24T16:30:50.483Z - info: ::1 - - [24/Oct/2016:16:30:50 +0000] "GET /createUser HTTP/1.1" 302 46 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T16:30:50.493Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-24 18:30:50 | user.verifyToken]'
+2016-10-24T16:30:50.493Z - debug: no user authenticated [2016-10-24 18:30:50 | user.getIndex]
+2016-10-24T16:30:51.066Z - info: ::1 - - [24/Oct/2016:16:30:51 +0000] "GET / HTTP/1.1" 200 718 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T16:30:53.171Z - info: ::1 - - [24/Oct/2016:16:30:53 +0000] "GET /login HTTP/1.1" 200 424 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T16:30:56.387Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-24 18:30:56 | mysql.getUserForUsername]'
+2016-10-24T16:30:56.402Z - debug: Basic authenticated [2016-10-24 18:30:56 | app.BasicStrategy]
+2016-10-24T16:30:56.405Z - info: Signed new token [2016-10-24 18:30:56 | user.basicAuthCallback]
+2016-10-24T16:30:56.407Z - info: ::1 - - [24/Oct/2016:16:30:56 +0000] "POST /login HTTP/1.1" 302 46 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T16:30:56.410Z - debug: search user [2016-10-24 18:30:56 | user.verifyToken]
+2016-10-24T16:30:56.411Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-24 18:30:56 | mysql.getUserForUsername]'
+2016-10-24T16:30:56.412Z - debug: Load start page for  Admin [2016-10-24 18:30:56 | user.getIndex]
+2016-10-24T16:30:56.413Z - debug: [ RowDataPacket {
+    user_id: 1,
+    user_role_id: 3,
+    username: 'admin',
+    password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+    email: 'ad@min',
+    created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ] '[2016-10-24 18:30:56 | mysql.getAllUsers]'
+2016-10-24T16:30:56.414Z - debug: [] '[2016-10-24 18:30:56 | mysql.getAllUserGroups]'
+2016-10-24T16:30:56.415Z - debug: { users: 
+   [ RowDataPacket {
+       user_id: 1,
+       user_role_id: 3,
+       username: 'admin',
+       password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+       email: 'ad@min',
+       created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ],
+  userGroups: [] } '[2016-10-24 18:30:56 | mysql.getStartPageData]'
+2016-10-24T16:30:56.415Z - debug:  users=[user_id=1, user_role_id=3, username=admin, password=$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e, email=ad@min, created=Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit)], userGroups=[]
+2016-10-24T16:30:56.457Z - info: ::1 - - [24/Oct/2016:16:30:56 +0000] "GET / HTTP/1.1" 200 1097 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T16:30:58.886Z - debug: search user [2016-10-24 18:30:58 | user.verifyToken]
+2016-10-24T16:30:58.887Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-24 18:30:58 | mysql.getUserForUsername]'
+2016-10-24T16:30:58.888Z - debug: [] '[2016-10-24 18:30:58 | mysql.getAllUserGroups]'
+2016-10-24T16:30:58.929Z - info: ::1 - - [24/Oct/2016:16:30:58 +0000] "GET /createUser HTTP/1.1" 200 1322 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-24T16:31:29.250Z - debug: search user [2016-10-24 18:31:29 | user.verifyToken]
+2016-10-24T16:31:29.258Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-24 18:31:29 | mysql.getUserForUsername]'
+2016-10-24T16:31:29.258Z - debug: Load start page for  Admin [2016-10-24 18:31:29 | user.getIndex]
+2016-10-24T16:31:29.259Z - debug: [ RowDataPacket {
+    user_id: 1,
+    user_role_id: 3,
+    username: 'admin',
+    password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+    email: 'ad@min',
+    created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ] '[2016-10-24 18:31:29 | mysql.getAllUsers]'
+2016-10-24T16:31:29.259Z - debug: [] '[2016-10-24 18:31:29 | mysql.getAllUserGroups]'
+2016-10-24T16:31:29.260Z - debug: { users: 
+   [ RowDataPacket {
+       user_id: 1,
+       user_role_id: 3,
+       username: 'admin',
+       password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+       email: 'ad@min',
+       created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ],
+  userGroups: [] } '[2016-10-24 18:31:29 | mysql.getStartPageData]'
+2016-10-24T16:31:29.260Z - debug:  users=[user_id=1, user_role_id=3, username=admin, password=$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e, email=ad@min, created=Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit)], userGroups=[]
+2016-10-24T16:31:29.289Z - info: ::1 - - [24/Oct/2016:16:31:29 +0000] "GET / HTTP/1.1" 200 1118 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+
+2016-10-26T18:46:03.874Z - info: Server is running @ http://localhost:4000 [2016-10-26 20:46:03 | app.listen]
+2016-10-26T18:46:04.049Z - error: uncaughtException: verification is not defined date=Wed Oct 26 2016 20:46:04 GMT+0200 (Mitteleuropäische Sommerzeit), pid=13448, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=51929088, heapTotal=36081664, heapUsed=22029408, loadavg=[0, 0, 0], uptime=505890.3821138, trace=[column=51, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js, function=, line=66, method=null, native=false, column=16, file=events.js, function=Server.g, line=260, method=g, native=false, column=13, file=events.js, function=emitNone, line=67, method=null, native=false, column=7, file=events.js, function=Server.emit, line=166, method=emit, native=false, column=10, file=net.js, function=emitListeningNT, line=1260, method=null, native=false, column=9, file=node.js, function=doNTCallback1, line=430, method=null, native=false, column=17, file=node.js, function=process._tickCallback, line=352, method=_tickCallback, native=false, column=11, file=module.js, function=Function.Module.runMain, line=469, method=Module.runMain, native=false, column=18, file=node.js, function=startup, line=136, method=null, native=false, column=3, file=node.js, function=null, line=963, method=null, native=false], stack=[ReferenceError: verification is not defined,     at Server.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js:66:51),     at Server.g (events.js:260:16),     at emitNone (events.js:67:13),     at Server.emit (events.js:166:7),     at emitListeningNT (net.js:1260:10),     at doNTCallback1 (node.js:430:9),     at process._tickCallback (node.js:352:17),     at Function.Module.runMain (module.js:469:11),     at startup (node.js:136:18),     at node.js:963:3]
+2016-10-26T18:46:04.063Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 20:46:04 | mysql.selectAllUserRoles]'
+2016-10-26T18:46:12.246Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-26 20:46:12 | user.verifyToken]'
+2016-10-26T18:46:12.247Z - debug: no user authenticated [2016-10-26 20:46:12 | user.getIndex]
+2016-10-26T18:46:13.074Z - info: ::1 - - [26/Oct/2016:18:46:13 +0000] "GET / HTTP/1.1" 200 700 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:46:13.077Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-26 20:46:13 | user.verifyToken]'
+2016-10-26T18:46:13.077Z - debug: no user authenticated [2016-10-26 20:46:13 | user.getIndex]
+2016-10-26T18:46:13.137Z - info: ::1 - - [26/Oct/2016:18:46:13 +0000] "GET / HTTP/1.1" 200 700 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:46:13.358Z - info: ::1 - - [26/Oct/2016:18:46:13 +0000] "GET /favicon.ico HTTP/1.1" 404 122 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:46:46.061Z - info: Server is running @ http://localhost:4000 [2016-10-26 20:46:46 | app.listen]
+2016-10-26T18:46:46.132Z - error: uncaughtException: verification is not defined date=Wed Oct 26 2016 20:46:46 GMT+0200 (Mitteleuropäische Sommerzeit), pid=6040, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=51941376, heapTotal=36081664, heapUsed=22054392, loadavg=[0, 0, 0], uptime=505932.463907, trace=[column=51, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js, function=, line=66, method=null, native=false, column=16, file=events.js, function=Server.g, line=260, method=g, native=false, column=13, file=events.js, function=emitNone, line=67, method=null, native=false, column=7, file=events.js, function=Server.emit, line=166, method=emit, native=false, column=10, file=net.js, function=emitListeningNT, line=1260, method=null, native=false, column=9, file=node.js, function=doNTCallback1, line=430, method=null, native=false, column=17, file=node.js, function=process._tickCallback, line=352, method=_tickCallback, native=false, column=11, file=module.js, function=Function.Module.runMain, line=469, method=Module.runMain, native=false, column=18, file=node.js, function=startup, line=136, method=null, native=false, column=3, file=node.js, function=null, line=963, method=null, native=false], stack=[ReferenceError: verification is not defined,     at Server.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js:66:51),     at Server.g (events.js:260:16),     at emitNone (events.js:67:13),     at Server.emit (events.js:166:7),     at emitListeningNT (net.js:1260:10),     at doNTCallback1 (node.js:430:9),     at process._tickCallback (node.js:352:17),     at Function.Module.runMain (module.js:469:11),     at startup (node.js:136:18),     at node.js:963:3]
+2016-10-26T18:46:46.144Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 20:46:46 | mysql.selectAllUserRoles]'
+2016-10-26T18:46:47.443Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-26 20:46:47 | user.verifyToken]'
+2016-10-26T18:46:47.446Z - debug: no user authenticated [2016-10-26 20:46:47 | user.getIndex]
+2016-10-26T18:46:47.840Z - info: ::1 - - [26/Oct/2016:18:46:47 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:48:20.089Z - info: Server is running @ http://localhost:4000 [2016-10-26 20:48:20 | app.listen]
+2016-10-26T18:48:20.160Z - error: uncaughtException: admin is not defined date=Wed Oct 26 2016 20:48:20 GMT+0200 (Mitteleuropäische Sommerzeit), pid=12620, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=51970048, heapTotal=36081664, heapUsed=22042328, loadavg=[0, 0, 0], uptime=506026.4928272, trace=[column=51, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js, function=, line=66, method=null, native=false, column=16, file=events.js, function=Server.g, line=260, method=g, native=false, column=13, file=events.js, function=emitNone, line=67, method=null, native=false, column=7, file=events.js, function=Server.emit, line=166, method=emit, native=false, column=10, file=net.js, function=emitListeningNT, line=1260, method=null, native=false, column=9, file=node.js, function=doNTCallback1, line=430, method=null, native=false, column=17, file=node.js, function=process._tickCallback, line=352, method=_tickCallback, native=false, column=11, file=module.js, function=Function.Module.runMain, line=469, method=Module.runMain, native=false, column=18, file=node.js, function=startup, line=136, method=null, native=false, column=3, file=node.js, function=null, line=963, method=null, native=false], stack=[ReferenceError: admin is not defined,     at Server.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js:66:51),     at Server.g (events.js:260:16),     at emitNone (events.js:67:13),     at Server.emit (events.js:166:7),     at emitListeningNT (net.js:1260:10),     at doNTCallback1 (node.js:430:9),     at process._tickCallback (node.js:352:17),     at Function.Module.runMain (module.js:469:11),     at startup (node.js:136:18),     at node.js:963:3]
+2016-10-26T18:48:20.175Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 20:48:20 | mysql.selectAllUserRoles]'
+2016-10-26T18:49:09.044Z - info: Server is running @ http://localhost:4000 [2016-10-26 20:49:09 | app.listen]
+2016-10-26T18:49:09.124Z - error: uncaughtException: admin is not defined date=Wed Oct 26 2016 20:49:09 GMT+0200 (Mitteleuropäische Sommerzeit), pid=11108, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=52731904, heapTotal=52592640, heapUsed=19543416, loadavg=[0, 0, 0], uptime=506075.4557437, trace=[column=51, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js, function=, line=66, method=null, native=false, column=16, file=events.js, function=Server.g, line=260, method=g, native=false, column=13, file=events.js, function=emitNone, line=67, method=null, native=false, column=7, file=events.js, function=Server.emit, line=166, method=emit, native=false, column=10, file=net.js, function=emitListeningNT, line=1260, method=null, native=false, column=9, file=node.js, function=doNTCallback1, line=430, method=null, native=false, column=17, file=node.js, function=process._tickCallback, line=352, method=_tickCallback, native=false, column=11, file=module.js, function=Function.Module.runMain, line=469, method=Module.runMain, native=false, column=18, file=node.js, function=startup, line=136, method=null, native=false, column=3, file=node.js, function=null, line=963, method=null, native=false], stack=[ReferenceError: admin is not defined,     at Server.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js:66:51),     at Server.g (events.js:260:16),     at emitNone (events.js:67:13),     at Server.emit (events.js:166:7),     at emitListeningNT (net.js:1260:10),     at doNTCallback1 (node.js:430:9),     at process._tickCallback (node.js:352:17),     at Function.Module.runMain (module.js:469:11),     at startup (node.js:136:18),     at node.js:963:3]
+2016-10-26T18:49:09.138Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 20:49:09 | mysql.selectAllUserRoles]'
+2016-10-26T18:49:11.923Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-26 20:49:11 | user.verifyToken]'
+2016-10-26T18:49:11.924Z - debug: no user authenticated [2016-10-26 20:49:11 | user.getIndex]
+2016-10-26T18:49:12.324Z - info: ::1 - - [26/Oct/2016:18:49:12 +0000] "GET / HTTP/1.1" 200 644 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:49:35.149Z - info: Server is running @ http://localhost:4000 [2016-10-26 20:49:35 | app.listen]
+2016-10-26T18:49:35.224Z - error: uncaughtException: admin is not defined date=Wed Oct 26 2016 20:49:35 GMT+0200 (Mitteleuropäische Sommerzeit), pid=8480, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=52068352, heapTotal=36081664, heapUsed=22252120, loadavg=[0, 0, 0], uptime=506101.5558547, trace=[column=51, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js, function=, line=66, method=null, native=false, column=16, file=events.js, function=Server.g, line=260, method=g, native=false, column=13, file=events.js, function=emitNone, line=67, method=null, native=false, column=7, file=events.js, function=Server.emit, line=166, method=emit, native=false, column=10, file=net.js, function=emitListeningNT, line=1260, method=null, native=false, column=9, file=node.js, function=doNTCallback1, line=430, method=null, native=false, column=17, file=node.js, function=process._tickCallback, line=352, method=_tickCallback, native=false, column=11, file=module.js, function=Function.Module.runMain, line=469, method=Module.runMain, native=false, column=18, file=node.js, function=startup, line=136, method=null, native=false, column=3, file=node.js, function=null, line=963, method=null, native=false], stack=[ReferenceError: admin is not defined,     at Server.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js:66:51),     at Server.g (events.js:260:16),     at emitNone (events.js:67:13),     at Server.emit (events.js:166:7),     at emitListeningNT (net.js:1260:10),     at doNTCallback1 (node.js:430:9),     at process._tickCallback (node.js:352:17),     at Function.Module.runMain (module.js:469:11),     at startup (node.js:136:18),     at node.js:963:3]
+2016-10-26T18:49:35.237Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 20:49:35 | mysql.selectAllUserRoles]'
+2016-10-26T18:49:37.383Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-26 20:49:37 | user.verifyToken]'
+2016-10-26T18:49:37.387Z - debug: no user authenticated [2016-10-26 20:49:37 | user.getIndex]
+2016-10-26T18:49:37.809Z - info: ::1 - - [26/Oct/2016:18:49:37 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:52:53.213Z - info: Server is running @ http://localhost:4000 [2016-10-26 20:52:53 | app.listen]
+2016-10-26T18:52:53.289Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 20:52:53 | mysql.selectAllUserRoles]'
+2016-10-26T18:52:59.497Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-26 20:52:59 | user.verifyToken]'
+2016-10-26T18:52:59.497Z - debug: no user authenticated [2016-10-26 20:52:59 | user.getIndex]
+2016-10-26T18:52:59.971Z - info: ::1 - - [26/Oct/2016:18:52:59 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:53:02.380Z - info: ::1 - - [26/Oct/2016:18:53:02 +0000] "GET /login HTTP/1.1" 200 424 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:53:05.400Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 20:53:05 | mysql.selectUserForUsername]'
+2016-10-26T18:53:05.417Z - debug: Basic authenticated [2016-10-26 20:53:05 | app.BasicStrategy]
+2016-10-26T18:53:05.420Z - info: Signed new token [2016-10-26 20:53:05 | user.basicAuthCallback]
+2016-10-26T18:53:05.433Z - info: ::1 - - [26/Oct/2016:18:53:05 +0000] "POST /login HTTP/1.1" 302 46 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:53:05.438Z - debug: search user [2016-10-26 20:53:05 | user.verifyToken]
+2016-10-26T18:53:05.440Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 20:53:05 | mysql.selectUserForUsername]'
+2016-10-26T18:53:05.440Z - debug: Load start page for  Admin [2016-10-26 20:53:05 | user.getIndex]
+2016-10-26T18:53:05.442Z - debug: [ RowDataPacket {
+    user_id: 1,
+    user_role_id: 3,
+    username: 'admin',
+    password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+    email: 'ad@min',
+    created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ] '[2016-10-26 20:53:05 | mysql.selectAllUsers]'
+2016-10-26T18:53:05.442Z - debug: [] '[2016-10-26 20:53:05 | mysql.selectAllUserGroups]'
+2016-10-26T18:53:05.443Z - debug: { users: 
+   [ RowDataPacket {
+       user_id: 1,
+       user_role_id: 3,
+       username: 'admin',
+       password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+       email: 'ad@min',
+       created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } ],
+  userGroups: [] } '[2016-10-26 20:53:05 | mysql.getStartPageData]'
+2016-10-26T18:53:05.443Z - debug:  users=[user_id=1, user_role_id=3, username=admin, password=$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e, email=ad@min, created=Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit)], userGroups=[]
+2016-10-26T18:53:05.503Z - info: ::1 - - [26/Oct/2016:18:53:05 +0000] "GET / HTTP/1.1" 200 1089 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:53:07.511Z - debug: search user [2016-10-26 20:53:07 | user.verifyToken]
+2016-10-26T18:53:07.514Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 20:53:07 | mysql.selectUserForUsername]'
+2016-10-26T18:53:07.515Z - debug: [] '[2016-10-26 20:53:07 | mysql.selectAllUserGroups]'
+2016-10-26T18:53:07.518Z - info: ::1 - - [26/Oct/2016:18:53:07 +0000] "GET /admin/createUserCandidate HTTP/1.1" 500 1405 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:53:53.281Z - debug: [] '[2016-10-26 20:53:53 | mysql.selectNewUserCandidates]'
+2016-10-26T18:54:53.280Z - debug: [] '[2016-10-26 20:54:53 | mysql.selectNewUserCandidates]'
+2016-10-26T18:55:06.103Z - info: Server is running @ http://localhost:4000 [2016-10-26 20:55:06 | app.listen]
+2016-10-26T18:55:06.183Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 20:55:06 | mysql.selectAllUserRoles]'
+2016-10-26T18:55:08.400Z - debug: search user [2016-10-26 20:55:08 | user.verifyToken]
+2016-10-26T18:55:08.403Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 20:55:08 | mysql.selectUserForUsername]'
+2016-10-26T18:55:08.410Z - debug: [] '[2016-10-26 20:55:08 | mysql.selectAllUserGroups]'
+2016-10-26T18:55:08.863Z - info: ::1 - - [26/Oct/2016:18:55:08 +0000] "GET /admin/createUserCandidate HTTP/1.1" 500 2399 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:56:06.175Z - debug: [] '[2016-10-26 20:56:06 | mysql.selectNewUserCandidates]'
+2016-10-26T18:56:30.187Z - info: Server is running @ http://localhost:4000 [2016-10-26 20:56:30 | app.listen]
+2016-10-26T18:56:30.257Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 20:56:30 | mysql.selectAllUserRoles]'
+2016-10-26T18:56:30.807Z - debug: search user [2016-10-26 20:56:30 | user.verifyToken]
+2016-10-26T18:56:30.816Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 20:56:30 | mysql.selectUserForUsername]'
+2016-10-26T18:56:30.818Z - debug: [] '[2016-10-26 20:56:30 | mysql.selectAllUserGroups]'
+2016-10-26T18:56:31.250Z - info: ::1 - - [26/Oct/2016:18:56:31 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1160 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:57:30.249Z - debug: [] '[2016-10-26 20:57:30 | mysql.selectNewUserCandidates]'
+2016-10-26T18:57:48.348Z - info: Server is running @ http://localhost:4000 [2016-10-26 20:57:48 | app.listen]
+2016-10-26T18:57:48.424Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 20:57:48 | mysql.selectAllUserRoles]'
+2016-10-26T18:57:50.737Z - debug: search user [2016-10-26 20:57:50 | user.verifyToken]
+2016-10-26T18:57:50.740Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 20:57:50 | mysql.selectUserForUsername]'
+2016-10-26T18:57:50.747Z - debug:  id=1, name=Privater Nutzer, description=null, id=2, name=Öffentlicher Nutzer, description=null, id=3, name=Admin, description=null, id=4, name=Auditor, description=null, id=5, name=Experte, description=null
+2016-10-26T18:57:50.749Z - debug: [] '[2016-10-26 20:57:50 | mysql.selectAllUserGroups]'
+2016-10-26T18:57:51.163Z - info: ::1 - - [26/Oct/2016:18:57:51 +0000] "GET /admin/createUserCandidate HTTP/1.1" 304 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T18:58:30.682Z - info: Server is running @ http://localhost:4000 [2016-10-26 20:58:30 | app.listen]
+2016-10-26T18:58:30.754Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 20:58:30 | mysql.selectAllUserRoles]'
+2016-10-26T18:58:32.795Z - debug: search user [2016-10-26 20:58:32 | user.verifyToken]
+2016-10-26T18:58:32.801Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 20:58:32 | mysql.selectUserForUsername]'
+2016-10-26T18:58:32.816Z - error: uncaughtException: userRoles.forEach is not a function date=Wed Oct 26 2016 20:58:32 GMT+0200 (Mitteleuropäische Sommerzeit), pid=11624, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=53149696, heapTotal=37101568, heapUsed=23498888, loadavg=[0, 0, 0], uptime=506639.1465768, trace=[column=15, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=getCreateUserCandidate, line=17, method=null, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=169, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=150, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=72, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false], stack=[TypeError: userRoles.forEach is not a function,     at getCreateUserCandidate (C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:17:15),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:169:21,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:150:17,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:72:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16)]
+2016-10-26T18:59:30.746Z - debug: [] '[2016-10-26 20:59:30 | mysql.selectNewUserCandidates]'
+2016-10-26T19:00:30.746Z - debug: [] '[2016-10-26 21:00:30 | mysql.selectNewUserCandidates]'
+2016-10-26T19:00:32.781Z - info: ::1 - - [26/Oct/2016:19:00:32 +0000] "GET /admin/createUserCandidate HTTP/1.1" - - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:00:32.785Z - debug: search user [2016-10-26 21:00:32 | user.verifyToken]
+2016-10-26T19:00:32.787Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:00:32 | mysql.selectUserForUsername]'
+2016-10-26T19:00:32.790Z - error: uncaughtException: userRoles.forEach is not a function date=Wed Oct 26 2016 21:00:32 GMT+0200 (Mitteleuropäische Sommerzeit), pid=11624, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=53993472, heapTotal=37101568, heapUsed=24569800, loadavg=[0, 0, 0], uptime=506759.1238878, trace=[column=15, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=getCreateUserCandidate, line=17, method=null, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=169, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=150, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=72, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false], stack=[TypeError: userRoles.forEach is not a function,     at getCreateUserCandidate (C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:17:15),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:169:21,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:150:17,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:72:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16)]
+2016-10-26T19:01:30.748Z - debug: [] '[2016-10-26 21:01:30 | mysql.selectNewUserCandidates]'
+2016-10-26T19:02:15.240Z - debug: search user [2016-10-26 21:02:15 | user.verifyToken]
+2016-10-26T19:02:15.242Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:02:15 | mysql.selectUserForUsername]'
+2016-10-26T19:02:15.246Z - error: uncaughtException: userRoles.forEach is not a function date=Wed Oct 26 2016 21:02:15 GMT+0200 (Mitteleuropäische Sommerzeit), pid=11624, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=54185984, heapTotal=37101568, heapUsed=25216176, loadavg=[0, 0, 0], uptime=506861.5803594, trace=[column=15, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=getCreateUserCandidate, line=17, method=null, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=169, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=150, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=72, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false], stack=[TypeError: userRoles.forEach is not a function,     at getCreateUserCandidate (C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:17:15),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:169:21,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:150:17,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:72:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16)]
+2016-10-26T19:02:45.849Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:02:45 | app.listen]
+2016-10-26T19:02:45.924Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:02:45 | mysql.selectAllUserRoles]'
+2016-10-26T19:02:49.147Z - debug: search user [2016-10-26 21:02:49 | user.verifyToken]
+2016-10-26T19:02:49.149Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:02:49 | mysql.selectUserForUsername]'
+2016-10-26T19:02:49.164Z - error: uncaughtException: userRoles.forEach is not a function date=Wed Oct 26 2016 21:02:49 GMT+0200 (Mitteleuropäische Sommerzeit), pid=15620, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=53362688, heapTotal=37101568, heapUsed=23517360, loadavg=[0, 0, 0], uptime=506895.4967394, trace=[column=15, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=getCreateUserCandidate, line=17, method=null, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=169, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=150, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=72, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false], stack=[TypeError: userRoles.forEach is not a function,     at getCreateUserCandidate (C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:17:15),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:169:21,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:150:17,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:72:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16)]
+2016-10-26T19:03:02.026Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:03:02 | app.listen]
+2016-10-26T19:03:02.097Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:03:02 | mysql.selectAllUserRoles]'
+2016-10-26T19:03:02.180Z - debug: search user [2016-10-26 21:03:02 | user.verifyToken]
+2016-10-26T19:03:02.183Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:03:02 | mysql.selectUserForUsername]'
+2016-10-26T19:03:02.186Z - debug: [] '[2016-10-26 21:03:02 | mysql.selectAllUserGroups]'
+2016-10-26T19:03:02.630Z - info: ::1 - - [26/Oct/2016:19:03:02 +0000] "GET /admin/createUserCandidate HTTP/1.1" 304 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:03:05.882Z - debug: search user [2016-10-26 21:03:05 | user.verifyToken]
+2016-10-26T19:03:05.884Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:03:05 | mysql.selectUserForUsername]'
+2016-10-26T19:03:05.885Z - debug: [] '[2016-10-26 21:03:05 | mysql.selectAllUserGroups]'
+2016-10-26T19:03:05.951Z - info: ::1 - - [26/Oct/2016:19:03:05 +0000] "GET /admin/createUserCandidate HTTP/1.1" 304 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:04:02.090Z - debug: [] '[2016-10-26 21:04:02 | mysql.selectNewUserCandidates]'
+2016-10-26T19:04:22.047Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:04:22 | app.listen]
+2016-10-26T19:04:22.114Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:04:22 | mysql.selectAllUserRoles]'
+2016-10-26T19:04:22.116Z - debug: { publicUser: { id: 1, name: 'Privater Nutzer', description: null },
+  privateUser: { id: 2, name: 'Öffentlicher Nutzer', description: null },
+  admin: { id: 3, name: 'Admin', description: null },
+  auditor: { id: 4, name: 'Auditor', description: null },
+  expert: { id: 5, name: 'Experte', description: null } } '[2016-10-26 21:04:22 | app]'
+2016-10-26T19:05:22.106Z - debug: [] '[2016-10-26 21:05:22 | mysql.selectNewUserCandidates]'
+2016-10-26T19:05:44.377Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:05:44 | app.listen]
+2016-10-26T19:05:44.458Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:05:44 | mysql.selectAllUserRoles]'
+2016-10-26T19:05:44.459Z - debug: { publicUser: { id: 1, name: 'Privater Nutzer', description: null },
+  privateUser: { id: 2, name: 'Öffentlicher Nutzer', description: null },
+  admin: { id: 3, name: 'Admin', description: null },
+  auditor: { id: 4, name: 'Auditor', description: null },
+  expert: { id: 5, name: 'Experte', description: null } } '[2016-10-26 21:05:44 | app]'
+2016-10-26T19:05:44.473Z - error: uncaughtException: userRoles.forEach is not a function date=Wed Oct 26 2016 21:05:44 GMT+0200 (Mitteleuropäische Sommerzeit), pid=9524, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=52707328, heapTotal=37101568, heapUsed=22878736, loadavg=[0, 0, 0], uptime=507070.8056288, trace=[column=19, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js, function=null, line=66, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=225, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=90, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false, column=28, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=, line=109, method=null, native=false], stack=[TypeError: userRoles.forEach is not a function,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js:66:19,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:225:13,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:90:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16),     at Socket.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:109:28)]
+2016-10-26T19:06:44.451Z - debug: [] '[2016-10-26 21:06:44 | mysql.selectNewUserCandidates]'
+2016-10-26T19:07:35.662Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:07:35 | app.listen]
+2016-10-26T19:07:35.756Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:07:35 | mysql.selectAllUserRoles]'
+2016-10-26T19:07:39.324Z - debug: search user [2016-10-26 21:07:39 | user.verifyToken]
+2016-10-26T19:07:39.327Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:07:39 | mysql.selectUserForUsername]'
+2016-10-26T19:07:39.328Z - debug: [] '[2016-10-26 21:07:39 | mysql.selectAllUserGroups]'
+2016-10-26T19:07:39.729Z - info: ::1 - - [26/Oct/2016:19:07:39 +0000] "GET /admin/createUserCandidate HTTP/1.1" 304 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:08:35.742Z - debug: [] '[2016-10-26 21:08:35 | mysql.selectNewUserCandidates]'
+2016-10-26T19:09:35.745Z - debug: [] '[2016-10-26 21:09:35 | mysql.selectNewUserCandidates]'
+2016-10-26T19:10:22.113Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:10:22 | app.listen]
+2016-10-26T19:10:22.188Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:10:22 | mysql.selectAllUserRoles]'
+2016-10-26T19:10:25.366Z - debug: search user [2016-10-26 21:10:25 | user.verifyToken]
+2016-10-26T19:10:25.369Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:10:25 | mysql.selectUserForUsername]'
+2016-10-26T19:10:25.377Z - debug: [] '[2016-10-26 21:10:25 | mysql.selectAllUserGroups]'
+2016-10-26T19:10:25.798Z - info: ::1 - - [26/Oct/2016:19:10:25 +0000] "GET /admin/createUserCandidate HTTP/1.1" 304 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:11:01.903Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:11:01 | app.listen]
+2016-10-26T19:11:01.974Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:11:01 | mysql.selectAllUserRoles]'
+2016-10-26T19:11:02.657Z - debug: search user [2016-10-26 21:11:02 | user.verifyToken]
+2016-10-26T19:11:02.660Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:11:02 | mysql.selectUserForUsername]'
+2016-10-26T19:11:02.662Z - debug: [] '[2016-10-26 21:11:02 | mysql.selectAllUserGroups]'
+2016-10-26T19:11:03.104Z - info: ::1 - - [26/Oct/2016:19:11:03 +0000] "GET /admin/createUserCandidate HTTP/1.1" 304 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:11:21.864Z - debug: search user [2016-10-26 21:11:21 | user.verifyToken]
+2016-10-26T19:11:21.866Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:11:21 | mysql.selectUserForUsername]'
+2016-10-26T19:11:21.867Z - debug: [] '[2016-10-26 21:11:21 | mysql.selectAllUserGroups]'
+2016-10-26T19:11:21.946Z - info: ::1 - - [26/Oct/2016:19:11:21 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1160 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:11:23.090Z - debug: search user [2016-10-26 21:11:23 | user.verifyToken]
+2016-10-26T19:11:23.094Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:11:23 | mysql.selectUserForUsername]'
+2016-10-26T19:11:23.096Z - debug: [] '[2016-10-26 21:11:23 | mysql.selectAllUserGroups]'
+2016-10-26T19:11:23.144Z - info: ::1 - - [26/Oct/2016:19:11:23 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1160 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:11:43.607Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:11:43 | app.listen]
+2016-10-26T19:11:43.674Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:11:43 | mysql.selectAllUserRoles]'
+2016-10-26T19:11:45.266Z - debug: search user [2016-10-26 21:11:45 | user.verifyToken]
+2016-10-26T19:11:45.271Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:11:45 | mysql.selectUserForUsername]'
+2016-10-26T19:11:45.272Z - debug: [] '[2016-10-26 21:11:45 | mysql.selectAllUserGroups]'
+2016-10-26T19:11:45.666Z - info: ::1 - - [26/Oct/2016:19:11:45 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1160 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:11:47.224Z - debug: search user [2016-10-26 21:11:47 | user.verifyToken]
+2016-10-26T19:11:47.225Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:11:47 | mysql.selectUserForUsername]'
+2016-10-26T19:11:47.225Z - debug: [] '[2016-10-26 21:11:47 | mysql.selectAllUserGroups]'
+2016-10-26T19:11:47.298Z - info: ::1 - - [26/Oct/2016:19:11:47 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1160 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:12:43.668Z - debug: [] '[2016-10-26 21:12:43 | mysql.selectNewUserCandidates]'
+2016-10-26T19:13:17.570Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:13:17 | app.listen]
+2016-10-26T19:13:17.643Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:13:17 | mysql.selectAllUserRoles]'
+2016-10-26T19:13:21.209Z - debug: search user [2016-10-26 21:13:21 | user.verifyToken]
+2016-10-26T19:13:21.221Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:13:21 | mysql.selectUserForUsername]'
+2016-10-26T19:13:21.222Z - debug: publicUser [2016-10-26 21:13:21 | [object Object]]
+2016-10-26T19:13:21.222Z - debug: privateUser [2016-10-26 21:13:21 | [object Object]]
+2016-10-26T19:13:21.222Z - debug: admin [2016-10-26 21:13:21 | [object Object]]
+2016-10-26T19:13:21.222Z - debug: auditor [2016-10-26 21:13:21 | [object Object]]
+2016-10-26T19:13:21.223Z - debug: expert [2016-10-26 21:13:21 | [object Object]]
+2016-10-26T19:13:21.223Z - debug: [] '[2016-10-26 21:13:21 | mysql.selectAllUserGroups]'
+2016-10-26T19:13:21.666Z - info: ::1 - - [26/Oct/2016:19:13:21 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1160 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:13:43.401Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:13:43 | app.listen]
+2016-10-26T19:13:43.495Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:13:43 | mysql.selectAllUserRoles]'
+2016-10-26T19:13:44.109Z - debug: search user [2016-10-26 21:13:44 | user.verifyToken]
+2016-10-26T19:13:44.112Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:13:44 | mysql.selectUserForUsername]'
+2016-10-26T19:13:44.113Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:13:44 | admin.getCreateUserCandidate]
+2016-10-26T19:13:44.113Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:13:44 | admin.getCreateUserCandidate]
+2016-10-26T19:13:44.113Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:13:44 | admin.getCreateUserCandidate]
+2016-10-26T19:13:44.114Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:13:44 | admin.getCreateUserCandidate]
+2016-10-26T19:13:44.114Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:13:44 | admin.getCreateUserCandidate]
+2016-10-26T19:13:44.115Z - debug: [] '[2016-10-26 21:13:44 | mysql.selectAllUserGroups]'
+2016-10-26T19:13:44.559Z - info: ::1 - - [26/Oct/2016:19:13:44 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1160 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:14:43.485Z - debug: [] '[2016-10-26 21:14:43 | mysql.selectNewUserCandidates]'
+2016-10-26T19:14:47.019Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:14:47 | app.listen]
+2016-10-26T19:14:47.097Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:14:47 | mysql.selectAllUserRoles]'
+2016-10-26T19:14:49.114Z - debug: search user [2016-10-26 21:14:49 | user.verifyToken]
+2016-10-26T19:14:49.116Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:14:49 | mysql.selectUserForUsername]'
+2016-10-26T19:14:49.116Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:14:49 | admin.getCreateUserCandidate]
+2016-10-26T19:14:49.117Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:14:49 | admin.getCreateUserCandidate]
+2016-10-26T19:14:49.117Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:14:49 | admin.getCreateUserCandidate]
+2016-10-26T19:14:49.117Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:14:49 | admin.getCreateUserCandidate]
+2016-10-26T19:14:49.117Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:14:49 | admin.getCreateUserCandidate]
+2016-10-26T19:14:49.118Z - debug: [] '[2016-10-26 21:14:49 | mysql.selectAllUserGroups]'
+2016-10-26T19:14:49.559Z - info: ::1 - - [26/Oct/2016:19:14:49 +0000] "GET /admin/createUserCandidate HTTP/1.1" 304 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:15:47.090Z - debug: [] '[2016-10-26 21:15:47 | mysql.selectNewUserCandidates]'
+2016-10-26T19:16:47.091Z - debug: [] '[2016-10-26 21:16:47 | mysql.selectNewUserCandidates]'
+2016-10-26T19:17:47.090Z - debug: [] '[2016-10-26 21:17:47 | mysql.selectNewUserCandidates]'
+2016-10-26T19:18:30.962Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:18:30 | app.listen]
+2016-10-26T19:18:31.037Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:18:31 | mysql.selectAllUserRoles]'
+2016-10-26T19:18:33.773Z - debug: search user [2016-10-26 21:18:33 | user.verifyToken]
+2016-10-26T19:18:33.776Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:18:33 | mysql.selectUserForUsername]'
+2016-10-26T19:18:33.776Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:18:33 | admin.getCreateUserCandidate]
+2016-10-26T19:18:33.777Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:18:33 | admin.getCreateUserCandidate]
+2016-10-26T19:18:33.777Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:18:33 | admin.getCreateUserCandidate]
+2016-10-26T19:18:33.777Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:18:33 | admin.getCreateUserCandidate]
+2016-10-26T19:18:33.777Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:18:33 | admin.getCreateUserCandidate]
+2016-10-26T19:18:33.779Z - debug: [] '[2016-10-26 21:18:33 | mysql.selectAllUserGroups]'
+2016-10-26T19:18:34.196Z - info: ::1 - - [26/Oct/2016:19:18:34 +0000] "GET /admin/createUserCandidate HTTP/1.1" 500 2313 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:18:45.750Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:18:45 | app.listen]
+2016-10-26T19:18:45.822Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:18:45 | mysql.selectAllUserRoles]'
+2016-10-26T19:18:47.062Z - debug: search user [2016-10-26 21:18:47 | user.verifyToken]
+2016-10-26T19:18:47.066Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:18:47 | mysql.selectUserForUsername]'
+2016-10-26T19:18:47.067Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:18:47 | admin.getCreateUserCandidate]
+2016-10-26T19:18:47.067Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:18:47 | admin.getCreateUserCandidate]
+2016-10-26T19:18:47.068Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:18:47 | admin.getCreateUserCandidate]
+2016-10-26T19:18:47.068Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:18:47 | admin.getCreateUserCandidate]
+2016-10-26T19:18:47.069Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:18:47 | admin.getCreateUserCandidate]
+2016-10-26T19:18:47.070Z - debug: [] '[2016-10-26 21:18:47 | mysql.selectAllUserGroups]'
+2016-10-26T19:18:47.488Z - info: ::1 - - [26/Oct/2016:19:18:47 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1260 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:19:26.266Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:19:26 | app.listen]
+2016-10-26T19:19:26.339Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:19:26 | mysql.selectAllUserRoles]'
+2016-10-26T19:19:28.004Z - debug: search user [2016-10-26 21:19:28 | user.verifyToken]
+2016-10-26T19:19:28.007Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:19:28 | mysql.selectUserForUsername]'
+2016-10-26T19:19:28.007Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:19:28 | admin.getCreateUserCandidate]
+2016-10-26T19:19:28.008Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:19:28 | admin.getCreateUserCandidate]
+2016-10-26T19:19:28.008Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:19:28 | admin.getCreateUserCandidate]
+2016-10-26T19:19:28.008Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:19:28 | admin.getCreateUserCandidate]
+2016-10-26T19:19:28.008Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:19:28 | admin.getCreateUserCandidate]
+2016-10-26T19:19:28.009Z - debug: [] '[2016-10-26 21:19:28 | mysql.selectAllUserGroups]'
+2016-10-26T19:19:28.463Z - info: ::1 - - [26/Oct/2016:19:19:28 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1260 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:19:42.903Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:19:42 | app.listen]
+2016-10-26T19:19:42.980Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:19:42 | mysql.selectAllUserRoles]'
+2016-10-26T19:19:44.356Z - debug: search user [2016-10-26 21:19:44 | user.verifyToken]
+2016-10-26T19:19:44.359Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:19:44 | mysql.selectUserForUsername]'
+2016-10-26T19:19:44.359Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:19:44 | admin.getCreateUserCandidate]
+2016-10-26T19:19:44.359Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:19:44 | admin.getCreateUserCandidate]
+2016-10-26T19:19:44.359Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:19:44 | admin.getCreateUserCandidate]
+2016-10-26T19:19:44.360Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:19:44 | admin.getCreateUserCandidate]
+2016-10-26T19:19:44.360Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:19:44 | admin.getCreateUserCandidate]
+2016-10-26T19:19:44.361Z - debug: [] '[2016-10-26 21:19:44 | mysql.selectAllUserGroups]'
+2016-10-26T19:19:44.799Z - info: ::1 - - [26/Oct/2016:19:19:44 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1160 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:20:27.266Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:20:27 | app.listen]
+2016-10-26T19:20:27.335Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:20:27 | mysql.selectAllUserRoles]'
+2016-10-26T19:20:32.651Z - info: ::1 - - [26/Oct/2016:19:20:32 +0000] "GET /admin/createUserCandidate HTTP/1.1" 500 1293 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:21:05.213Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:21:05 | app.listen]
+2016-10-26T19:21:05.291Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:21:05 | mysql.selectAllUserRoles]'
+2016-10-26T19:21:05.297Z - debug: undefined
+2016-10-26T19:21:12.327Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:21:12 | app.listen]
+2016-10-26T19:21:12.398Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:21:12 | mysql.selectAllUserRoles]'
+2016-10-26T19:21:12.399Z - debug:  id=1, name=Privater Nutzer, description=null, id=2, name=Öffentlicher Nutzer, description=null, id=3, name=Admin, description=null, id=4, name=Auditor, description=null, id=5, name=Experte, description=null
+2016-10-26T19:22:12.390Z - debug: [] '[2016-10-26 21:22:12 | mysql.selectNewUserCandidates]'
+2016-10-26T19:22:28.029Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:22:28 | app.listen]
+2016-10-26T19:22:28.128Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:22:28 | mysql.selectAllUserRoles]'
+2016-10-26T19:22:28.129Z - debug:  id=1, name=Privater Nutzer, description=null
+2016-10-26T19:22:43.244Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:22:43 | app.listen]
+2016-10-26T19:22:43.326Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:22:43 | mysql.selectAllUserRoles]'
+2016-10-26T19:22:43.343Z - error: uncaughtException: userRoles.toJSON is not a function date=Wed Oct 26 2016 21:22:43 GMT+0200 (Mitteleuropäische Sommerzeit), pid=8016, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=52367360, heapTotal=37101568, heapUsed=22793696, loadavg=[0, 0, 0], uptime=508089.6751292, trace=[column=32, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js, function=null, line=65, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=225, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=90, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false, column=28, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=, line=109, method=null, native=false], stack=[TypeError: userRoles.toJSON is not a function,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\app.js:65:32,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:225:13,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:90:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16),     at Socket.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:109:28)]
+2016-10-26T19:23:43.317Z - debug: [] '[2016-10-26 21:23:43 | mysql.selectNewUserCandidates]'
+2016-10-26T19:24:43.320Z - debug: [] '[2016-10-26 21:24:43 | mysql.selectNewUserCandidates]'
+2016-10-26T19:25:41.895Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:25:41 | app.listen]
+2016-10-26T19:25:41.968Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:25:41 | mysql.selectAllUserRoles]'
+2016-10-26T19:25:41.971Z - debug:  id=1, name=Privater Nutzer, description=null, id=2, name=Öffentlicher Nutzer, description=null, id=3, name=Admin, description=null, id=4, name=Auditor, description=null, id=5, name=Experte, description=null
+2016-10-26T19:25:48.124Z - debug: search user [2016-10-26 21:25:48 | user.verifyToken]
+2016-10-26T19:25:48.130Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:25:48 | mysql.selectUserForUsername]'
+2016-10-26T19:25:48.131Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:25:48 | admin.getCreateUserCandidate]
+2016-10-26T19:25:48.131Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:25:48 | admin.getCreateUserCandidate]
+2016-10-26T19:25:48.132Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:25:48 | admin.getCreateUserCandidate]
+2016-10-26T19:25:48.133Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:25:48 | admin.getCreateUserCandidate]
+2016-10-26T19:25:48.133Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:25:48 | admin.getCreateUserCandidate]
+2016-10-26T19:25:48.135Z - debug: [] '[2016-10-26 21:25:48 | mysql.selectAllUserGroups]'
+2016-10-26T19:25:48.601Z - info: ::1 - - [26/Oct/2016:19:25:48 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1319 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:26:00.173Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:26:00 | app.listen]
+2016-10-26T19:26:00.239Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:26:00 | mysql.selectAllUserRoles]'
+2016-10-26T19:26:00.241Z - debug:  id=1, name=Privater Nutzer, description=null, id=2, name=Öffentlicher Nutzer, description=null, id=3, name=Admin, description=null, id=4, name=Auditor, description=null, id=5, name=Experte, description=null
+2016-10-26T19:26:01.972Z - debug: search user [2016-10-26 21:26:01 | user.verifyToken]
+2016-10-26T19:26:01.975Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:26:01 | mysql.selectUserForUsername]'
+2016-10-26T19:26:01.975Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:26:01 | admin.getCreateUserCandidate]
+2016-10-26T19:26:01.975Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:26:01 | admin.getCreateUserCandidate]
+2016-10-26T19:26:01.975Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:26:01 | admin.getCreateUserCandidate]
+2016-10-26T19:26:01.976Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:26:01 | admin.getCreateUserCandidate]
+2016-10-26T19:26:01.977Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:26:01 | admin.getCreateUserCandidate]
+2016-10-26T19:26:01.978Z - debug: [] '[2016-10-26 21:26:01 | mysql.selectAllUserGroups]'
+2016-10-26T19:26:02.401Z - info: ::1 - - [26/Oct/2016:19:26:02 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1298 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:26:29.100Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:26:29 | app.listen]
+2016-10-26T19:26:29.177Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:26:29 | mysql.selectAllUserRoles]'
+2016-10-26T19:26:29.178Z - debug:  id=1, name=Privater Nutzer, description=null, id=2, name=Öffentlicher Nutzer, description=null, id=3, name=Admin, description=null, id=4, name=Auditor, description=null, id=5, name=Experte, description=null
+2016-10-26T19:26:31.250Z - debug: search user [2016-10-26 21:26:31 | user.verifyToken]
+2016-10-26T19:26:31.253Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:26:31 | mysql.selectUserForUsername]'
+2016-10-26T19:26:31.254Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:26:31 | admin.getCreateUserCandidate]
+2016-10-26T19:26:31.254Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:26:31 | admin.getCreateUserCandidate]
+2016-10-26T19:26:31.255Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:26:31 | admin.getCreateUserCandidate]
+2016-10-26T19:26:31.257Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:26:31 | admin.getCreateUserCandidate]
+2016-10-26T19:26:31.258Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:26:31 | admin.getCreateUserCandidate]
+2016-10-26T19:26:31.258Z - debug: [] '[2016-10-26 21:26:31 | mysql.selectAllUserGroups]'
+2016-10-26T19:26:31.702Z - info: ::1 - - [26/Oct/2016:19:26:31 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1487 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:26:38.947Z - debug: search user [2016-10-26 21:26:38 | user.verifyToken]
+2016-10-26T19:26:38.954Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:26:38 | mysql.selectUserForUsername]'
+2016-10-26T19:26:38.954Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:26:38 | admin.getCreateUserCandidate]
+2016-10-26T19:26:38.955Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:26:38 | admin.getCreateUserCandidate]
+2016-10-26T19:26:38.955Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:26:38 | admin.getCreateUserCandidate]
+2016-10-26T19:26:38.956Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:26:38 | admin.getCreateUserCandidate]
+2016-10-26T19:26:38.956Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:26:38 | admin.getCreateUserCandidate]
+2016-10-26T19:26:38.957Z - debug: [] '[2016-10-26 21:26:38 | mysql.selectAllUserGroups]'
+2016-10-26T19:26:39.034Z - info: ::1 - - [26/Oct/2016:19:26:39 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1349 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:26:50.403Z - debug: search user [2016-10-26 21:26:50 | user.verifyToken]
+2016-10-26T19:26:50.407Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:26:50 | mysql.selectUserForUsername]'
+2016-10-26T19:26:50.408Z - warn: req.body.data not found [2016-10-26 21:26:50 | ebox.validateUserCandidate]
+2016-10-26T19:26:50.413Z - info: ::1 - - [26/Oct/2016:19:26:50 +0000] "POST /admin/createUserCandidate HTTP/1.1" 302 96 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:26:50.418Z - debug: search user [2016-10-26 21:26:50 | user.verifyToken]
+2016-10-26T19:26:50.419Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:26:50 | mysql.selectUserForUsername]'
+2016-10-26T19:26:50.419Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:26:50 | admin.getCreateUserCandidate]
+2016-10-26T19:26:50.420Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:26:50 | admin.getCreateUserCandidate]
+2016-10-26T19:26:50.420Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:26:50 | admin.getCreateUserCandidate]
+2016-10-26T19:26:50.420Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:26:50 | admin.getCreateUserCandidate]
+2016-10-26T19:26:50.421Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:26:50 | admin.getCreateUserCandidate]
+2016-10-26T19:26:50.421Z - debug: [] '[2016-10-26 21:26:50 | mysql.selectAllUserGroups]'
+2016-10-26T19:26:50.468Z - info: ::1 - - [26/Oct/2016:19:26:50 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1429 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:27:29.169Z - debug: [] '[2016-10-26 21:27:29 | mysql.selectNewUserCandidates]'
+2016-10-26T19:28:29.170Z - debug: [] '[2016-10-26 21:28:29 | mysql.selectNewUserCandidates]'
+2016-10-26T19:29:29.170Z - debug: [] '[2016-10-26 21:29:29 | mysql.selectNewUserCandidates]'
+2016-10-26T19:29:35.273Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:29:35 | app.listen]
+2016-10-26T19:29:35.344Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:29:35 | mysql.selectAllUserRoles]'
+2016-10-26T19:29:40.073Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:29:40 | app.listen]
+2016-10-26T19:29:40.156Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:29:40 | mysql.selectAllUserRoles]'
+2016-10-26T19:29:43.268Z - debug: search user [2016-10-26 21:29:43 | user.verifyToken]
+2016-10-26T19:29:43.272Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:29:43 | mysql.selectUserForUsername]'
+2016-10-26T19:29:43.273Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:29:43 | admin.getCreateUserCandidate]
+2016-10-26T19:29:43.273Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:29:43 | admin.getCreateUserCandidate]
+2016-10-26T19:29:43.273Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:29:43 | admin.getCreateUserCandidate]
+2016-10-26T19:29:43.274Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:29:43 | admin.getCreateUserCandidate]
+2016-10-26T19:29:43.274Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:29:43 | admin.getCreateUserCandidate]
+2016-10-26T19:29:43.275Z - debug: [] '[2016-10-26 21:29:43 | mysql.selectAllUserGroups]'
+2016-10-26T19:29:43.688Z - info: ::1 - - [26/Oct/2016:19:29:43 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1349 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:29:47.433Z - debug: search user [2016-10-26 21:29:47 | user.verifyToken]
+2016-10-26T19:29:47.435Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:29:47 | mysql.selectUserForUsername]'
+2016-10-26T19:29:47.450Z - error: uncaughtException: req is not defined date=Wed Oct 26 2016 21:29:47 GMT+0200 (Mitteleuropäische Sommerzeit), pid=11044, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=77750272, heapTotal=64927744, heapUsed=42227848, loadavg=[0, 0, 0], uptime=508513.7817513, trace=[column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=validateUserCandidate, line=104, method=null, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=postCreateUserCandidate, line=27, method=null, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=169, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=150, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=72, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false], stack=[ReferenceError: req is not defined,     at validateUserCandidate (C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:104:16),     at postCreateUserCandidate (C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:27:21),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:169:21,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:150:17,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:72:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12)]
+2016-10-26T19:30:21.967Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:30:21 | app.listen]
+2016-10-26T19:30:22.045Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:30:22 | mysql.selectAllUserRoles]'
+2016-10-26T19:30:22.072Z - debug: search user [2016-10-26 21:30:22 | user.verifyToken]
+2016-10-26T19:30:22.074Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:30:22 | mysql.selectUserForUsername]'
+2016-10-26T19:30:22.075Z - warn: Required fields not found
+2016-10-26T19:30:22.084Z - info: ::ffff:127.0.0.1 - - [26/Oct/2016:19:30:22 +0000] "POST /admin/createUserCandidate HTTP/1.1" 302 96 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:30:22.368Z - debug: search user [2016-10-26 21:30:22 | user.verifyToken]
+2016-10-26T19:30:22.369Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:30:22 | mysql.selectUserForUsername]'
+2016-10-26T19:30:22.369Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:30:22 | admin.getCreateUserCandidate]
+2016-10-26T19:30:22.370Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:30:22 | admin.getCreateUserCandidate]
+2016-10-26T19:30:22.370Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:30:22 | admin.getCreateUserCandidate]
+2016-10-26T19:30:22.370Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:30:22 | admin.getCreateUserCandidate]
+2016-10-26T19:30:22.371Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:30:22 | admin.getCreateUserCandidate]
+2016-10-26T19:30:22.372Z - debug: [] '[2016-10-26 21:30:22 | mysql.selectAllUserGroups]'
+2016-10-26T19:30:22.791Z - info: ::ffff:127.0.0.1 - - [26/Oct/2016:19:30:22 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1429 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:30:47.177Z - debug: search user [2016-10-26 21:30:47 | user.verifyToken]
+2016-10-26T19:30:47.179Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:30:47 | mysql.selectUserForUsername]'
+2016-10-26T19:30:47.179Z - warn: Required fields not found
+2016-10-26T19:30:47.181Z - info: ::ffff:127.0.0.1 - - [26/Oct/2016:19:30:47 +0000] "POST /admin/createUserCandidate HTTP/1.1" 302 96 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:30:47.189Z - debug: search user [2016-10-26 21:30:47 | user.verifyToken]
+2016-10-26T19:30:47.191Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:30:47 | mysql.selectUserForUsername]'
+2016-10-26T19:30:47.191Z - debug: publicUser { id: 1, name: 'Privater Nutzer', description: null } [2016-10-26 21:30:47 | admin.getCreateUserCandidate]
+2016-10-26T19:30:47.192Z - debug: privateUser { id: 2, name: 'Öffentlicher Nutzer', description: null } [2016-10-26 21:30:47 | admin.getCreateUserCandidate]
+2016-10-26T19:30:47.192Z - debug: admin { id: 3, name: 'Admin', description: null } [2016-10-26 21:30:47 | admin.getCreateUserCandidate]
+2016-10-26T19:30:47.192Z - debug: auditor { id: 4, name: 'Auditor', description: null } [2016-10-26 21:30:47 | admin.getCreateUserCandidate]
+2016-10-26T19:30:47.192Z - debug: expert { id: 5, name: 'Experte', description: null } [2016-10-26 21:30:47 | admin.getCreateUserCandidate]
+2016-10-26T19:30:47.193Z - debug: [] '[2016-10-26 21:30:47 | mysql.selectAllUserGroups]'
+2016-10-26T19:30:47.261Z - info: ::ffff:127.0.0.1 - - [26/Oct/2016:19:30:47 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1429 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:31:22.034Z - debug: [] '[2016-10-26 21:31:22 | mysql.selectNewUserCandidates]'
+2016-10-26T19:32:15.437Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:32:15 | app.listen]
+2016-10-26T19:32:15.511Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:32:15 | mysql.selectAllUserRoles]'
+2016-10-26T19:32:20.319Z - debug: search user [2016-10-26 21:32:20 | user.verifyToken]
+2016-10-26T19:32:20.322Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:32:20 | mysql.selectUserForUsername]'
+2016-10-26T19:32:20.328Z - debug:  userRole=1, email=be0schwarz@gmail.com, userGroup=none
+2016-10-26T19:32:20.329Z - warn: Required fields not found
+2016-10-26T19:32:20.337Z - info: ::1 - - [26/Oct/2016:19:32:20 +0000] "POST /admin/createUserCandidate HTTP/1.1" 302 96 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:32:20.344Z - debug: search user [2016-10-26 21:32:20 | user.verifyToken]
+2016-10-26T19:32:20.345Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:32:20 | mysql.selectUserForUsername]'
+2016-10-26T19:32:20.347Z - debug: [] '[2016-10-26 21:32:20 | mysql.selectAllUserGroups]'
+2016-10-26T19:32:20.758Z - info: ::1 - - [26/Oct/2016:19:32:20 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1429 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:33:15.500Z - debug: [] '[2016-10-26 21:33:15 | mysql.selectNewUserCandidates]'
+2016-10-26T19:34:15.502Z - debug: [] '[2016-10-26 21:34:15 | mysql.selectNewUserCandidates]'
+2016-10-26T19:34:48.946Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:34:48 | app.listen]
+2016-10-26T19:34:49.027Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:34:49 | mysql.selectAllUserRoles]'
+2016-10-26T19:34:52.138Z - debug: search user [2016-10-26 21:34:52 | user.verifyToken]
+2016-10-26T19:34:52.143Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:34:52 | mysql.selectUserForUsername]'
+2016-10-26T19:34:52.144Z - debug: [] '[2016-10-26 21:34:52 | mysql.selectAllUserGroups]'
+2016-10-26T19:34:52.554Z - info: ::1 - - [26/Oct/2016:19:34:52 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1512 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:34:59.274Z - debug: search user [2016-10-26 21:34:59 | user.verifyToken]
+2016-10-26T19:34:59.276Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:34:59 | mysql.selectUserForUsername]'
+2016-10-26T19:34:59.283Z - debug:  user_role_id=1, email=be0schwarz@gmail.com
+2016-10-26T19:34:59.292Z - error: { [Error: ER_NO_REFERENCED_ROW_2: Cannot add or update a child row: a foreign key constraint fails (`bewertungsportal`.`user_candidate`, CONSTRAINT `user_candidate_role_fk` FOREIGN KEY (`user_role_id`) REFERENCES `user_role` (`user_role_id`) ON DELETE NO ACTION ON UPDATE NO ACTION)]
+  code: 'ER_NO_REFERENCED_ROW_2',
+  errno: 1452,
+  sqlState: '23000',
+  index: 0 } '[2016-10-26 21:34:59 | mysql.insertUserCandidate]'
+2016-10-26T19:34:59.298Z - info: ::1 - - [26/Oct/2016:19:34:59 +0000] "POST /admin/createUserCandidate HTTP/1.1" 302 96 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:34:59.304Z - debug: search user [2016-10-26 21:34:59 | user.verifyToken]
+2016-10-26T19:34:59.307Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:34:59 | mysql.selectUserForUsername]'
+2016-10-26T19:34:59.308Z - debug: [] '[2016-10-26 21:34:59 | mysql.selectAllUserGroups]'
+2016-10-26T19:34:59.366Z - info: ::1 - - [26/Oct/2016:19:34:59 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1580 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:35:49.018Z - debug: [] '[2016-10-26 21:35:49 | mysql.selectNewUserCandidates]'
+2016-10-26T19:36:49.018Z - debug: [] '[2016-10-26 21:36:49 | mysql.selectNewUserCandidates]'
+2016-10-26T19:37:49.020Z - debug: [] '[2016-10-26 21:37:49 | mysql.selectNewUserCandidates]'
+2016-10-26T19:38:49.020Z - debug: [] '[2016-10-26 21:38:49 | mysql.selectNewUserCandidates]'
+2016-10-26T19:39:49.020Z - debug: [] '[2016-10-26 21:39:49 | mysql.selectNewUserCandidates]'
+2016-10-26T19:40:49.024Z - debug: [] '[2016-10-26 21:40:49 | mysql.selectNewUserCandidates]'
+2016-10-26T19:41:49.024Z - debug: [] '[2016-10-26 21:41:49 | mysql.selectNewUserCandidates]'
+2016-10-26T19:42:49.023Z - debug: [] '[2016-10-26 21:42:49 | mysql.selectNewUserCandidates]'
+2016-10-26T19:43:49.025Z - debug: [] '[2016-10-26 21:43:49 | mysql.selectNewUserCandidates]'
+2016-10-26T19:44:51.154Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:44:51 | app.listen]
+2016-10-26T19:44:51.231Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:44:51 | mysql.selectAllUserRoles]'
+2016-10-26T19:45:00.246Z - debug: search user [2016-10-26 21:45:00 | user.verifyToken]
+2016-10-26T19:45:00.252Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:45:00 | mysql.selectUserForUsername]'
+2016-10-26T19:45:00.253Z - debug: [] '[2016-10-26 21:45:00 | mysql.selectAllUserGroups]'
+2016-10-26T19:45:00.685Z - info: ::1 - - [26/Oct/2016:19:45:00 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1512 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:45:03.061Z - debug: search user [2016-10-26 21:45:03 | user.verifyToken]
+2016-10-26T19:45:03.066Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:45:03 | mysql.selectUserForUsername]'
+2016-10-26T19:45:03.067Z - debug:  user_role_id=1, email=be0schwarz@gmail.com
+2016-10-26T19:45:03.068Z - debug:  user_role_id=false, email=be0schwarz@gmail.com, token=60c21402-5314-48e2-9409-8d7ec77d78da
+2016-10-26T19:45:03.079Z - error: { [Error: ER_NO_REFERENCED_ROW_2: Cannot add or update a child row: a foreign key constraint fails (`bewertungsportal`.`user_candidate`, CONSTRAINT `user_candidate_role_fk` FOREIGN KEY (`user_role_id`) REFERENCES `user_role` (`user_role_id`) ON DELETE NO ACTION ON UPDATE NO ACTION)]
+  code: 'ER_NO_REFERENCED_ROW_2',
+  errno: 1452,
+  sqlState: '23000',
+  index: 0 } '[2016-10-26 21:45:03 | mysql.insertUserCandidate]'
+2016-10-26T19:45:03.083Z - info: ::1 - - [26/Oct/2016:19:45:03 +0000] "POST /admin/createUserCandidate HTTP/1.1" 302 96 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:45:03.089Z - debug: search user [2016-10-26 21:45:03 | user.verifyToken]
+2016-10-26T19:45:03.091Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:45:03 | mysql.selectUserForUsername]'
+2016-10-26T19:45:03.092Z - debug: [] '[2016-10-26 21:45:03 | mysql.selectAllUserGroups]'
+2016-10-26T19:45:03.147Z - info: ::1 - - [26/Oct/2016:19:45:03 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1580 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:45:51.222Z - debug: [] '[2016-10-26 21:45:51 | mysql.selectNewUserCandidates]'
+2016-10-26T19:46:34.608Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:46:34 | app.listen]
+2016-10-26T19:46:34.682Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:46:34 | mysql.selectAllUserRoles]'
+2016-10-26T19:46:38.428Z - debug: search user [2016-10-26 21:46:38 | user.verifyToken]
+2016-10-26T19:46:38.431Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:46:38 | mysql.selectUserForUsername]'
+2016-10-26T19:46:38.432Z - debug: [] '[2016-10-26 21:46:38 | mysql.selectAllUserGroups]'
+2016-10-26T19:46:38.836Z - info: ::1 - - [26/Oct/2016:19:46:38 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1512 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:46:44.217Z - debug: search user [2016-10-26 21:46:44 | user.verifyToken]
+2016-10-26T19:46:44.219Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:46:44 | mysql.selectUserForUsername]'
+2016-10-26T19:46:44.220Z - debug:  user_role_id=1, email=be0schwarz@gmail.com
+2016-10-26T19:46:44.221Z - debug:  user_role_id=1, email=be0schwarz@gmail.com, token=9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7
+2016-10-26T19:46:44.228Z - debug: OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 3,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '',
+  protocol41: true,
+  changedRows: 0 } '[2016-10-26 21:46:44 | mysql.insertUserCandidate]'
+2016-10-26T19:46:44.233Z - info: ::1 - - [26/Oct/2016:19:46:44 +0000] "POST /admin/createUserCandidate HTTP/1.1" 302 96 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:46:44.238Z - debug: search user [2016-10-26 21:46:44 | user.verifyToken]
+2016-10-26T19:46:44.240Z - debug: RowDataPacket {
+  user_id: 1,
+  user_role_id: 3,
+  username: 'admin',
+  password: '$2a$06$sOkLttp/Sj1Tac6Hr61S6exeCSvzyjjIQ4pyTlmltlKWUgJDPEx2e',
+  email: 'ad@min',
+  created: Mon Oct 03 2016 17:02:17 GMT+0200 (Mitteleuropäische Sommerzeit) } '[2016-10-26 21:46:44 | mysql.selectUserForUsername]'
+2016-10-26T19:46:44.243Z - debug: [] '[2016-10-26 21:46:44 | mysql.selectAllUserGroups]'
+2016-10-26T19:46:44.310Z - info: ::1 - - [26/Oct/2016:19:46:44 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1615 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-26T19:47:34.671Z - debug: [ RowDataPacket {
+    email: 'be0schwarz@gmail.com',
+    created: Wed Oct 26 2016 21:46:44 GMT+0200 (Mitteleuropäische Sommerzeit),
+    user_role_id: 1,
+    user_candidate_id: 3,
+    email_sent: null,
+    token: '9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7' } ] '[2016-10-26 21:47:34 | mysql.selectNewUserCandidates]'
+2016-10-26T19:47:35.019Z - error: { [Error: Invalid login: 535 Authentication credentials invalid]
+  code: 'EAUTH',
+  response: '535 Authentication credentials invalid',
+  responseCode: 535,
+  command: 'AUTH PLAIN' } '[2016-10-26 21:47:35 | mail.createVerificationMail]'
+2016-10-26T19:48:34.673Z - debug: [ RowDataPacket {
+    email: 'be0schwarz@gmail.com',
+    created: Wed Oct 26 2016 21:46:44 GMT+0200 (Mitteleuropäische Sommerzeit),
+    user_role_id: 1,
+    user_candidate_id: 3,
+    email_sent: null,
+    token: '9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7' } ] '[2016-10-26 21:48:34 | mysql.selectNewUserCandidates]'
+2016-10-26T19:48:35.003Z - error: { [Error: Invalid login: 535 Authentication credentials invalid]
+  code: 'EAUTH',
+  response: '535 Authentication credentials invalid',
+  responseCode: 535,
+  command: 'AUTH PLAIN' } '[2016-10-26 21:48:35 | mail.createVerificationMail]'
+2016-10-26T19:49:34.676Z - debug: [ RowDataPacket {
+    email: 'be0schwarz@gmail.com',
+    created: Wed Oct 26 2016 21:46:44 GMT+0200 (Mitteleuropäische Sommerzeit),
+    user_role_id: 1,
+    user_candidate_id: 3,
+    email_sent: null,
+    token: '9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7' } ] '[2016-10-26 21:49:34 | mysql.selectNewUserCandidates]'
+2016-10-26T19:49:35.021Z - error: { [Error: Invalid login: 535 Authentication credentials invalid]
+  code: 'EAUTH',
+  response: '535 Authentication credentials invalid',
+  responseCode: 535,
+  command: 'AUTH PLAIN' } '[2016-10-26 21:49:35 | mail.createVerificationMail]'
+2016-10-26T19:50:34.676Z - debug: [ RowDataPacket {
+    email: 'be0schwarz@gmail.com',
+    created: Wed Oct 26 2016 21:46:44 GMT+0200 (Mitteleuropäische Sommerzeit),
+    user_role_id: 1,
+    user_candidate_id: 3,
+    email_sent: null,
+    token: '9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7' } ] '[2016-10-26 21:50:34 | mysql.selectNewUserCandidates]'
+2016-10-26T19:50:35.170Z - error: { [Error: Invalid login: 535 Authentication credentials invalid]
+  code: 'EAUTH',
+  response: '535 Authentication credentials invalid',
+  responseCode: 535,
+  command: 'AUTH PLAIN' } '[2016-10-26 21:50:35 | mail.createVerificationMail]'
+2016-10-26T19:50:41.190Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:50:41 | app.listen]
+2016-10-26T19:50:41.266Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:50:41 | mysql.selectAllUserRoles]'
+2016-10-26T19:51:41.257Z - debug: [ RowDataPacket {
+    email: 'be0schwarz@gmail.com',
+    created: Wed Oct 26 2016 21:46:44 GMT+0200 (Mitteleuropäische Sommerzeit),
+    user_role_id: 1,
+    user_candidate_id: 3,
+    email_sent: null,
+    token: '9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7' } ] '[2016-10-26 21:51:41 | mysql.selectNewUserCandidates]'
+2016-10-26T19:51:41.636Z - error: { [Error: Invalid login: 535 Authentication credentials invalid]
+  code: 'EAUTH',
+  response: '535 Authentication credentials invalid',
+  responseCode: 535,
+  command: 'AUTH PLAIN' } '[2016-10-26 21:51:41 | mail.createVerificationMail]'
+2016-10-26T19:52:41.257Z - debug: [ RowDataPacket {
+    email: 'be0schwarz@gmail.com',
+    created: Wed Oct 26 2016 21:46:44 GMT+0200 (Mitteleuropäische Sommerzeit),
+    user_role_id: 1,
+    user_candidate_id: 3,
+    email_sent: null,
+    token: '9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7' } ] '[2016-10-26 21:52:41 | mysql.selectNewUserCandidates]'
+2016-10-26T19:52:41.606Z - error: { [Error: Invalid login: 535 Authentication credentials invalid]
+  code: 'EAUTH',
+  response: '535 Authentication credentials invalid',
+  responseCode: 535,
+  command: 'AUTH PLAIN' } '[2016-10-26 21:52:41 | mail.createVerificationMail]'
+2016-10-26T19:53:41.259Z - debug: [ RowDataPacket {
+    email: 'be0schwarz@gmail.com',
+    created: Wed Oct 26 2016 21:46:44 GMT+0200 (Mitteleuropäische Sommerzeit),
+    user_role_id: 1,
+    user_candidate_id: 3,
+    email_sent: null,
+    token: '9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7' } ] '[2016-10-26 21:53:41 | mysql.selectNewUserCandidates]'
+2016-10-26T19:53:41.974Z - info: Verification mail sent: 250 Requested mail action okay, completed: id=0MD9uq-1c7Ea61iIu-00GcVv [2016-10-26 21:53:41 | mail.createVerificationMail]
+2016-10-26T19:53:41.984Z - debug: OkPacket {
+  fieldCount: 0,
+  affectedRows: 0,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 0  Changed: 0  Warnings: 0',
+  protocol41: true,
+  changedRows: 0 } '[2016-10-26 21:53:41 | mysql.updateUserCandidateSent]'
+2016-10-26T19:53:42.001Z - error: uncaughtException: callback is not a function date=Wed Oct 26 2016 21:53:41 GMT+0200 (Mitteleuropäische Sommerzeit), pid=9024, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=55615488, heapTotal=37101568, heapUsed=25021240, loadavg=[0, 0, 0], uptime=509948.3309677, trace=[column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=207, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=10, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.OkPacket, line=78, method=OkPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false, column=28, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=, line=109, method=null, native=false, column=13, file=events.js, function=emitOne, line=77, method=null, native=false, column=7, file=events.js, function=Socket.emit, line=169, method=emit, native=false], stack=[TypeError: callback is not a function,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:207:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.OkPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:78:10),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16),     at Socket.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:109:28),     at emitOne (events.js:77:13),     at Socket.emit (events.js:169:7)]
+2016-10-26T19:55:19.167Z - info: Server is running @ http://localhost:4000 [2016-10-26 21:55:19 | app.listen]
+2016-10-26T19:55:19.237Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 21:55:19 | mysql.selectAllUserRoles]'
+2016-10-26T19:56:19.230Z - debug: [ RowDataPacket {
+    email: 'be0schwarz@gmail.com',
+    created: Wed Oct 26 2016 21:46:44 GMT+0200 (Mitteleuropäische Sommerzeit),
+    user_role_id: 1,
+    user_candidate_id: 3,
+    email_sent: null,
+    token: '9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7' } ] '[2016-10-26 21:56:19 | mysql.selectNewUserCandidates]'
+2016-10-26T19:56:19.979Z - info: Verification mail sent: 250 Requested mail action okay, completed: id=0LqE5k-1cURPc1jzU-00doNK [2016-10-26 21:56:19 | mail.createVerificationMail]
+2016-10-26T19:56:19.985Z - error: { [Error: ER_TRUNCATED_WRONG_VALUE: Incorrect datetime value: '1477511779982' for column 'email_sent' at row 1]
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlState: '22007',
+  index: 0 } '[2016-10-26 21:56:19 | mysql.updateUserCandidateSent]'
+2016-10-26T19:57:19.232Z - debug: [ RowDataPacket {
+    email: 'be0schwarz@gmail.com',
+    created: Wed Oct 26 2016 21:46:44 GMT+0200 (Mitteleuropäische Sommerzeit),
+    user_role_id: 1,
+    user_candidate_id: 3,
+    email_sent: null,
+    token: '9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7' } ] '[2016-10-26 21:57:19 | mysql.selectNewUserCandidates]'
+2016-10-26T19:57:19.889Z - info: Verification mail sent: 250 Requested mail action okay, completed: id=0M3u86-1cr2Rq1QME-00rbnv [2016-10-26 21:57:19 | mail.createVerificationMail]
+2016-10-26T19:57:19.892Z - error: { [Error: ER_TRUNCATED_WRONG_VALUE: Incorrect datetime value: '1477511839891' for column 'email_sent' at row 1]
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlState: '22007',
+  index: 0 } '[2016-10-26 21:57:19 | mysql.updateUserCandidateSent]'
+2016-10-26T20:00:36.835Z - info: Server is running @ http://localhost:4000 [2016-10-26 22:00:36 | app.listen]
+2016-10-26T20:00:36.906Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 22:00:36 | mysql.selectAllUserRoles]'
+2016-10-26T20:01:36.897Z - debug: [ RowDataPacket {
+    email: 'be0schwarz@gmail.com',
+    created: Wed Oct 26 2016 21:46:44 GMT+0200 (Mitteleuropäische Sommerzeit),
+    user_role_id: 1,
+    user_candidate_id: 3,
+    email_sent: null,
+    token: '9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7' } ] '[2016-10-26 22:01:36 | mysql.selectNewUserCandidates]'
+2016-10-26T20:01:37.653Z - debug: { from: '"Bewertungsportal"<schwarz_dev@gmx.de>',
+  to: 'be0schwarz@gmail.com',
+  subject: 'Account Registrierung',
+  text: 'Guten Tag, bitte vervollständigen Sie Ihren Bewertungsportal Account über folgende Adresse: http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7',
+  html: 'Guten Tag,<br/><br/>bitte vervollständigen Sie Ihren Bewertungsportal Account über folgende Adresse:<br/><a href="http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7">http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7</a>',
+  headers: {} } '[2016-10-26 22:01:37 | mail.createVerificationMail]'
+2016-10-26T20:01:37.654Z - info: Verification mail sent: 250 Requested mail action okay, completed: id=0MZD0K-1cKS7G0Cjs-00KvfH [2016-10-26 22:01:37 | mail.createVerificationMail]
+2016-10-26T20:01:37.659Z - error: { [Error: ER_TRUNCATED_WRONG_VALUE: Incorrect datetime value: '1477512097.654' for column 'email_sent' at row 1]
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlState: '22007',
+  index: 0 } '[2016-10-26 22:01:37 | mysql.updateUserCandidateSent]'
+2016-10-26T20:02:35.234Z - info: Server is running @ http://localhost:4000 [2016-10-26 22:02:35 | app.listen]
+2016-10-26T20:02:35.302Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 22:02:35 | mysql.selectAllUserRoles]'
+2016-10-26T20:03:35.290Z - debug: [ RowDataPacket {
+    email: 'be0schwarz@gmail.com',
+    created: Wed Oct 26 2016 21:46:44 GMT+0200 (Mitteleuropäische Sommerzeit),
+    user_role_id: 1,
+    user_candidate_id: 3,
+    email_sent: null,
+    token: '9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7' } ] '[2016-10-26 22:03:35 | mysql.selectNewUserCandidates]'
+2016-10-26T20:03:35.980Z - debug: { from: '"Bewertungsportal"<schwarz_dev@gmx.de>',
+  to: 'be0schwarz@gmail.com',
+  subject: 'Account Registrierung',
+  text: 'Guten Tag, bitte vervollständigen Sie Ihren Bewertungsportal Account über folgende Adresse: http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7',
+  html: 'Guten Tag,<br/><br/>bitte vervollständigen Sie Ihren Bewertungsportal Account über folgende Adresse:<br/><a href="http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7">http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7</a>',
+  headers: {} } '[2016-10-26 22:03:35 | mail.createVerificationMail]'
+2016-10-26T20:03:35.987Z - info: Verification mail sent: 250 Requested mail action okay, completed: id=0LpPg1-1cVGSn1m7h-00f94K [2016-10-26 22:03:35 | mail.createVerificationMail]
+2016-10-26T20:03:35.990Z - error: { [Error: ER_TRUNCATED_WRONG_VALUE: Incorrect datetime value: '1477512215' for column 'email_sent' at row 1]
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlState: '22007',
+  index: 0 } '[2016-10-26 22:03:35 | mysql.updateUserCandidateSent]'
+2016-10-26T20:04:35.290Z - debug: [ RowDataPacket {
+    email: 'be0schwarz@gmail.com',
+    created: Wed Oct 26 2016 21:46:44 GMT+0200 (Mitteleuropäische Sommerzeit),
+    user_role_id: 1,
+    user_candidate_id: 3,
+    email_sent: null,
+    token: '9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7' } ] '[2016-10-26 22:04:35 | mysql.selectNewUserCandidates]'
+2016-10-26T20:04:35.940Z - debug: { from: '"Bewertungsportal"<schwarz_dev@gmx.de>',
+  to: 'be0schwarz@gmail.com',
+  subject: 'Account Registrierung',
+  text: 'Guten Tag, bitte vervollständigen Sie Ihren Bewertungsportal Account über folgende Adresse: http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7',
+  html: 'Guten Tag,<br/><br/>bitte vervollständigen Sie Ihren Bewertungsportal Account über folgende Adresse:<br/><a href="http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7">http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7</a>',
+  headers: {} } '[2016-10-26 22:04:35 | mail.createVerificationMail]'
+2016-10-26T20:04:35.941Z - info: Verification mail sent: 250 Requested mail action okay, completed: id=0MNw0t-1bxZpD1VVb-007Sgt [2016-10-26 22:04:35 | mail.createVerificationMail]
+2016-10-26T20:04:35.942Z - error: { [Error: ER_TRUNCATED_WRONG_VALUE: Incorrect datetime value: '1477512275' for column 'email_sent' at row 1]
+  code: 'ER_TRUNCATED_WRONG_VALUE',
+  errno: 1292,
+  sqlState: '22007',
+  index: 0 } '[2016-10-26 22:04:35 | mysql.updateUserCandidateSent]'
+2016-10-26T20:08:00.381Z - info: Server is running @ http://localhost:4000 [2016-10-26 22:08:00 | app.listen]
+2016-10-26T20:08:00.456Z - debug: [ RowDataPacket { user_role_id: 1, name: 'Privater Nutzer', description: null },
+  RowDataPacket {
+    user_role_id: 2,
+    name: 'Öffentlicher Nutzer',
+    description: null },
+  RowDataPacket { user_role_id: 3, name: 'Admin', description: null },
+  RowDataPacket { user_role_id: 4, name: 'Auditor', description: null },
+  RowDataPacket { user_role_id: 5, name: 'Experte', description: null } ] '[2016-10-26 22:08:00 | mysql.selectAllUserRoles]'
+2016-10-26T20:09:00.448Z - debug: [ RowDataPacket {
+    email: 'be0schwarz@gmail.com',
+    created: Wed Oct 26 2016 21:46:44 GMT+0200 (Mitteleuropäische Sommerzeit),
+    user_role_id: 1,
+    user_candidate_id: 3,
+    email_sent: null,
+    token: '9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7' } ] '[2016-10-26 22:09:00 | mysql.selectNewUserCandidates]'
+2016-10-26T20:09:01.198Z - debug: { from: '"Bewertungsportal"<schwarz_dev@gmx.de>',
+  to: 'be0schwarz@gmail.com',
+  subject: 'Account Registrierung',
+  text: 'Guten Tag, bitte vervollständigen Sie Ihren Bewertungsportal Account über folgende Adresse: http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7',
+  html: 'Guten Tag,<br/><br/>bitte vervollständigen Sie Ihren Bewertungsportal Account über folgende Adresse:<br/><a href="http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7">http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7</a>',
+  headers: {} } '[2016-10-26 22:09:01 | mail.createVerificationMail]'
+2016-10-26T20:09:01.198Z - info: Verification mail sent: 250 Requested mail action okay, completed: id=0MdoR7-1cFmpY2XWf-00PgW1 [2016-10-26 22:09:01 | mail.createVerificationMail]
+2016-10-26T20:09:01.212Z - debug: OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1 } '[2016-10-26 22:09:01 | mysql.updateUserCandidateSent]'
+2016-10-26T20:10:00.448Z - debug: [] '[2016-10-26 22:10:00 | mysql.selectNewUserCandidates]'

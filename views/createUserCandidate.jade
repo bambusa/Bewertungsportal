@@ -6,8 +6,8 @@ block content
         //p Header
         h1 Nutzer erstellen
         if user
-            p Hallo #{user.username}
-            a(href='/logout') Logout
+                p Hallo #{user.username}
+                a(href='/logout') Logout
 
         if errMessage && errMessage.length > 0
             div.errMessage
@@ -37,14 +37,25 @@ block content
         div#middle.floatLeft
             div.padding
                 div#content
-                    form(action="/login", method="post")
-                        p Username:
-                            input(type="text", name="username")
-                        p Passwort
-                            input(type="text", name="password")
+                    form(action="/admin/createUserCandidate", method="post")
+                        div
+                            p Nutzer-Rolle:
+                            select(name = "user_role_id")
+                                each role, key in userRoles
+                                    option(value=role.id) #{role.name}
+                        div
+                            p Email:
+                                input(type="text", name="email")
+                        //div
+                        //    p Nutzergruppe
+                        //    select(name = "user_group_id")
+                        //        option(value="none") Keine
+                        //        if userGroups
+                        //            each group in userGroups
+                        //                option(value=group.user_group_id) #{group.name}
                         br
                         br
-                        button(type="submit") Anmelden
+                        button(type="submit") Speichern
 
         div#right.floatLeft
             div.padding

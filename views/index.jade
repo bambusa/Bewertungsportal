@@ -13,9 +13,13 @@ block content
             div#login
                 a(href='/login') Login
 
-        if errMessage
+        if errMessage && errMessage.length > 0
             div.errMessage
                 p.errMessage= errMessage
+
+        if succMessage && succMessage.length > 0
+            div.succMessage
+                p.succMessage= succMessage
 
     div#main
         //p Main
@@ -23,14 +27,22 @@ block content
             div.padding
                 div#mainMenu
                     h3 Main Menu
+                    if user && userRoles
                     ul
-                        li Nutzer erstellen
-                        li Nutzergruppe erstellen
-                        li Nutzer zu Gruppen zuordnen
+                        if user.user_role_id == userRoles.admin.id
+                            li
+                                b Start
+                            li
+                                a(href="/admin/createUserCandidate") Nutzer erstellen
+                            li
+                                a(href="/admin/createUserGroup") Nutzergruppe erstellen
+                            li
+                                a(href="/admin/manageUserGroups") Nutzer zu Gruppen zuordnen
 
         div#middle.floatLeft
             div.padding
                 div#groupData
+                    h3 Group Data
                     if groupData
                         if groupData.users
                             h2 Neueste Benutzer

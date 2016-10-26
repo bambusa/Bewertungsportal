@@ -6,8 +6,9 @@ var configs = {
         secret: "yVk!1rskSW9J!pq4rMq6",
         baseDir: "C:/Users/BSD/IdeaProjects/Bewertungsportal",
         port: 4000,
-        hostAddress: "https://localhost:4000/",
-        authCookieExpiration: 1
+        hostAddress: "http://localhost:4000/",
+        authCookieExpiration: 12,
+        verificationTimer: 60000
     },
     dbConfig: {
         host: 'localhost',
@@ -27,16 +28,16 @@ var configs = {
     debugConfig: {
         consoleLevel: 'debug',
         logSql: true
+    },
+    smtpConfig: {
+        host: 'mail.gmx.net',
+        port: 465,
+        secure: true, // use SSL
+        auth: {
+            user: 'schwarz_dev@gmx.de',
+            pass: '%jtTckIgD7jw'
+        }
     }
-    //smtpConfig: {
-    //    host: 'mail.agenturserver.de',
-    //    port: 465,
-    //    secure: true, // use SSL
-    //    auth: {
-    //        user: 'cloudservice@ball-b.de',
-    //        pass: 'agaxEsip!757'
-    //    }
-    //}
 };
 module.exports.configs = configs;
 
@@ -54,18 +55,12 @@ var response = {
         internalError: 6,
         permissionError: 7,
         cookieError: 8,
-        requestError: 9,
-        deviceRegistered: 10,
-        clientRegistered: 11,
-        userRegistered: 12,
-        eboxRegistered: 13
+        requestError: 9
     },
     errMessage: {
         not_auth_red_login: "Sorry, you need to login first.",
         no_perm_red_index: "Sorry, you don't have the required permissions to do that.",
-        token_note_verified: "Sorry, your authentication token could not be verified or is expired, please authenticate yourself first.",
-        radio_credentials_id_exists: "radio_credentials_id already exists"
-    }
+        token_note_verified: "Sorry, your authentication token could not be verified or is expired, please authenticate yourself first.",}
 };
 module.exports.response = response;
 

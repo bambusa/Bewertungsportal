@@ -4,10 +4,10 @@ block content
 
     div#head
         //p Header
-        h1 Nutzer erstellen
+        h1 Nutzergruppe erstellen
         if user
-            p Hallo #{user.username}
-            a(href='/logout') Logout
+                p Hallo #{user.username}
+                a(href='/logout') Logout
 
         if errMessage && errMessage.length > 0
             div.errMessage
@@ -28,23 +28,32 @@ block content
                             li
                                 a(href="/") Start
                             li
-                                b Nutzer erstellen
+                                a(href="/admin/createUserCandidate") Nutzer erstellen
                             li
-                                a(href="/admin/createUserGroup") Nutzergruppe erstellen
+                                b Nutzergruppe erstellen
                             li
                                 a(href="/admin/manageUserGroups") Nutzer zu Gruppen zuordnen
 
         div#middle.floatLeft
             div.padding
                 div#content
-                    form(action="/login", method="post")
-                        p Username:
-                            input(type="text", name="username")
-                        p Passwort
-                            input(type="text", name="password")
+                    form(action="/admin/createUserGroup", method="post")
+                        div
+                            select(name = "userRole")
+                                each role in userRoles
+                                    option(value=role.id) #{role.name}
+                        div
+                            p Email:
+                                input(type="text", name="email")
+                        div
+                            p Nutzergruppe
+                            select(name = "userGroup")
+                                option(value="none") Keine
+                                each group in userGroups
+                                    option(value=group.user_group_id) #{group.name}
                         br
                         br
-                        button(type="submit") Anmelden
+                        button(type="submit") Speichern
 
         div#right.floatLeft
             div.padding

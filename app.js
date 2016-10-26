@@ -21,6 +21,7 @@ var logger = require('./logger');
 var config = require('./config');
 var mysql = require('./mysql');
 var user = require('./routes/user');
+var admin = require('./routes/admin');
 
 
 /**
@@ -63,29 +64,8 @@ var server = app.listen(app.get('port'), function (err) {
         global.userRoles = userRoles;
     });
 
-    //var timer = 60000 // 1min
-    //var verificationExpirationCheck = setInterval(verification.checkVerification, timer)
-    //var reportInterval = setInterval(mail.createReports, timer)
+    var verificationExpirationCheck = setInterval(admin.checkNewUserCandidates, config.configs.serverConfig.verificationTimer)
 });
-
-// HTTPS
-/*var ssl_options = {
- key:    fs.readFileSync('/root/ssl/bb-cloud_com.key'),
- cert:   fs.readFileSync('/root/ssl/public.crt'),
- ca:     fs.readFileSync('/root/ssl/intermediate.crt'),
- requestCert:        true,
- rejectUnauthorized: false
- };
- var server = https.createServer(ssl_options, app).listen(app.get('port'), function (err) {
- if (err) throw err
- var message = 'Server is running @ https://www.bb-cloud.com:' + server.address().port
- logger.info(message, "app.listen")
-
- var timer = 60000 // 1min
- var verificationExpirationCheck = setInterval(verification.checkVerification, timer)
- //var reportInterval = setInterval(mail.createReports, timer)
- //verification.checkVerification()
- })*/
 
 
 app.use('/', routes.router);
