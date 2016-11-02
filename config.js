@@ -69,7 +69,7 @@ module.exports.response = response;
  */
 var strings = {
     german: {
-        defaultCampaign: "Standard"
+
     }
 };
 module.exports.strings = strings;

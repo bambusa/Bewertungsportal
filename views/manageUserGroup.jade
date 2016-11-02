@@ -1,0 +1,34 @@
+extends baseLayout
+
+block middle
+
+        div#content
+            p Nutzergruppe: #{userGroup.name}
+            if userGroup.description
+                p Beschreibung: #{userGroup.description}
+
+            form(action="/admin/manageUserGroup/"+userGroup.user_group_id, method="post")
+                input(type="hidden", name="userGroupId", value=userGroup.user_group_id)
+
+                div
+                    p Name ändern:
+                        input(type="text", name="name")
+                div
+                    p Beschreibung ändern:
+                        input(type="text", name="description")
+                if otherUsers && otherUsers.length > 0
+                    div
+                        p Nutzer hinzufügen:
+                            select(name = "addUser[]", multiple)
+                                each user, key in otherUsers
+                                    option(value=user.id) #{user.username}
+                if groupUsers && groupUsers.length > 0
+                    div
+                        p Nutzer entfernen:
+                            select(name = "removeUser[]", multiple)
+                                each user, key in groupUsers
+                                    option(value=user.id) #{user.username}
+
+                br
+                br
+                button(type="submit") Speichern

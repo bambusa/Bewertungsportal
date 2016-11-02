@@ -99,3 +99,14 @@ var tryParseDate = function (str) {
     return retValue
 };
 module.exports.tryParseDate = tryParseDate;
+
+var getUserRoleForId = function (userRoleId) {
+    for (var key in userRoles) {
+        if (userRoles[key].id == userRoleId) {
+            return userRoles[key];
+        }
+    }
+    logger.error("User role does not exist:", userRoleId, "helper.getUserRoleForId");
+    return null;
+};
+exports.getUserRoleForId = getUserRoleForId;

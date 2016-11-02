@@ -1,0 +1,39 @@
+extends baseLayout
+
+block middle
+
+    div#content
+        form(action="/expert/createIndicator", method="post")
+            div.formBlock
+                h5 Indikator
+                div
+                    p Name:
+                        input(type="text", name="name")
+                div
+                    p Beschreibung:
+                        input(type="text", name="description")
+            div.formBlock
+                h5 Bewertungsfaktor
+                div
+                    p Name:
+                        input(type="text", name="name")
+                div
+                    p Beschreibung:
+                        input(type="text", name="description")
+                div
+                    p Zielerreichungsfaktor:
+                        input(type="text", name="targetFactor")
+            div.formBlock
+                h5 Details (optional)
+                div
+                    p Quellenverweis:
+                        input(type="text", name="name")
+                if sets
+                    div
+                        p Indikatoren-Set:
+                            select(name = "sets[]", multiple)
+                                each set, key in sets
+                                    option(value=set.id) #{set.name}
+            div.formBlock.submit
+                button(type="submit", value="save", formaction="/expert/createIndicator/save") Speichern
+                button(type="submit", value="next", formaction="/expert/createIndicator/next") Speichern und Neu

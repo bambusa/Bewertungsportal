@@ -1001,3 +1001,1221 @@
   index: 0 } '[2016-10-26 22:04:35 | mysql.updateUserCandidateSent]'
 2016-10-26T20:08:00.381Z - info: Server is running @ http://localhost:4000 [2016-10-26 22:08:00 | app.listen]
 2016-10-26T20:09:01.198Z - info: Verification mail sent: 250 Requested mail action okay, completed: id=0MdoR7-1cFmpY2XWf-00PgW1 [2016-10-26 22:09:01 | mail.createVerificationMail]
+2016-10-27T13:08:54.248Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:08:54 | app.listen]
+2016-10-27T13:09:02.332Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-27 15:09:02 | user.verifyToken]'
+2016-10-27T13:09:03.140Z - info: ::1 - - [27/Oct/2016:13:09:03 +0000] "GET / HTTP/1.1" 200 644 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:09:03.145Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-27 15:09:03 | user.verifyToken]'
+2016-10-27T13:09:03.213Z - info: ::1 - - [27/Oct/2016:13:09:03 +0000] "GET / HTTP/1.1" 200 644 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:09:03.428Z - info: ::1 - - [27/Oct/2016:13:09:03 +0000] "GET /favicon.ico HTTP/1.1" 404 122 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:09:05.734Z - info: ::1 - - [27/Oct/2016:13:09:05 +0000] "GET /login HTTP/1.1" 500 2211 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:09:35.782Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:09:35 | app.listen]
+2016-10-27T13:12:32.473Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:12:32 | app.listen]
+2016-10-27T13:12:35.185Z - info: ::1 - - [27/Oct/2016:13:12:35 +0000] "GET /login HTTP/1.1" 200 763 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:12:39.202Z - info: Signed new token [2016-10-27 15:12:39 | user.basicAuthCallback]
+2016-10-27T13:12:39.211Z - info: ::1 - - [27/Oct/2016:13:12:39 +0000] "POST /login HTTP/1.1" 302 46 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:12:39.233Z - info: ::1 - - [27/Oct/2016:13:12:39 +0000] "GET / HTTP/1.1" 500 1731 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:13:01.554Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:13:01 | app.listen]
+2016-10-27T13:13:03.611Z - info: ::1 - - [27/Oct/2016:13:13:03 +0000] "GET / HTTP/1.1" 200 1089 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:14:05.005Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:14:05 | app.listen]
+2016-10-27T13:14:07.061Z - info: ::1 - - [27/Oct/2016:13:14:07 +0000] "GET / HTTP/1.1" 200 804 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:14:23.486Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:14:23 | app.listen]
+2016-10-27T13:14:24.571Z - info: ::1 - - [27/Oct/2016:13:14:24 +0000] "GET / HTTP/1.1" 200 1089 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:16:54.493Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:16:54 | app.listen]
+2016-10-27T13:16:56.781Z - info: ::1 - - [27/Oct/2016:13:16:56 +0000] "GET / HTTP/1.1" 200 1076 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:22:25.153Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:22:25 | app.listen]
+2016-10-27T13:22:27.255Z - info: ::1 - - [27/Oct/2016:13:22:27 +0000] "GET / HTTP/1.1" 200 1038 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:24:42.882Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:24:42 | app.listen]
+2016-10-27T13:24:45.020Z - info: ::1 - - [27/Oct/2016:13:24:45 +0000] "GET / HTTP/1.1" 200 1062 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:25:31.195Z - info: ::1 - - [27/Oct/2016:13:25:31 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 404 122 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:26:36.033Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:26:36 | app.listen]
+2016-10-27T13:26:51.294Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:26:51 | app.listen]
+2016-10-27T13:26:52.296Z - info: ::1 - - [27/Oct/2016:13:26:52 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 404 1348 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:27:00.633Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:27:00 | app.listen]
+2016-10-27T13:27:02.009Z - info: ::1 - - [27/Oct/2016:13:27:02 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 404 1966 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:27:48.186Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:27:48 | app.listen]
+2016-10-27T13:27:49.260Z - info: ::1 - - [27/Oct/2016:13:27:49 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 404 696 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:30:54.850Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:30:54 | app.listen]
+2016-10-27T13:30:57.741Z - info: ::1 - - [27/Oct/2016:13:30:57 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 500 1332 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:32:17.441Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:32:17 | app.listen]
+2016-10-27T13:32:19.669Z - info: ::1 - - [27/Oct/2016:13:32:19 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 500 2006 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:33:14.785Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:33:14 | app.listen]
+2016-10-27T13:33:16.787Z - info: ::1 - - [27/Oct/2016:13:33:16 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1016 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:34:28.273Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:34:28 | app.listen]
+2016-10-27T13:34:31.010Z - info: ::1 - - [27/Oct/2016:13:34:31 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:35:43.195Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:35:43 | app.listen]
+2016-10-27T13:35:44.257Z - info: ::1 - - [27/Oct/2016:13:35:44 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:37:50.097Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:37:50 | app.listen]
+2016-10-27T13:37:52.400Z - info: ::1 - - [27/Oct/2016:13:37:52 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1016 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:37:52.650Z - info: ::1 - - [27/Oct/2016:13:37:52 +0000] "GET /favicon.ico HTTP/1.1" 404 658 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:40:21.748Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:40:21 | app.listen]
+2016-10-27T13:40:23.778Z - info: ::1 - - [27/Oct/2016:13:40:23 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 500 1332 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:41:09.537Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:41:09 | app.listen]
+2016-10-27T13:41:11.642Z - info: ::1 - - [27/Oct/2016:13:41:11 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1051 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:41:26.706Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:41:26 | app.listen]
+2016-10-27T13:41:28.705Z - info: ::1 - - [27/Oct/2016:13:41:28 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:41:54.721Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:41:54 | app.listen]
+2016-10-27T13:42:26.437Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:42:26 | app.listen]
+2016-10-27T13:42:27.580Z - info: ::1 - - [27/Oct/2016:13:42:27 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 500 1332 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:42:43.097Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:42:43 | app.listen]
+2016-10-27T13:42:44.172Z - info: ::1 - - [27/Oct/2016:13:42:44 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1016 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:44:24.898Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:44:24 | app.listen]
+2016-10-27T13:44:30.222Z - info: ::1 - - [27/Oct/2016:13:44:30 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1051 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:44:37.531Z - warn: Required fields not found
+2016-10-27T13:44:37.538Z - info: ::1 - - [27/Oct/2016:13:44:37 +0000] "POST /registration/registerUser HTTP/1.1" 302 144 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:44:37.614Z - info: ::1 - - [27/Oct/2016:13:44:37 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 304 - "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:45:24.689Z - info: ::1 - - [27/Oct/2016:13:45:24 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 304 - "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:45:55.532Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:45:55 | app.listen]
+2016-10-27T13:45:59.094Z - info: ::1 - - [27/Oct/2016:13:45:59 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1075 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:45:59.356Z - info: ::1 - - [27/Oct/2016:13:45:59 +0000] "GET /favicon.ico HTTP/1.1" 404 658 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:46:01.447Z - warn: Required fields not found
+2016-10-27T13:46:01.452Z - info: ::1 - - [27/Oct/2016:13:46:01 +0000] "POST /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 302 144 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:46:01.504Z - info: ::1 - - [27/Oct/2016:13:46:01 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1075 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:50:20.039Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:50:20 | app.listen]
+2016-10-27T13:50:22.121Z - info: ::1 - - [27/Oct/2016:13:50:22 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 304 - "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:50:24.619Z - warn: Required fields not found
+2016-10-27T13:50:24.623Z - info: ::1 - - [27/Oct/2016:13:50:24 +0000] "POST /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 302 144 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:50:24.686Z - info: ::1 - - [27/Oct/2016:13:50:24 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1155 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:53:24.359Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:53:24 | app.listen]
+2016-10-27T13:53:26.576Z - warn: Required fields not found
+2016-10-27T13:53:26.585Z - info: ::1 - - [27/Oct/2016:13:53:26 +0000] "POST /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 302 144 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:53:26.989Z - info: ::1 - - [27/Oct/2016:13:53:26 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1269 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:53:35.944Z - info: ::1 - - [27/Oct/2016:13:53:35 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1189 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:53:36.112Z - info: ::1 - - [27/Oct/2016:13:53:36 +0000] "GET /favicon.ico HTTP/1.1" 404 658 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:53:38.483Z - error: uncaughtException: helper is not defined date=Thu Oct 27 2016 15:53:38 GMT+0200 (Mitteleuropäische Sommerzeit), pid=17076, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=86327296, heapTotal=69043456, heapUsed=48428776, loadavg=[0, 0, 0], uptime=574747.4461804, trace=[column=25, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=validateUser, line=318, method=null, native=false, column=32, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=135, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=75, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false, column=28, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=, line=109, method=null, native=false], stack=[ReferenceError: helper is not defined,     at validateUser (C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:318:25),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:135:32,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:75:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16),     at Socket.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:109:28)]
+2016-10-27T13:53:55.509Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:53:55 | app.listen]
+2016-10-27T13:53:55.663Z - error: uncaughtException: password1 is not defined date=Thu Oct 27 2016 15:53:55 GMT+0200 (Mitteleuropäische Sommerzeit), pid=7960, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=53227520, heapTotal=37101568, heapUsed=25337248, loadavg=[0, 0, 0], uptime=574764.6265378, trace=[column=41, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=validateUser, line=330, method=null, native=false, column=32, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=136, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=75, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false, column=28, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=, line=109, method=null, native=false], stack=[ReferenceError: password1 is not defined,     at validateUser (C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:330:41),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:136:32,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:75:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16),     at Socket.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:109:28)]
+2016-10-27T13:54:27.091Z - info: Server is running @ http://localhost:4000 [2016-10-27 15:54:27 | app.listen]
+2016-10-27T13:54:29.181Z - info: ::1 - - [27/Oct/2016:13:54:29 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:54:31.690Z - warn: Found unknown Key:  token 9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 [2016-10-27 15:54:31 | admin.validateUser]
+2016-10-27T13:54:31.716Z - info: ::1 - - [27/Oct/2016:13:54:31 +0000] "POST /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 302 46 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T13:54:31.792Z - info: ::1 - - [27/Oct/2016:13:54:31 +0000] "GET / HTTP/1.1" 200 1158 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:10:35.679Z - info: ::1 - - [27/Oct/2016:14:10:35 +0000] "GET /logout HTTP/1.1" 302 46 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:10:35.686Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-27 16:10:35 | user.verifyToken]'
+2016-10-27T14:10:35.739Z - info: ::1 - - [27/Oct/2016:14:10:35 +0000] "GET / HTTP/1.1" 200 584 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:17:47.833Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:17:47 | app.listen]
+2016-10-27T14:18:47.898Z - error: { [Error: ER_BAD_FIELD_ERROR: Unknown column 'registered' in 'where clause']
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  index: 0 } '[2016-10-27 16:18:47 | mysql.selectNewUserCandidates]'
+2016-10-27T14:19:47.896Z - error: { [Error: ER_BAD_FIELD_ERROR: Unknown column 'registered' in 'where clause']
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  index: 0 } '[2016-10-27 16:19:47 | mysql.selectNewUserCandidates]'
+2016-10-27T14:20:12.343Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:20:12 | app.listen]
+2016-10-27T14:21:13.089Z - info: Verification mail sent: 250 Requested mail action okay, completed: id=0MQdAP-1cTpP840hZ-00U4RS [2016-10-27 16:21:13 | mail.createVerificationMail]
+2016-10-27T14:21:40.583Z - info: ::1 - - [27/Oct/2016:14:21:40 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1189 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:21:48.740Z - warn: Found unknown Key:  token 9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 [2016-10-27 16:21:48 | admin.validateUser]
+2016-10-27T14:21:48.764Z - info: ::1 - - [27/Oct/2016:14:21:48 +0000] "POST /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 302 56 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:21:48.815Z - info: ::1 - - [27/Oct/2016:14:21:48 +0000] "GET /login HTTP/1.1" 200 854 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:21:57.379Z - info: Signed new token [2016-10-27 16:21:57 | user.basicAuthCallback]
+2016-10-27T14:21:57.387Z - info: ::1 - - [27/Oct/2016:14:21:57 +0000] "POST /login HTTP/1.1" 302 46 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:21:57.409Z - error: uncaughtException: Cannot read property 'name' of undefined date=Thu Oct 27 2016 16:21:57 GMT+0200 (Mitteleuropäische Sommerzeit), pid=12216, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=63528960, heapTotal=50468608, heapUsed=39875608, loadavg=[0, 0, 0], uptime=576446.3716306, trace=[column=62, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=28, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=234, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=268, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=75, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false], stack=[TypeError: Cannot read property 'name' of undefined,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:28:62,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:234:17,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:268:9,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:75:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16)]
+2016-10-27T14:32:19.976Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:32:19 | app.listen]
+2016-10-27T14:32:46.101Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:32:46 | app.listen]
+2016-10-27T14:33:46.888Z - info: Verification mail sent: 250 Requested mail action okay, completed: id=0MYsEZ-1cLa8Y2tJD-00VfML [2016-10-27 16:33:46 | mail.createVerificationMail]
+2016-10-27T14:35:01.610Z - info: ::1 - - [27/Oct/2016:14:35:01 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1189 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:35:06.122Z - warn: Nothing got updated OkPacket {
+  fieldCount: 0,
+  affectedRows: 0,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 0  Changed: 0  Warnings: 0',
+  protocol41: true,
+  changedRows: 0 } [2016-10-27 16:35:06 | mysql.updateUserCandidateRegistered]
+2016-10-27T14:35:06.126Z - info: ::1 - - [27/Oct/2016:14:35:06 +0000] "POST /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 302 90 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:35:06.135Z - error: undefined '[2016-10-27 16:35:06 | user.getRegisterUser]'
+2016-10-27T14:35:06.137Z - info: ::1 - - [27/Oct/2016:14:35:06 +0000] "GET /registration/undefined HTTP/1.1" 302 46 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:35:06.161Z - error: uncaughtException: Cannot read property 'name' of undefined date=Thu Oct 27 2016 16:35:06 GMT+0200 (Mitteleuropäische Sommerzeit), pid=8100, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=58564608, heapTotal=41193216, heapUsed=34503896, loadavg=[0, 0, 0], uptime=577235.1216084, trace=[column=62, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=28, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=234, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=275, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=75, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false], stack=[TypeError: Cannot read property 'name' of undefined,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:28:62,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:234:17,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:275:9,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:75:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16)]
+2016-10-27T14:38:06.362Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:38:06 | app.listen]
+2016-10-27T14:38:08.000Z - info: ::1 - - [27/Oct/2016:14:38:07 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1239 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:39:26.459Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:39:26 | app.listen]
+2016-10-27T14:39:30.201Z - info: ::1 - - [27/Oct/2016:14:39:30 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1189 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:39:32.329Z - info: ::1 - - [27/Oct/2016:14:39:32 +0000] "POST /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 302 144 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:39:32.400Z - info: ::1 - - [27/Oct/2016:14:39:32 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1273 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:41:04.773Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:41:04 | app.listen]
+2016-10-27T14:41:21.954Z - warn: Nothing got updated OkPacket {
+  fieldCount: 0,
+  affectedRows: 0,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 0  Changed: 0  Warnings: 0',
+  protocol41: true,
+  changedRows: 0 } [2016-10-27 16:41:21 | mysql.updateUserCandidateRegistered]
+2016-10-27T14:41:21.968Z - info: ::1 - - [27/Oct/2016:14:41:21 +0000] "POST /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 302 90 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:41:21.975Z - error: undefined '[2016-10-27 16:41:21 | user.getRegisterUser]'
+2016-10-27T14:41:21.976Z - info: ::1 - - [27/Oct/2016:14:41:21 +0000] "GET /registration/undefined HTTP/1.1" 302 46 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:41:22.003Z - error: uncaughtException: Cannot read property 'name' of undefined date=Thu Oct 27 2016 16:41:21 GMT+0200 (Mitteleuropäische Sommerzeit), pid=3632, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=54075392, heapTotal=37101568, heapUsed=26893368, loadavg=[0, 0, 0], uptime=577610.9638915, trace=[column=62, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=28, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=236, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=275, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=75, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false], stack=[TypeError: Cannot read property 'name' of undefined,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:28:62,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:236:17,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:275:9,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:75:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16)]
+2016-10-27T14:43:43.392Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:43:43 | app.listen]
+2016-10-27T14:43:48.444Z - info: ::1 - - [27/Oct/2016:14:43:48 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1189 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:43:51.091Z - info: ::1 - - [27/Oct/2016:14:43:51 +0000] "POST /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 302 56 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:43:51.152Z - info: ::1 - - [27/Oct/2016:14:43:51 +0000] "GET /login HTTP/1.1" 200 854 "http://localhost:4000/registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:44:14.126Z - info: Signed new token [2016-10-27 16:44:14 | user.basicAuthCallback]
+2016-10-27T14:44:14.128Z - info: ::1 - - [27/Oct/2016:14:44:14 +0000] "POST /login HTTP/1.1" 302 46 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:44:14.153Z - error: uncaughtException: Cannot read property 'name' of undefined date=Thu Oct 27 2016 16:44:14 GMT+0200 (Mitteleuropäische Sommerzeit), pid=1296, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=86089728, heapTotal=70075392, heapUsed=39947576, loadavg=[0, 0, 0], uptime=577783.1147336, trace=[column=62, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=28, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=243, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=275, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=75, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false], stack=[TypeError: Cannot read property 'name' of undefined,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:28:62,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:243:17,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:275:9,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:75:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16)]
+2016-10-27T14:49:45.199Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:49:45 | app.listen]
+2016-10-27T14:49:48.056Z - info: ::1 - - [27/Oct/2016:14:49:48 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 200 1189 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:50:25.417Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:50:25 | app.listen]
+2016-10-27T14:50:28.062Z - error: undefined '[2016-10-27 16:50:28 | user.getRegisterUser]'
+2016-10-27T14:50:28.073Z - info: ::1 - - [27/Oct/2016:14:50:28 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 302 46 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:50:28.099Z - error: uncaughtException: Cannot read property 'name' of undefined date=Thu Oct 27 2016 16:50:28 GMT+0200 (Mitteleuropäische Sommerzeit), pid=1912, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=53178368, heapTotal=37101568, heapUsed=24092800, loadavg=[0, 0, 0], uptime=578157.0622763, trace=[column=62, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=29, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=240, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=275, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=75, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false], stack=[TypeError: Cannot read property 'name' of undefined,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:29:62,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:240:17,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:275:9,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:75:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16)]
+2016-10-27T14:51:19.027Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:51:19 | app.listen]
+2016-10-27T14:51:19.135Z - error: uncaughtException: Cannot read property 'name' of undefined date=Thu Oct 27 2016 16:51:19 GMT+0200 (Mitteleuropäische Sommerzeit), pid=15464, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=52801536, heapTotal=37101568, heapUsed=23384648, loadavg=[0, 0, 0], uptime=578208.0973507, trace=[column=62, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=29, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=240, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=275, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=75, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false], stack=[TypeError: Cannot read property 'name' of undefined,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:29:62,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:240:17,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:275:9,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:75:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16)]
+2016-10-27T14:51:31.276Z - info: ::1 - - [27/Oct/2016:14:51:31 +0000] "GET / HTTP/1.1" - - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:51:33.760Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:51:33 | app.listen]
+2016-10-27T14:51:35.390Z - error: undefined '[2016-10-27 16:51:35 | user.getRegisterUser]'
+2016-10-27T14:51:35.400Z - info: ::1 - - [27/Oct/2016:14:51:35 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 302 46 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:51:35.424Z - error: uncaughtException: Cannot read property 'name' of undefined date=Thu Oct 27 2016 16:51:35 GMT+0200 (Mitteleuropäische Sommerzeit), pid=16376, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=53166080, heapTotal=37101568, heapUsed=24122000, loadavg=[0, 0, 0], uptime=578224.387662, trace=[column=62, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=29, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=240, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=275, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=75, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false], stack=[TypeError: Cannot read property 'name' of undefined,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:29:62,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:240:17,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:275:9,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:75:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16)]
+2016-10-27T14:51:45.926Z - info: ::1 - - [27/Oct/2016:14:51:45 +0000] "GET / HTTP/1.1" - - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:53:19.877Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:53:19 | app.listen]
+2016-10-27T14:53:21.538Z - warn: No results found [2016-10-27 16:53:21 | mysql.selectUserCandidateForToken]
+2016-10-27T14:53:21.541Z - error: null '[2016-10-27 16:53:21 | user.getRegisterUser]'
+2016-10-27T14:53:21.550Z - info: ::1 - - [27/Oct/2016:14:53:21 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 302 46 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:53:21.581Z - error: uncaughtException: Cannot read property 'name' of undefined date=Thu Oct 27 2016 16:53:21 GMT+0200 (Mitteleuropäische Sommerzeit), pid=12068, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=53886976, heapTotal=53612544, heapUsed=22624248, loadavg=[0, 0, 0], uptime=578330.5450474, trace=[column=62, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=29, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=240, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=287, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=77, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false], stack=[TypeError: Cannot read property 'name' of undefined,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:29:62,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:240:17,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:287:9,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:77:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16)]
+2016-10-27T14:54:42.422Z - info: Server is running @ http://localhost:4000 [2016-10-27 16:54:42 | app.listen]
+2016-10-27T14:54:44.419Z - warn: No results found [2016-10-27 16:54:44 | mysql.selectUserCandidateForToken]
+2016-10-27T14:54:44.420Z - error: null '[2016-10-27 16:54:44 | user.getRegisterUser]'
+2016-10-27T14:54:44.429Z - info: ::1 - - [27/Oct/2016:14:54:44 +0000] "GET /registration/9a5353c8-daac-45a5-b0a6-ba1a8b50b3c7 HTTP/1.1" 302 46 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:54:44.434Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-27 16:54:44 | user.verifyToken]'
+2016-10-27T14:54:44.830Z - info: ::1 - - [27/Oct/2016:14:54:44 +0000] "GET / HTTP/1.1" 200 657 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T14:55:42.496Z - warn: No results found [2016-10-27 16:55:42 | mysql.selectNewUserCandidates]
+2016-10-27T14:56:42.497Z - warn: No results found [2016-10-27 16:56:42 | mysql.selectNewUserCandidates]
+2016-10-27T16:10:58.077Z - info: Server is running @ http://localhost:4000 [2016-10-27 18:10:58 | app.listen]
+2016-10-27T16:33:49.818Z - info: Server is running @ http://localhost:4000 [2016-10-27 18:33:49 | app.listen]
+2016-10-27T16:33:53.042Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-27 18:33:53 | user.verifyToken]'
+2016-10-27T16:33:53.471Z - info: ::1 - - [27/Oct/2016:16:33:53 +0000] "GET / HTTP/1.1" 200 584 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:33:54.756Z - info: ::1 - - [27/Oct/2016:16:33:54 +0000] "GET /login HTTP/1.1" 200 754 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:33:58.297Z - info: Signed new token [2016-10-27 18:33:58 | user.basicAuthCallback]
+2016-10-27T16:33:58.305Z - info: ::1 - - [27/Oct/2016:16:33:58 +0000] "POST /login HTTP/1.1" 302 46 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:33:58.319Z - warn: No results found [2016-10-27 18:33:58 | mysql.selectAllUserGroups]
+2016-10-27T16:33:58.374Z - info: ::1 - - [27/Oct/2016:16:33:58 +0000] "GET / HTTP/1.1" 200 956 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:34:05.856Z - info: ::1 - - [27/Oct/2016:16:34:05 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 837 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:36:20.502Z - info: Server is running @ http://localhost:4000 [2016-10-27 18:36:20 | app.listen]
+2016-10-27T16:36:21.646Z - info: ::1 - - [27/Oct/2016:16:36:21 +0000] "GET /admin/createUserGroup HTTP/1.1" 304 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:36:31.357Z - info: New user group  created { name: 'Neu1', description: 'First try' } [2016-10-27 18:36:31 | admin.postCreateUserGroup]
+2016-10-27T16:36:31.362Z - info: ::1 - - [27/Oct/2016:16:36:31 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 108 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:36:31.432Z - info: ::1 - - [27/Oct/2016:16:36:31 +0000] "GET /admin/manageUserGroup/undefined HTTP/1.1" 404 678 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:41:36.785Z - info: Server is running @ http://localhost:4000 [2016-10-27 18:41:36 | app.listen]
+2016-10-27T16:41:38.671Z - info: ::1 - - [27/Oct/2016:16:41:38 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 837 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:41:41.093Z - info: New user group  created { name: 'Neu1', description: 'First try' } [2016-10-27 18:41:41 | admin.postCreateUserGroup]
+2016-10-27T16:41:41.096Z - info: ::1 - - [27/Oct/2016:16:41:41 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 108 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:41:41.149Z - info: ::1 - - [27/Oct/2016:16:41:41 +0000] "GET /admin/manageUserGroup/undefined HTTP/1.1" 404 678 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:43:27.164Z - info: Server is running @ http://localhost:4000 [2016-10-27 18:43:27 | app.listen]
+2016-10-27T16:43:28.414Z - info: ::1 - - [27/Oct/2016:16:43:28 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 837 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:43:29.443Z - info: New user group  created { [Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 1]
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlState: '42000',
+  index: 0 } [2016-10-27 18:43:29 | admin.postCreateUserGroup]
+2016-10-27T16:43:29.449Z - info: ::1 - - [27/Oct/2016:16:43:29 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 108 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:43:29.512Z - info: ::1 - - [27/Oct/2016:16:43:29 +0000] "GET /admin/manageUserGroup/undefined HTTP/1.1" 404 678 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:44:18.749Z - info: Server is running @ http://localhost:4000 [2016-10-27 18:44:18 | app.listen]
+2016-10-27T16:44:20.692Z - info: ::1 - - [27/Oct/2016:16:44:20 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 837 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:44:21.641Z - info: New user group  created { name: 'Neu1', description: 'First try' } [2016-10-27 18:44:21 | admin.postCreateUserGroup]
+2016-10-27T16:44:21.647Z - info: ::1 - - [27/Oct/2016:16:44:21 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 108 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:44:21.703Z - info: ::1 - - [27/Oct/2016:16:44:21 +0000] "GET /admin/manageUserGroup/undefined HTTP/1.1" 404 678 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:46:26.556Z - info: Server is running @ http://localhost:4000 [2016-10-27 18:46:26 | app.listen]
+2016-10-27T16:46:28.758Z - info: ::1 - - [27/Oct/2016:16:46:28 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 837 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:46:29.781Z - error: Query {
+  domain: null,
+  _events: 
+   { error: [Function],
+     packet: [Function],
+     end: [Function],
+     timeout: [Function],
+     'start-tls': [Function] },
+  _eventsCount: 5,
+  _maxListeners: undefined,
+  _callback: [Function],
+  _callSite: [Error],
+  _ended: false,
+  _timeout: undefined,
+  _idleNext: null,
+  _idlePrev: null,
+  _idleStart: null,
+  _idleTimeout: -1,
+  _repeat: null,
+  sql: 'INSERT INTO user_group SET ?',
+  values: undefined,
+  typeCast: true,
+  nestTables: false,
+  _resultSet: null,
+  _results: [],
+  _fields: [],
+  _index: 0,
+  _loadError: null,
+  _connection: 
+   Connection {
+     domain: null,
+     _events: { error: [Function] },
+     _eventsCount: 1,
+     _maxListeners: undefined,
+     config: 
+      ConnectionConfig {
+        host: 'localhost',
+        port: 3306,
+        localAddress: undefined,
+        socketPath: undefined,
+        user: 'benjamin',
+        password: '0000',
+        database: 'bewertungsportal',
+        connectTimeout: 10000,
+        insecureAuth: false,
+        supportBigNumbers: false,
+        bigNumberStrings: false,
+        dateStrings: false,
+        debug: undefined,
+        trace: true,
+        stringifyObjects: false,
+        timezone: 'local',
+        flags: '',
+        queryFormat: undefined,
+        pool: undefined,
+        ssl: false,
+        multipleStatements: false,
+        typeCast: true,
+        maxPacketSize: 0,
+        charsetNumber: 33,
+        clientFlags: 455631,
+        protocol41: true },
+     _socket: 
+      Socket {
+        _connecting: false,
+        _hadError: false,
+        _handle: [Object],
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [Object],
+        readable: true,
+        domain: null,
+        _events: [Object],
+        _eventsCount: 6,
+        _maxListeners: undefined,
+        _writableState: [Object],
+        writable: true,
+        allowHalfOpen: false,
+        destroyed: false,
+        bytesRead: 1482,
+        _bytesDispatched: 207,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        _idleTimeout: -1,
+        _idleNext: null,
+        _idlePrev: null,
+        _idleStart: 797,
+        read: [Function],
+        _consuming: true },
+     _protocol: 
+      Protocol {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 6,
+        _maxListeners: undefined,
+        readable: true,
+        writable: true,
+        _config: [Object],
+        _connection: [Circular],
+        _callback: null,
+        _fatalError: null,
+        _quitSequence: null,
+        _handshakeSequence: [Object],
+        _handshaked: true,
+        _ended: false,
+        _destroyed: false,
+        _queue: [Object],
+        _handshakeInitializationPacket: [Object],
+        _parser: [Object] },
+     _connectCalled: true,
+     state: 'authenticated',
+     threadId: 157 } } '[2016-10-27 18:46:29 | mysql.insertUserGroup]'
+2016-10-27T16:46:29.796Z - error: uncaughtException: callback is not a function date=Thu Oct 27 2016 18:46:29 GMT+0200 (Mitteleuropäische Sommerzeit), pid=9748, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=75866112, heapTotal=64927744, heapUsed=40494352, loadavg=[0, 0, 0], uptime=585118.7580414, trace=[column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Object.insertUserGroup, line=278, method=insertUserGroup, native=false, column=15, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=postCreateUserGroup, line=60, method=null, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=283, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=264, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=349, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=77, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false], stack=[TypeError: callback is not a function,     at Object.insertUserGroup (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:278:9),     at postCreateUserGroup (C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:60:15),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:283:21,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:264:17,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:349:9,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:77:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23)]
+2016-10-27T16:46:29.798Z - info: New user group  created { name: 'Neu1', description: 'First try' } [2016-10-27 18:46:29 | admin.postCreateUserGroup]
+2016-10-27T16:46:29.804Z - info: ::1 - - [27/Oct/2016:16:46:29 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 108 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:46:29.878Z - info: ::1 - - [27/Oct/2016:16:46:29 +0000] "GET /admin/manageUserGroup/undefined HTTP/1.1" 404 678 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:47:45.784Z - info: Server is running @ http://localhost:4000 [2016-10-27 18:47:45 | app.listen]
+2016-10-27T16:47:47.615Z - info: ::1 - - [27/Oct/2016:16:47:47 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 837 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:47:48.577Z - error: Query {
+  domain: null,
+  _events: 
+   { error: [Function],
+     packet: [Function],
+     end: [Function],
+     timeout: [Function],
+     'start-tls': [Function] },
+  _eventsCount: 5,
+  _maxListeners: undefined,
+  _callback: [Function],
+  _callSite: [Error],
+  _ended: false,
+  _timeout: undefined,
+  _idleNext: null,
+  _idlePrev: null,
+  _idleStart: null,
+  _idleTimeout: -1,
+  _repeat: null,
+  sql: 'INSERT INTO user_group SET `name` = \'Neu1\', `description` = \'First try\'',
+  values: { name: 'Neu1', description: 'First try' },
+  typeCast: true,
+  nestTables: false,
+  _resultSet: null,
+  _results: [],
+  _fields: [],
+  _index: 0,
+  _loadError: null,
+  _connection: 
+   Connection {
+     domain: null,
+     _events: { error: [Function] },
+     _eventsCount: 1,
+     _maxListeners: undefined,
+     config: 
+      ConnectionConfig {
+        host: 'localhost',
+        port: 3306,
+        localAddress: undefined,
+        socketPath: undefined,
+        user: 'benjamin',
+        password: '0000',
+        database: 'bewertungsportal',
+        connectTimeout: 10000,
+        insecureAuth: false,
+        supportBigNumbers: false,
+        bigNumberStrings: false,
+        dateStrings: false,
+        debug: undefined,
+        trace: true,
+        stringifyObjects: false,
+        timezone: 'local',
+        flags: '',
+        queryFormat: undefined,
+        pool: undefined,
+        ssl: false,
+        multipleStatements: false,
+        typeCast: true,
+        maxPacketSize: 0,
+        charsetNumber: 33,
+        clientFlags: 455631,
+        protocol41: true },
+     _socket: 
+      Socket {
+        _connecting: false,
+        _hadError: false,
+        _handle: [Object],
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [Object],
+        readable: true,
+        domain: null,
+        _events: [Object],
+        _eventsCount: 6,
+        _maxListeners: undefined,
+        _writableState: [Object],
+        writable: true,
+        allowHalfOpen: false,
+        destroyed: false,
+        bytesRead: 1482,
+        _bytesDispatched: 207,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        _idleTimeout: -1,
+        _idleNext: null,
+        _idlePrev: null,
+        _idleStart: 747,
+        read: [Function],
+        _consuming: true },
+     _protocol: 
+      Protocol {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 6,
+        _maxListeners: undefined,
+        readable: true,
+        writable: true,
+        _config: [Object],
+        _connection: [Circular],
+        _callback: null,
+        _fatalError: null,
+        _quitSequence: null,
+        _handshakeSequence: [Object],
+        _handshaked: true,
+        _ended: false,
+        _destroyed: false,
+        _queue: [Object],
+        _handshakeInitializationPacket: [Object],
+        _parser: [Object] },
+     _connectCalled: true,
+     state: 'authenticated',
+     threadId: 158 } } '[2016-10-27 18:47:48 | mysql.insertUserGroup]'
+2016-10-27T16:47:48.582Z - info: ::1 - - [27/Oct/2016:16:47:48 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 88 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:47:48.588Z - info: New user group  created { name: 'Neu1', description: 'First try' } [2016-10-27 18:47:48 | admin.postCreateUserGroup]
+2016-10-27T16:47:48.606Z - error: uncaughtException: Can't set headers after they are sent. date=Thu Oct 27 2016 18:47:48 GMT+0200 (Mitteleuropäische Sommerzeit), pid=904, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=80379904, heapTotal=63895808, heapUsed=45184872, loadavg=[0, 0, 0], uptime=585197.5633004, trace=[column=11, file=_http_outgoing.js, function=ServerResponse.OutgoingMessage.setHeader, line=335, method=OutgoingMessage.setHeader, native=false, column=10, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js, function=ServerResponse.header, line=719, method=header, native=false, column=15, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js, function=ServerResponse.location, line=836, method=location, native=false, column=18, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js, function=ServerResponse.redirect, line=874, method=redirect, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=null, line=64, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=273, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=10, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.OkPacket, line=78, method=OkPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false], stack=[Error: Can't set headers after they are sent.,     at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:335:11),     at ServerResponse.header (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js:719:10),     at ServerResponse.location (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js:836:15),     at ServerResponse.redirect (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js:874:18),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:64:21,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:273:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.OkPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:78:10),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23)]
+2016-10-27T16:47:48.673Z - info: ::1 - - [27/Oct/2016:16:47:48 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 905 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:50:06.341Z - info: Server is running @ http://localhost:4000 [2016-10-27 18:50:06 | app.listen]
+2016-10-27T16:50:10.358Z - error: Query {
+  domain: null,
+  _events: 
+   { error: [Function],
+     packet: [Function],
+     end: [Function],
+     timeout: [Function],
+     'start-tls': [Function] },
+  _eventsCount: 5,
+  _maxListeners: undefined,
+  _callback: [Function],
+  _callSite: [Error],
+  _ended: false,
+  _timeout: undefined,
+  _idleNext: null,
+  _idlePrev: null,
+  _idleStart: null,
+  _idleTimeout: -1,
+  _repeat: null,
+  sql: 'INSERT INTO user_group SET `name` = \'2\', `description` = \'2\'',
+  values: { name: '2', description: '2' },
+  typeCast: true,
+  nestTables: false,
+  _resultSet: null,
+  _results: [],
+  _fields: [],
+  _index: 0,
+  _loadError: null,
+  _connection: 
+   Connection {
+     domain: null,
+     _events: { error: [Function] },
+     _eventsCount: 1,
+     _maxListeners: undefined,
+     config: 
+      ConnectionConfig {
+        host: 'localhost',
+        port: 3306,
+        localAddress: undefined,
+        socketPath: undefined,
+        user: 'benjamin',
+        password: '0000',
+        database: 'bewertungsportal',
+        connectTimeout: 10000,
+        insecureAuth: false,
+        supportBigNumbers: false,
+        bigNumberStrings: false,
+        dateStrings: false,
+        debug: undefined,
+        trace: true,
+        stringifyObjects: false,
+        timezone: 'local',
+        flags: '',
+        queryFormat: undefined,
+        pool: undefined,
+        ssl: false,
+        multipleStatements: false,
+        typeCast: true,
+        maxPacketSize: 0,
+        charsetNumber: 33,
+        clientFlags: 455631,
+        protocol41: true },
+     _socket: 
+      Socket {
+        _connecting: false,
+        _hadError: false,
+        _handle: [Object],
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [Object],
+        readable: true,
+        domain: null,
+        _events: [Object],
+        _eventsCount: 6,
+        _maxListeners: undefined,
+        _writableState: [Object],
+        writable: true,
+        allowHalfOpen: false,
+        destroyed: false,
+        bytesRead: 963,
+        _bytesDispatched: 159,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        _idleTimeout: -1,
+        _idleNext: null,
+        _idlePrev: null,
+        _idleStart: 767,
+        read: [Function],
+        _consuming: true },
+     _protocol: 
+      Protocol {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 6,
+        _maxListeners: undefined,
+        readable: true,
+        writable: true,
+        _config: [Object],
+        _connection: [Circular],
+        _callback: null,
+        _fatalError: null,
+        _quitSequence: null,
+        _handshakeSequence: [Object],
+        _handshaked: true,
+        _ended: false,
+        _destroyed: false,
+        _queue: [Object],
+        _handshakeInitializationPacket: [Object],
+        _parser: [Object] },
+     _connectCalled: true,
+     state: 'authenticated',
+     threadId: 159 } } '[2016-10-27 18:50:10 | mysql.insertUserGroup]'
+2016-10-27T16:50:10.369Z - info: ::1 - - [27/Oct/2016:16:50:10 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 88 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:50:10.378Z - info: New user group  created { name: '2', description: '2' } [2016-10-27 18:50:10 | admin.postCreateUserGroup]
+2016-10-27T16:50:10.394Z - error: uncaughtException: Can't set headers after they are sent. date=Thu Oct 27 2016 18:50:10 GMT+0200 (Mitteleuropäische Sommerzeit), pid=16880, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=53866496, heapTotal=37101568, heapUsed=26255448, loadavg=[0, 0, 0], uptime=585339.3562402, trace=[column=11, file=_http_outgoing.js, function=ServerResponse.OutgoingMessage.setHeader, line=335, method=OutgoingMessage.setHeader, native=false, column=10, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js, function=ServerResponse.header, line=719, method=header, native=false, column=15, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js, function=ServerResponse.location, line=836, method=location, native=false, column=18, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js, function=ServerResponse.redirect, line=874, method=redirect, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=null, line=65, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=273, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=10, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.OkPacket, line=78, method=OkPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false], stack=[Error: Can't set headers after they are sent.,     at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:335:11),     at ServerResponse.header (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js:719:10),     at ServerResponse.location (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js:836:15),     at ServerResponse.redirect (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js:874:18),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:65:21,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:273:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.OkPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:78:10),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23)]
+2016-10-27T16:50:10.819Z - info: ::1 - - [27/Oct/2016:16:50:10 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 905 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:56:02.386Z - info: Server is running @ http://localhost:4000 [2016-10-27 18:56:02 | app.listen]
+2016-10-27T16:56:05.877Z - error: Query {
+  domain: null,
+  _events: 
+   { error: [Function],
+     packet: [Function],
+     end: [Function],
+     timeout: [Function],
+     'start-tls': [Function] },
+  _eventsCount: 5,
+  _maxListeners: undefined,
+  _callback: [Function],
+  _callSite: [Error],
+  _ended: false,
+  _timeout: undefined,
+  _idleNext: null,
+  _idlePrev: null,
+  _idleStart: null,
+  _idleTimeout: -1,
+  _repeat: null,
+  sql: 'INSERT INTO user_group SET `name` = \'2\', `description` = \'2\'',
+  values: { name: '2', description: '2' },
+  typeCast: true,
+  nestTables: false,
+  _resultSet: null,
+  _results: [],
+  _fields: [],
+  _index: 0,
+  _loadError: null,
+  _connection: 
+   Connection {
+     domain: null,
+     _events: { error: [Function] },
+     _eventsCount: 1,
+     _maxListeners: undefined,
+     config: 
+      ConnectionConfig {
+        host: 'localhost',
+        port: 3306,
+        localAddress: undefined,
+        socketPath: undefined,
+        user: 'benjamin',
+        password: '0000',
+        database: 'bewertungsportal',
+        connectTimeout: 10000,
+        insecureAuth: false,
+        supportBigNumbers: false,
+        bigNumberStrings: false,
+        dateStrings: false,
+        debug: undefined,
+        trace: true,
+        stringifyObjects: false,
+        timezone: 'local',
+        flags: '',
+        queryFormat: undefined,
+        pool: undefined,
+        ssl: false,
+        multipleStatements: false,
+        typeCast: true,
+        maxPacketSize: 0,
+        charsetNumber: 33,
+        clientFlags: 455631,
+        protocol41: true },
+     _socket: 
+      Socket {
+        _connecting: false,
+        _hadError: false,
+        _handle: [Object],
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [Object],
+        readable: true,
+        domain: null,
+        _events: [Object],
+        _eventsCount: 6,
+        _maxListeners: undefined,
+        _writableState: [Object],
+        writable: true,
+        allowHalfOpen: false,
+        destroyed: false,
+        bytesRead: 963,
+        _bytesDispatched: 159,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        _idleTimeout: -1,
+        _idleNext: null,
+        _idlePrev: null,
+        _idleStart: 842,
+        read: [Function],
+        _consuming: true },
+     _protocol: 
+      Protocol {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 6,
+        _maxListeners: undefined,
+        readable: true,
+        writable: true,
+        _config: [Object],
+        _connection: [Circular],
+        _callback: null,
+        _fatalError: null,
+        _quitSequence: null,
+        _handshakeSequence: [Object],
+        _handshaked: true,
+        _ended: false,
+        _destroyed: false,
+        _queue: [Object],
+        _handshakeInitializationPacket: [Object],
+        _parser: [Object] },
+     _connectCalled: true,
+     state: 'authenticated',
+     threadId: 160 } } '[2016-10-27 18:56:05 | mysql.insertUserGroup]'
+2016-10-27T16:56:05.891Z - info: ::1 - - [27/Oct/2016:16:56:05 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 88 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:56:05.899Z - info: New user group created { name: '2', description: '2' } [2016-10-27 18:56:05 | admin.postCreateUserGroup]
+2016-10-27T16:56:05.915Z - error: uncaughtException: Can't set headers after they are sent. date=Thu Oct 27 2016 18:56:05 GMT+0200 (Mitteleuropäische Sommerzeit), pid=13884, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=54431744, heapTotal=53612544, heapUsed=25077528, loadavg=[0, 0, 0], uptime=585694.8771352, trace=[column=11, file=_http_outgoing.js, function=ServerResponse.OutgoingMessage.setHeader, line=335, method=OutgoingMessage.setHeader, native=false, column=10, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js, function=ServerResponse.header, line=719, method=header, native=false, column=15, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js, function=ServerResponse.location, line=836, method=location, native=false, column=18, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js, function=ServerResponse.redirect, line=874, method=redirect, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=null, line=64, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=273, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=10, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.OkPacket, line=78, method=OkPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false], stack=[Error: Can't set headers after they are sent.,     at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:335:11),     at ServerResponse.header (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js:719:10),     at ServerResponse.location (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js:836:15),     at ServerResponse.redirect (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js:874:18),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:64:21,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:273:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.OkPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:78:10),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23)]
+2016-10-27T16:56:06.329Z - info: ::1 - - [27/Oct/2016:16:56:06 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 905 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:59:19.248Z - info: Server is running @ http://localhost:4000 [2016-10-27 18:59:19 | app.listen]
+2016-10-27T16:59:22.140Z - error: Query {
+  domain: null,
+  _events: 
+   { error: [Function],
+     packet: [Function],
+     end: [Function],
+     timeout: [Function],
+     'start-tls': [Function] },
+  _eventsCount: 5,
+  _maxListeners: undefined,
+  _callback: [Function],
+  _callSite: [Error],
+  _ended: false,
+  _timeout: undefined,
+  _idleNext: null,
+  _idlePrev: null,
+  _idleStart: null,
+  _idleTimeout: -1,
+  _repeat: null,
+  sql: 'INSERT INTO user_group SET `name` = \'2\', `description` = \'2\'',
+  values: { name: '2', description: '2' },
+  typeCast: true,
+  nestTables: false,
+  _resultSet: null,
+  _results: [],
+  _fields: [],
+  _index: 0,
+  _loadError: null,
+  _connection: 
+   Connection {
+     domain: null,
+     _events: { error: [Function] },
+     _eventsCount: 1,
+     _maxListeners: undefined,
+     config: 
+      ConnectionConfig {
+        host: 'localhost',
+        port: 3306,
+        localAddress: undefined,
+        socketPath: undefined,
+        user: 'benjamin',
+        password: '0000',
+        database: 'bewertungsportal',
+        connectTimeout: 10000,
+        insecureAuth: false,
+        supportBigNumbers: false,
+        bigNumberStrings: false,
+        dateStrings: false,
+        debug: undefined,
+        trace: true,
+        stringifyObjects: false,
+        timezone: 'local',
+        flags: '',
+        queryFormat: undefined,
+        pool: undefined,
+        ssl: false,
+        multipleStatements: false,
+        typeCast: true,
+        maxPacketSize: 0,
+        charsetNumber: 33,
+        clientFlags: 455631,
+        protocol41: true },
+     _socket: 
+      Socket {
+        _connecting: false,
+        _hadError: false,
+        _handle: [Object],
+        _parent: null,
+        _host: 'localhost',
+        _readableState: [Object],
+        readable: true,
+        domain: null,
+        _events: [Object],
+        _eventsCount: 6,
+        _maxListeners: undefined,
+        _writableState: [Object],
+        writable: true,
+        allowHalfOpen: false,
+        destroyed: false,
+        bytesRead: 963,
+        _bytesDispatched: 159,
+        _sockname: null,
+        _pendingData: null,
+        _pendingEncoding: '',
+        _idleTimeout: -1,
+        _idleNext: null,
+        _idlePrev: null,
+        _idleStart: 790,
+        read: [Function],
+        _consuming: true },
+     _protocol: 
+      Protocol {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 6,
+        _maxListeners: undefined,
+        readable: true,
+        writable: true,
+        _config: [Object],
+        _connection: [Circular],
+        _callback: null,
+        _fatalError: null,
+        _quitSequence: null,
+        _handshakeSequence: [Object],
+        _handshaked: true,
+        _ended: false,
+        _destroyed: false,
+        _queue: [Object],
+        _handshakeInitializationPacket: [Object],
+        _parser: [Object] },
+     _connectCalled: true,
+     state: 'authenticated',
+     threadId: 161 } } '[2016-10-27 18:59:22 | mysql.insertUserGroup]'
+2016-10-27T16:59:22.151Z - info: ::1 - - [27/Oct/2016:16:59:22 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 88 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T16:59:22.158Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry '2' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 18:59:22 | mysql.insertUserGroup]'
+2016-10-27T16:59:22.172Z - error: uncaughtException: Can't set headers after they are sent. date=Thu Oct 27 2016 18:59:22 GMT+0200 (Mitteleuropäische Sommerzeit), pid=5952, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=53981184, heapTotal=53612544, heapUsed=22905016, loadavg=[0, 0, 0], uptime=585891.1358251, trace=[column=11, file=_http_outgoing.js, function=ServerResponse.OutgoingMessage.setHeader, line=335, method=OutgoingMessage.setHeader, native=false, column=10, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js, function=ServerResponse.header, line=719, method=header, native=false, column=15, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js, function=ServerResponse.location, line=836, method=location, native=false, column=18, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js, function=ServerResponse.redirect, line=874, method=redirect, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=null, line=69, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=267, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.ErrorPacket, line=94, method=ErrorPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false], stack=[Error: Can't set headers after they are sent.,     at ServerResponse.OutgoingMessage.setHeader (_http_outgoing.js:335:11),     at ServerResponse.header (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js:719:10),     at ServerResponse.location (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js:836:15),     at ServerResponse.redirect (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\express\lib\response.js:874:18),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:69:21,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:267:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query.ErrorPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:94:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12)]
+2016-10-27T16:59:22.580Z - info: ::1 - - [27/Oct/2016:16:59:22 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 905 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:02:00.245Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:02:00 | app.listen]
+2016-10-27T17:02:04.702Z - info: ::1 - - [27/Oct/2016:17:02:04 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 837 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:02:08.958Z - info: New user group created { name: 'a', description: 'a' } [2016-10-27 19:02:08 | admin.postCreateUserGroup]
+2016-10-27T17:02:08.963Z - info: ::1 - - [27/Oct/2016:17:02:08 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 92 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:02:09.028Z - info: ::1 - - [27/Oct/2016:17:02:09 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 404 670 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:05:39.157Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:05:39 | app.listen]
+2016-10-27T17:05:41.328Z - warn: No results found [2016-10-27 19:05:41 | mysql.selectUserGroupFromName]
+2016-10-27T17:05:41.338Z - info: ::1 - - [27/Oct/2016:17:05:41 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 302 46 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:05:41.775Z - info: ::1 - - [27/Oct/2016:17:05:41 +0000] "GET / HTTP/1.1" 200 1160 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:05:43.421Z - info: ::1 - - [27/Oct/2016:17:05:43 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 837 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:05:48.871Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'a' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 19:05:48 | mysql.insertUserGroup]'
+2016-10-27T17:05:48.873Z - info: ::1 - - [27/Oct/2016:17:05:48 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 88 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:05:48.919Z - info: ::1 - - [27/Oct/2016:17:05:48 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 905 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:06:49.940Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:06:49 | app.listen]
+2016-10-27T17:06:53.257Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'a' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 19:06:53 | mysql.insertUserGroup]'
+2016-10-27T17:06:53.267Z - info: ::1 - - [27/Oct/2016:17:06:53 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 88 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:06:53.659Z - info: ::1 - - [27/Oct/2016:17:06:53 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 905 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:08:46.601Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:08:46 | app.listen]
+2016-10-27T17:08:48.603Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'a' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 19:08:48 | mysql.insertUserGroup]'
+2016-10-27T17:08:48.615Z - info: ::1 - - [27/Oct/2016:17:08:48 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 88 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:08:49.026Z - info: ::1 - - [27/Oct/2016:17:08:49 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 905 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:09:21.308Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:09:21 | app.listen]
+2016-10-27T17:09:22.977Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'a' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 19:09:22 | mysql.insertUserGroup]'
+2016-10-27T17:09:22.989Z - info: ::1 - - [27/Oct/2016:17:09:22 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 88 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:09:23.389Z - info: ::1 - - [27/Oct/2016:17:09:23 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 905 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:09:45.589Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:09:45 | app.listen]
+2016-10-27T17:09:48.059Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'a' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 19:09:48 | mysql.insertUserGroup]'
+2016-10-27T17:09:48.069Z - info: ::1 - - [27/Oct/2016:17:09:48 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 88 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:09:48.484Z - info: ::1 - - [27/Oct/2016:17:09:48 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 905 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:10:16.112Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:10:16 | app.listen]
+2016-10-27T17:10:18.108Z - error: uncaughtException: results.contains is not a function date=Thu Oct 27 2016 19:10:18 GMT+0200 (Mitteleuropäische Sommerzeit), pid=7512, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=53665792, heapTotal=37101568, heapUsed=24300560, loadavg=[0, 0, 0], uptime=586547.0693749, trace=[column=30, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=null, line=59, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=197, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false, column=28, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=, line=109, method=null, native=false, column=13, file=events.js, function=emitOne, line=77, method=null, native=false], stack=[TypeError: results.contains is not a function,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:59:30,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:197:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16),     at Socket.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:109:28),     at emitOne (events.js:77:13)]
+2016-10-27T17:12:18.064Z - info: ::1 - - [27/Oct/2016:17:12:18 +0000] "POST /admin/createUserGroup HTTP/1.1" - - "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:15:40.785Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:15:40 | app.listen]
+2016-10-27T17:15:43.833Z - info: ::1 - - [27/Oct/2016:17:15:43 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 837 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:15:46.131Z - error: uncaughtException: results.contains is not a function date=Thu Oct 27 2016 19:15:46 GMT+0200 (Mitteleuropäische Sommerzeit), pid=16188, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=75366400, heapTotal=64927744, heapUsed=40288088, loadavg=[0, 0, 0], uptime=586875.0927962, trace=[column=30, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=null, line=59, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=197, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false, column=28, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=, line=109, method=null, native=false, column=13, file=events.js, function=emitOne, line=77, method=null, native=false], stack=[TypeError: results.contains is not a function,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:59:30,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:197:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16),     at Socket.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:109:28),     at emitOne (events.js:77:13)]
+2016-10-27T17:17:08.061Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:17:08 | app.listen]
+2016-10-27T17:17:08.273Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'a' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 19:17:08 | mysql.insertUserGroup]'
+2016-10-27T17:17:08.288Z - info: ::ffff:127.0.0.1 - - [27/Oct/2016:17:17:08 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 88 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:17:09.198Z - info: ::ffff:127.0.0.1 - - [27/Oct/2016:17:17:09 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 905 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:17:16.378Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'a' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 19:17:16 | mysql.insertUserGroup]'
+2016-10-27T17:17:16.380Z - info: ::ffff:127.0.0.1 - - [27/Oct/2016:17:17:16 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 88 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:17:16.432Z - info: ::ffff:127.0.0.1 - - [27/Oct/2016:17:17:16 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 905 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:18:01.693Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:18:01 | app.listen]
+2016-10-27T17:18:05.850Z - info: ::1 - - [27/Oct/2016:17:18:05 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 88 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:18:06.242Z - info: ::1 - - [27/Oct/2016:17:18:06 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 915 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:18:10.009Z - warn: No results found [2016-10-27 19:18:10 | mysql.selectUserGroupFromName]
+2016-10-27T17:18:10.030Z - info: New user group created { name: 'b', description: 'b' } [2016-10-27 19:18:10 | admin.postCreateUserGroup]
+2016-10-27T17:18:10.032Z - info: ::1 - - [27/Oct/2016:17:18:10 +0000] "POST /admin/createUserGroup HTTP/1.1" 302 94 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:18:10.038Z - warn: No results found [2016-10-27 19:18:10 | mysql.selectUserGroupFromName]
+2016-10-27T17:18:10.040Z - info: ::1 - - [27/Oct/2016:17:18:10 +0000] "GET /admin/manageUserGroup/13 HTTP/1.1" 302 46 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:18:10.115Z - info: ::1 - - [27/Oct/2016:17:18:10 +0000] "GET / HTTP/1.1" 200 1249 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:23:32.027Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:23:32 | app.listen]
+2016-10-27T17:23:36.247Z - info: ::1 - - [27/Oct/2016:17:23:36 +0000] "GET /admin/createUserGroup HTTP/1.1" 200 837 "http://localhost:4000/admin/createUserGroup" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:23:48.239Z - warn: No results found 5 [2016-10-27 19:23:48 | mysql.selectUserGroupForId]
+2016-10-27T17:23:48.244Z - info: ::1 - - [27/Oct/2016:17:23:48 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 302 46 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:23:48.315Z - info: ::1 - - [27/Oct/2016:17:23:48 +0000] "GET / HTTP/1.1" 200 1170 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:30:22.705Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:30:22 | app.listen]
+2016-10-27T17:30:30.839Z - warn: No results found 5 [2016-10-27 19:30:30 | mysql.selectUserGroupForId]
+2016-10-27T17:30:30.854Z - info: ::1 - - [27/Oct/2016:17:30:30 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 302 46 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:30:31.322Z - info: ::1 - - [27/Oct/2016:17:30:31 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:31:53.959Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:31:53 | app.listen]
+2016-10-27T17:32:00.065Z - warn: No results found 5 [2016-10-27 19:32:00 | mysql.selectUserGroupForId]
+2016-10-27T17:32:00.082Z - info: ::1 - - [27/Oct/2016:17:32:00 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 302 46 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:32:00.550Z - info: ::1 - - [27/Oct/2016:17:32:00 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:32:38.397Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:32:38 | app.listen]
+2016-10-27T17:32:54.032Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:32:54 | app.listen]
+2016-10-27T17:32:58.179Z - warn: No results found 5 [2016-10-27 19:32:58 | mysql.selectUserGroupForId]
+2016-10-27T17:32:58.197Z - info: ::1 - - [27/Oct/2016:17:32:58 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 302 46 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:32:58.619Z - info: ::1 - - [27/Oct/2016:17:32:58 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:34:54.778Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:34:54 | app.listen]
+2016-10-27T17:34:59.173Z - error: { [Error: ER_BAD_FIELD_ERROR: Unknown column 'name' in 'order clause']
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  index: 0 } '[2016-10-27 19:34:59 | mysql.selectAllUsersByName]'
+2016-10-27T17:34:59.587Z - info: ::1 - - [27/Oct/2016:17:34:59 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 500 2175 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:35:40.903Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:35:40 | app.listen]
+2016-10-27T17:35:44.419Z - error: { [Error: ER_BAD_FIELD_ERROR: Unknown column 'name' in 'order clause']
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  index: 0 } '[2016-10-27 19:35:44 | mysql.selectAllUsersByName]'
+2016-10-27T17:35:44.864Z - info: ::1 - - [27/Oct/2016:17:35:44 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 200 950 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:36:24.040Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:36:24 | app.listen]
+2016-10-27T17:36:25.952Z - info: ::1 - - [27/Oct/2016:17:36:25 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 200 1031 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:47:40.732Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:47:40 | app.listen]
+2016-10-27T17:47:43.013Z - info: ::1 - - [27/Oct/2016:17:47:43 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 200 1053 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:48:43.864Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:48:43 | app.listen]
+2016-10-27T17:48:45.356Z - info: ::1 - - [27/Oct/2016:17:48:45 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 200 1078 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:49:04.305Z - info: ::1 - - [27/Oct/2016:17:49:04 +0000] "POST /admin/manageUserGroup5 HTTP/1.1" 404 669 "http://localhost:4000/admin/manageUserGroup/5" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:49:14.642Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:49:14 | app.listen]
+2016-10-27T17:49:16.853Z - info: ::1 - - [27/Oct/2016:17:49:16 +0000] "POST /admin/manageUserGroup5 HTTP/1.1" 404 669 "http://localhost:4000/admin/manageUserGroup/5" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:49:21.634Z - info: Server is running @ http://localhost:4000 [2016-10-27 19:49:21 | app.listen]
+2016-10-27T17:49:22.896Z - info: ::1 - - [27/Oct/2016:17:49:22 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 200 1057 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:49:33.250Z - info: ::1 - - [27/Oct/2016:17:49:33 +0000] "POST /admin/manageUserGroup/5 HTTP/1.1" - - "http://localhost:4000/admin/manageUserGroup/5" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T17:49:39.308Z - info: ::1 - - [27/Oct/2016:17:49:39 +0000] "POST /admin/manageUserGroup/5 HTTP/1.1" - - "http://localhost:4000/admin/manageUserGroup/5" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:26:14.547Z - info: Server is running @ http://localhost:4000 [2016-10-27 20:26:14 | app.listen]
+2016-10-27T18:29:21.098Z - warn: No results found [2016-10-27 20:29:21 | mysql.selectAllUsersInGroup]
+2016-10-27T18:29:21.575Z - info: ::1 - - [27/Oct/2016:18:29:21 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:29:38.844Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'b' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 20:29:38 | mysql.updateUserGroup]'
+2016-10-27T18:30:42.560Z - info: ::1 - - [27/Oct/2016:18:30:42 +0000] "POST /admin/manageUserGroup/5 HTTP/1.1" - - "http://localhost:4000/admin/manageUserGroup/5" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:30:45.064Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'c' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 20:30:45 | mysql.updateUserGroup]'
+2016-10-27T18:30:55.167Z - info: ::1 - - [27/Oct/2016:18:30:55 +0000] "POST /admin/manageUserGroup/5 HTTP/1.1" - - "http://localhost:4000/admin/manageUserGroup/5" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:30:59.372Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'd' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 20:30:59 | mysql.updateUserGroup]'
+2016-10-27T18:31:11.175Z - info: ::1 - - [27/Oct/2016:18:31:11 +0000] "POST /admin/manageUserGroup/5 HTTP/1.1" - - "http://localhost:4000/admin/manageUserGroup/5" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:34:19.493Z - info: Server is running @ http://localhost:4000 [2016-10-27 20:34:19 | app.listen]
+2016-10-27T18:34:25.596Z - warn: No results found [2016-10-27 20:34:25 | mysql.selectAllUsersInGroup]
+2016-10-27T18:34:26.079Z - info: ::1 - - [27/Oct/2016:18:34:26 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 200 1057 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:34:26.356Z - info: ::1 - - [27/Oct/2016:18:34:26 +0000] "GET /favicon.ico HTTP/1.1" 404 658 "http://localhost:4000/admin/manageUserGroup/5" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:34:35.751Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'asd' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 20:34:35 | mysql.updateUserGroup]'
+2016-10-27T18:36:26.357Z - info: ::1 - - [27/Oct/2016:18:36:26 +0000] "POST /admin/manageUserGroup/5 HTTP/1.1" - - "http://localhost:4000/admin/manageUserGroup/5" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:36:26.377Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'asd' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 20:36:26 | mysql.updateUserGroup]'
+2016-10-27T18:39:14.588Z - info: Server is running @ http://localhost:4000 [2016-10-27 20:39:14 | app.listen]
+2016-10-27T18:39:16.990Z - warn: No results found [2016-10-27 20:39:16 | mysql.selectAllUsersInGroup]
+2016-10-27T18:39:17.403Z - info: ::1 - - [27/Oct/2016:18:39:17 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:39:21.525Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'c' for key 'name_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-27 20:39:21 | mysql.updateUserGroup]'
+2016-10-27T18:39:29.506Z - info: ::1 - - [27/Oct/2016:18:39:29 +0000] "POST /admin/manageUserGroup/5 HTTP/1.1" - - "http://localhost:4000/admin/manageUserGroup/5" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:47:00.784Z - info: ::1 - - [27/Oct/2016:18:47:00 +0000] "POST /admin/manageUserGroup/5 HTTP/1.1" - - "http://localhost:4000/admin/manageUserGroup/5" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:47:38.323Z - info: Server is running @ http://localhost:4000 [2016-10-27 20:47:38 | app.listen]
+2016-10-27T18:47:41.545Z - warn: No results found [2016-10-27 20:47:41 | mysql.selectAllUsersInGroup]
+2016-10-27T18:47:41.990Z - info: ::1 - - [27/Oct/2016:18:47:41 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:47:44.064Z - error: { [Error: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect integer value: 'admin' for column 'user_id' at row 1]
+  code: 'ER_TRUNCATED_WRONG_VALUE_FOR_FIELD',
+  errno: 1366,
+  sqlState: 'HY000',
+  index: 0 } '[2016-10-27 20:47:44 | mysql.insertUserInGroup]'
+2016-10-27T18:47:44.065Z - error: { [Error: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect integer value: 'd' for column 'user_id' at row 1]
+  code: 'ER_TRUNCATED_WRONG_VALUE_FOR_FIELD',
+  errno: 1366,
+  sqlState: 'HY000',
+  index: 0 } '[2016-10-27 20:47:44 | mysql.insertUserInGroup]'
+2016-10-27T18:49:42.008Z - info: ::1 - - [27/Oct/2016:18:49:42 +0000] "POST /admin/manageUserGroup/5 HTTP/1.1" - - "http://localhost:4000/admin/manageUserGroup/5" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:49:42.014Z - error: { [Error: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect integer value: 'admin' for column 'user_id' at row 1]
+  code: 'ER_TRUNCATED_WRONG_VALUE_FOR_FIELD',
+  errno: 1366,
+  sqlState: 'HY000',
+  index: 0 } '[2016-10-27 20:49:42 | mysql.insertUserInGroup]'
+2016-10-27T18:49:42.015Z - error: { [Error: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect integer value: 'd' for column 'user_id' at row 1]
+  code: 'ER_TRUNCATED_WRONG_VALUE_FOR_FIELD',
+  errno: 1366,
+  sqlState: 'HY000',
+  index: 0 } '[2016-10-27 20:49:42 | mysql.insertUserInGroup]'
+2016-10-27T18:51:33.916Z - info: Server is running @ http://localhost:4000 [2016-10-27 20:51:33 | app.listen]
+2016-10-27T18:51:35.846Z - warn: No results found [2016-10-27 20:51:35 | mysql.selectAllUsersInGroup]
+2016-10-27T18:51:36.302Z - info: ::1 - - [27/Oct/2016:18:51:36 +0000] "GET /admin/manageUserGroup/5 HTTP/1.1" 200 1059 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-27T18:51:38.265Z - error: { [Error: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect integer value: 'admin' for column 'user_id' at row 1]
+  code: 'ER_TRUNCATED_WRONG_VALUE_FOR_FIELD',
+  errno: 1366,
+  sqlState: 'HY000',
+  index: 0 } '[2016-10-27 20:51:38 | mysql.insertUserInGroup]'
+2016-10-27T18:51:38.266Z - error: { [Error: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect integer value: 'd' for column 'user_id' at row 1]
+  code: 'ER_TRUNCATED_WRONG_VALUE_FOR_FIELD',
+  errno: 1366,
+  sqlState: 'HY000',
+  index: 0 } '[2016-10-27 20:51:38 | mysql.insertUserInGroup]'
+2016-10-28T14:13:05.764Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:13:05 | app.listen]
+2016-10-28T14:15:21.204Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:15:21 | app.listen]
+2016-10-28T14:15:26.884Z - error: { [JsonWebTokenError: jwt must be provided] name: 'JsonWebTokenError', message: 'jwt must be provided' } '[2016-10-28 16:15:26 | user.verifyToken]'
+2016-10-28T14:15:27.347Z - info: ::1 - - [28/Oct/2016:14:15:27 +0000] "GET / HTTP/1.1" 200 584 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:15:27.593Z - info: ::1 - - [28/Oct/2016:14:15:27 +0000] "GET /favicon.ico HTTP/1.1" 404 658 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:15:29.000Z - info: ::1 - - [28/Oct/2016:14:15:29 +0000] "GET /login HTTP/1.1" 200 754 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:15:31.723Z - info: Signed new token [2016-10-28 16:15:31 | user.basicAuthCallback]
+2016-10-28T14:15:31.728Z - info: ::1 - - [28/Oct/2016:14:15:31 +0000] "POST /login HTTP/1.1" 302 46 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:15:31.751Z - error: uncaughtException: val.slice is not a function date=Fri Oct 28 2016 16:15:31 GMT+0200 (Mitteleuropäische Sommerzeit), pid=9488, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=80019456, heapTotal=69043456, heapUsed=48308752, loadavg=[0, 0, 0], uptime=662460.7154873, trace=[column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\node_modules\sqlstring\lib\SqlString.js, function=escapeString, line=178, method=null, native=false, column=10, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\node_modules\sqlstring\lib\SqlString.js, function=Object.escape, line=55, method=escape, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\node_modules\sqlstring\lib\SqlString.js, function=Object.format, line=92, method=format, native=false, column=20, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=Connection.format, line=287, method=format, native=false, column=22, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=Connection.query, line=209, method=query, native=false, column=18, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=selectAllUsersInGroup, line=168, method=null, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=482, method=null, native=false, column=13, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=117, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false], stack=[TypeError: val.slice is not a function,     at escapeString (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\node_modules\sqlstring\lib\SqlString.js:178:23),     at Object.escape (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\node_modules\sqlstring\lib\SqlString.js:55:10),     at Object.format (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\node_modules\sqlstring\lib\SqlString.js:92:21),     at Connection.format (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:287:20),     at Connection.query (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:209:22),     at selectAllUsersInGroup (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:168:18),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:482:21,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:117:13),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8)]
+2016-10-28T14:23:39.864Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:23:39 | app.listen]
+2016-10-28T14:23:41.569Z - info: ::1 - - [28/Oct/2016:14:23:41 +0000] "GET / HTTP/1.1" 200 985 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:25:03.835Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:25:03 | app.listen]
+2016-10-28T14:25:05.262Z - info: ::1 - - [28/Oct/2016:14:25:05 +0000] "GET / HTTP/1.1" 200 1088 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:25:08.674Z - error: uncaughtException: val.slice is not a function date=Fri Oct 28 2016 16:25:08 GMT+0200 (Mitteleuropäische Sommerzeit), pid=2524, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=76070912, heapTotal=63895808, heapUsed=40650432, loadavg=[0, 0, 0], uptime=663037.6385004, trace=[column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\node_modules\sqlstring\lib\SqlString.js, function=escapeString, line=178, method=null, native=false, column=10, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\node_modules\sqlstring\lib\SqlString.js, function=Object.escape, line=55, method=escape, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\node_modules\sqlstring\lib\SqlString.js, function=Object.format, line=92, method=format, native=false, column=20, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=Connection.format, line=287, method=format, native=false, column=22, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js, function=Connection.query, line=209, method=query, native=false, column=22, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Object.selectAllUsersInGroup, line=175, method=selectAllUsersInGroup, native=false, column=11, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=getCreateUserCandidate, line=23, method=null, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=283, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=264, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=497, method=null, native=false], stack=[TypeError: val.slice is not a function,     at escapeString (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\node_modules\sqlstring\lib\SqlString.js:178:23),     at Object.escape (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\node_modules\sqlstring\lib\SqlString.js:55:10),     at Object.format (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\node_modules\sqlstring\lib\SqlString.js:92:21),     at Connection.format (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:287:20),     at Connection.query (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\Connection.js:209:22),     at Object.selectAllUsersInGroup (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:175:22),     at getCreateUserCandidate (C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:23:11),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:283:21,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:264:17,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:497:9]
+2016-10-28T14:26:49.659Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:26:49 | app.listen]
+2016-10-28T14:26:49.745Z - info: ::1 - - [28/Oct/2016:14:26:49 +0000] "GET /admin/createUserCandidate HTTP/1.1" 500 1273 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:27:48.261Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:27:48 | app.listen]
+2016-10-28T14:27:50.641Z - error: No username provided [2016-10-28 16:27:50 | mysql.selectUserForUsername]
+2016-10-28T14:27:50.650Z - info: ::1 - - [28/Oct/2016:14:27:50 +0000] "GET /admin/createUserCandidate HTTP/1.1" 302 46 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:27:50.655Z - error: No username provided [2016-10-28 16:27:50 | mysql.selectUserForUsername]
+2016-10-28T14:27:51.051Z - info: ::1 - - [28/Oct/2016:14:27:51 +0000] "GET / HTTP/1.1" 200 658 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:28:41.679Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:28:41 | app.listen]
+2016-10-28T14:28:43.244Z - error: No username provided admin [2016-10-28 16:28:43 | mysql.selectUserForUsername]
+2016-10-28T14:28:43.671Z - info: ::1 - - [28/Oct/2016:14:28:43 +0000] "GET / HTTP/1.1" 200 584 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:29:33.881Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:29:33 | app.listen]
+2016-10-28T14:29:36.452Z - info: ::1 - - [28/Oct/2016:14:29:36 +0000] "GET / HTTP/1.1" 200 1088 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:34:03.432Z - error: No userGroupId provided [2016-10-28 16:34:03 | mysql.selectAllUsersInGroup]
+2016-10-28T14:34:03.447Z - error: uncaughtException: callback is not a function date=Fri Oct 28 2016 16:34:03 GMT+0200 (Mitteleuropäische Sommerzeit), pid=2736, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=77066240, heapTotal=63895808, heapUsed=42072640, loadavg=[0, 0, 0], uptime=663572.4101578, trace=[column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Object.selectAllUsersInGroup, line=190, method=selectAllUsersInGroup, native=false, column=11, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js, function=getCreateUserCandidate, line=23, method=null, native=false, column=21, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=283, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=264, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=497, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=78, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false], stack=[TypeError: callback is not a function,     at Object.selectAllUsersInGroup (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:190:9),     at getCreateUserCandidate (C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\admin.js:23:11),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:283:21,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:264:17,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:497:9,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:78:17),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23)]
+2016-10-28T14:34:48.549Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:34:48 | app.listen]
+2016-10-28T14:34:48.653Z - info: ::ffff:127.0.0.1 - - [28/Oct/2016:14:34:48 +0000] "GET /admin/createUserCandidate HTTP/1.1" 500 1273 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:35:29.880Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:35:29 | app.listen]
+2016-10-28T14:35:32.914Z - info: ::1 - - [28/Oct/2016:14:35:32 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1532 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:35:36.695Z - info: ::1 - - [28/Oct/2016:14:35:36 +0000] "GET /admin/createUserCandidate HTTP/1.1" 304 - "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:36:03.364Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'be0schwarz@gmail.com' for key 'email_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-28 16:36:03 | mysql.insertUserCandidate]'
+2016-10-28T14:36:03.368Z - info: ::1 - - [28/Oct/2016:14:36:03 +0000] "POST /admin/createUserCandidate HTTP/1.1" 302 96 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:36:03.428Z - info: ::1 - - [28/Oct/2016:14:36:03 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1600 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:37:19.726Z - error: { [Error: ER_DUP_ENTRY: Duplicate entry 'be0schwarz@gmail.com' for key 'email_UNIQUE'] code: 'ER_DUP_ENTRY', errno: 1062, sqlState: '23000', index: 0 } '[2016-10-28 16:37:19 | mysql.insertUserCandidate]'
+2016-10-28T14:37:19.727Z - info: ::1 - - [28/Oct/2016:14:37:19 +0000] "POST /admin/createUserCandidate HTTP/1.1" 302 96 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:37:19.767Z - info: ::1 - - [28/Oct/2016:14:37:19 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1600 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:40:08.669Z - info: New user candidate created { user_role_id: 1,
+  email: 'be0schwarz@gmail.com',
+  token: '3c4845d0-61bf-4f05-8906-f2bfd25fdf47' } [2016-10-28 16:40:08 | admin.postCreateUserCandidate]
+2016-10-28T14:40:08.670Z - info: ::1 - - [28/Oct/2016:14:40:08 +0000] "POST /admin/createUserCandidate HTTP/1.1" 302 96 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:40:08.716Z - info: ::1 - - [28/Oct/2016:14:40:08 +0000] "GET /admin/createUserCandidate HTTP/1.1" 200 1635 "http://localhost:4000/admin/createUserCandidate" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:40:30.663Z - info: Verification mail sent: 250 Requested mail action okay, completed: id=0LuP19-1d02Yd1N6V-011hf9 [2016-10-28 16:40:30 | mail.createVerificationMail]
+2016-10-28T14:40:52.864Z - info: ::1 - - [28/Oct/2016:14:40:52 +0000] "GET /registration/3c4845d0-61bf-4f05-8906-f2bfd25fdf47 HTTP/1.1" 200 1205 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:41:02.689Z - warn: No results found experte [2016-10-28 16:41:02 | mysql.selectUserForUsername]
+2016-10-28T14:41:02.868Z - info: New user registered { email: 'be0schwarz@gmail.com',
+  user_role_id: 5,
+  username: 'experte',
+  password: '$2a$10$vOKp6c8a14G1cN5TXLP12eFMKtERkAIf93PmSo9RC7YnouP95pmbu' } [2016-10-28 16:41:02 | user.postRegisterUser]
+2016-10-28T14:41:02.886Z - info: ::1 - - [28/Oct/2016:14:41:02 +0000] "POST /registration/3c4845d0-61bf-4f05-8906-f2bfd25fdf47 HTTP/1.1" 302 56 "http://localhost:4000/registration/3c4845d0-61bf-4f05-8906-f2bfd25fdf47" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:41:02.925Z - info: ::1 - - [28/Oct/2016:14:41:02 +0000] "GET /login HTTP/1.1" 200 864 "http://localhost:4000/registration/3c4845d0-61bf-4f05-8906-f2bfd25fdf47" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:41:03.571Z - error: uncaughtException: candidate is not defined date=Fri Oct 28 2016 16:41:03 GMT+0200 (Mitteleuropäische Sommerzeit), pid=14864, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=67760128, heapTotal=48409344, heapUsed=37185528, loadavg=[0, 0, 0], uptime=663992.5336, trace=[column=83, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=164, method=null, native=false, column=26, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\lib\nodemailer.js, function=, line=329, method=null, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\lib\smtp-transport.js, function=null, line=141, method=null, native=false, column=14, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\node_modules\smtp-connection\lib\smtp-connection.js, function=callback, line=374, method=null, native=false, column=20, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\node_modules\smtp-connection\lib\smtp-connection.js, function=null, line=392, method=null, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\node_modules\smtp-connection\lib\smtp-connection.js, function=SMTPConnection._actionSMTPStream, line=1361, method=_actionSMTPStream, native=false, column=18, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\node_modules\smtp-connection\lib\smtp-connection.js, function=, line=854, method=null, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\node_modules\smtp-connection\lib\smtp-connection.js, function=SMTPConnection._processResponse, line=669, method=_processResponse, native=false, column=10, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\node_modules\smtp-connection\lib\smtp-connection.js, function=SMTPConnection._onData, line=493, method=_onData, native=false, column=13, file=events.js, function=emitOne, line=77, method=null, native=false], stack=[ReferenceError: candidate is not defined,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:164:83,     at Nodemailer.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\lib\nodemailer.js:329:26),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\lib\smtp-transport.js:141:24,     at callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\node_modules\smtp-connection\lib\smtp-connection.js:374:14),     at C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\node_modules\smtp-connection\lib\smtp-connection.js:392:20,     at SMTPConnection._actionSMTPStream (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\node_modules\smtp-connection\lib\smtp-connection.js:1361:16),     at SMTPConnection.<anonymous> (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\node_modules\smtp-connection\lib\smtp-connection.js:854:18),     at SMTPConnection._processResponse (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\node_modules\smtp-connection\lib\smtp-connection.js:669:16),     at SMTPConnection._onData (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\nodemailer\node_modules\nodemailer-smtp-transport\node_modules\smtp-connection\lib\smtp-connection.js:493:10),     at emitOne (events.js:77:13)]
+2016-10-28T14:43:05.811Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:43:05 | app.listen]
+2016-10-28T14:43:12.215Z - info: Signed new token [2016-10-28 16:43:12 | user.basicAuthCallback]
+2016-10-28T14:43:12.225Z - info: ::1 - - [28/Oct/2016:14:43:12 +0000] "POST /login HTTP/1.1" 302 46 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:43:12.245Z - error: uncaughtException: Cannot read property 'name' of undefined date=Fri Oct 28 2016 16:43:12 GMT+0200 (Mitteleuropäische Sommerzeit), pid=14976, uid=null, gid=null, cwd=C:\Users\BSD\IdeaProjects\Bewertungsportal, execPath=c:\program files\nodejs\node.exe, version=v4.2.2, argv=[c:\program files\nodejs\node.exe, C:\Users\BSD\IdeaProjects\Bewertungsportal\app], rss=54165504, heapTotal=53612544, heapUsed=23784280, loadavg=[0, 0, 0], uptime=664121.2091929, trace=[column=62, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=30, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js, function=null, line=264, method=null, native=false, column=9, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=null, line=538, method=null, native=false, column=17, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js, function=Query._callback, line=77, method=_callback, native=false, column=24, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js, function=Query.Sequence.end, line=85, method=Sequence.end, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query._handleFinalResultPacket, line=144, method=_handleFinalResultPacket, native=false, column=8, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js, function=Query.EofPacket, line=128, method=EofPacket, native=false, column=23, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol._parsePacket, line=280, method=_parsePacket, native=false, column=12, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js, function=Parser.write, line=74, method=write, native=false, column=16, file=C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js, function=Protocol.write, line=39, method=write, native=false], stack=[TypeError: Cannot read property 'name' of undefined,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:30:62,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\routes\user.js:264:17,     at C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:538:9,     at Query._callback (C:\Users\BSD\IdeaProjects\Bewertungsportal\mysql.js:77:17),     at Query.Sequence.end (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Sequence.js:85:24),     at Query._handleFinalResultPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:144:8),     at Query.EofPacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\sequences\Query.js:128:8),     at Protocol._parsePacket (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:280:23),     at Parser.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Parser.js:74:12),     at Protocol.write (C:\Users\BSD\IdeaProjects\Bewertungsportal\node_modules\mysql\lib\protocol\Protocol.js:39:16)]
+2016-10-28T14:44:59.928Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:44:59 | app.listen]
+2016-10-28T14:45:00.428Z - info: ::1 - - [28/Oct/2016:14:45:00 +0000] "GET / HTTP/1.1" 200 721 "http://localhost:4000/login" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:45:07.909Z - info: ::1 - - [28/Oct/2016:14:45:07 +0000] "GET /expert/createIndicator HTTP/1.1" 404 669 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:45:53.238Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:45:53 | app.listen]
+2016-10-28T14:45:54.498Z - info: ::1 - - [28/Oct/2016:14:45:54 +0000] "GET /expert/createIndicator HTTP/1.1" 500 2346 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+
+2016-10-28T14:46:18.725Z - info: Server is running @ http://localhost:4000 [2016-10-28 16:46:18 | app.listen]
+2016-10-28T14:46:20.781Z - info: ::1 - - [28/Oct/2016:14:46:20 +0000] "GET /expert/createIndicator HTTP/1.1" 200 1512 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36"
+

@@ -1,11 +1,14 @@
 /*
  Modules
  */
+var nodemailer = require('nodemailer');
 var bcrypt = require('bcrypt-nodejs');
 var jwt = require('jsonwebtoken');
+
 var mysql = require('../mysql');
 var logger = require('../logger');
 var config = require('../config');
+var helper = require('../helper');
 
 
 
@@ -19,16 +22,27 @@ var getIndex = function (req, res) {
             //logger.debug("userRoles: ", userRoles, "user.getIndex");
             if (user.user_role_id == userRoles.publicUser.id || user.user_role_id == userRoles.privateUser.id || user.user_role_id == userRoles.admin.id || user.user_role_id == userRoles.auditor.id || user.user_role_id == userRoles.expert.id) {
                 var userRole;
+
                 if (user.user_role_id == userRoles.admin.id) {
                     userRole = userRoles.admin;
+                } else if (user.user_role_id == userRoles.expert.id) {
+                    userRole = userRoles.expert;
+                } else if (user.user_role_id == userRoles.auditor.id) {
+                    userRole = userRoles.auditor;
+                } else if (user.user_role_id == userRoles.privateUser.id) {
+                    userRole = userRoles.privateUser;
+                } else if (user.user_role_id == userRoles.publicUser.id) {
+                    userRole = userRoles.publicUser;
                 }
 
-                logger.debug("Load start page for ", userRole.name, "user.getIndex");
-                var userRoleTitle = ' (' + userRole.name + ')';
+                if (userRole)  {
+                    logger.debug("Load start page for ", userRole.name, "user.getIndex");
+                    var userRoleTitle = ' (' + userRole.name + ')';
+                }
 
                 mysql.getStartPageData(user, function (groupData) {
                     logger.debug(groupData)
-                    res.render('index', {title: 'Start' + userRoleTitle, user: user, userRoles: userRoles, groupData: groupData, errMessage: req.flash('errMessage')});
+                    res.render('index', {title: 'Start' + userRoleTitle, user: user, userRoles: userRoles, groupData: groupData, errMessage: req.flash('errMessage'), succMessage: req.flash('succMessage')});
                 });
             }
             else {
@@ -38,7 +52,7 @@ var getIndex = function (req, res) {
         }
         else {
             logger.debug("no user authenticated", "user.getIndex");
-            res.render('index', {title: 'Start', user: user, errMessage: req.flash('errMessage')});
+            res.render('index', {title: 'Start', user: user, errMessage: req.flash('errMessage'), succMessage: req.flash('succMessage')});
         }
     })
 };
@@ -47,16 +61,16 @@ exports.getIndex = getIndex;
 
 
 /*
- Authentication
+ Frontend Rendering
  */
 var getLogin = function (req, res) {
-    res.render('login', {errMessage: req.flash('errMessage')});
+    res.render('login', {title: "Login", errMessage: req.flash('errMessage'), succMessage: req.flash('succMessage')});
 };
 exports.getLogin = getLogin;
 
 var postLogin = function (req, res, next) {
     if (req.body.username && req.body.password) {
-        mysql.selectUserForUsername(req, res, next, req.body.username, function (req, res, next, result) {
+        mysql.getUserForUsername(req, res, next, req.body.username, function (req, res, next, result) {
             if (result) {
                 if (bcrypt.compareSync(req.body.password, result.password)) {
                     logger.debug("Basic authenticated", "app.BasicStrategy");
@@ -97,9 +111,120 @@ var getLogout = function (req, res) {
 };
 exports.getLogout = getLogout;
 
+var getRegisterUser = function(req, res) {
+    res.clearCookie('auth');
+    var token = req.params.token;
+    if (token) {
+        mysql.selectUserCandidateForToken(token, function (userCandidate) {
+            if (userCandidate && typeof userCandidate === 'object' && typeof userCandidate !== '[object Array]') {
+                var roleName = "-";
+                var role = helper.getUserRoleForId(userCandidate.user_role_id);
+                if (role) roleName = role.name;
+                res.render('registerUser', {title: "Registrieren", userCandidate: userCandidate, roleName: roleName, token: token, errMessage: req.flash('errMessage'), succMessage: req.flash('succMessage')});
+            }
+            else {
+                logger.error(userCandidate, "user.getRegisterUser");
+                req.flash('errMessage', 'Ungültiger Token');
+                res.redirect('/');
+            }
+        });
+    }
+    else {
+        logger.error("No token provided", "user.getRegisterUser");
+        req.flash('errMessage', 'Ungültiger Token');
+        res.redirect('/');
+    }
+};
+exports.getRegisterUser = getRegisterUser;
+
+var postRegisterUser = function(req, res) {
+    var token = req.body.token;
+    logger.debug(token)
+    if (token) {
+        if (req.body.username) {
+            var user = mysql.selectUserForUsername(req.body.username, function (user) {
+                if (!user) {
+                    if (req.body.password1 == req.body.password2) {
+                        var user = validateUser(req.body);
+                        if (user) {
+                            mysql.insertUser(user, function (results) {
+                                if (results) {
+                                    logger.info("New user registered", user, "user.postRegisterUser");
+                                    mysql.updateUserCandidateRegistered(token, function (results) {
+                                        if (results) {
+                                            var hostAdress = config.configs.serverConfig.hostAddress;
+                                            var smtpConfig = config.configs.smtpConfig;
+                                            var transporter = nodemailer.createTransport(smtpConfig);
+
+                                            var mailOptions = {
+                                                from: '"Bewertungsportal"<' + smtpConfig.auth.user + '>', // sender address
+                                                to: user.email,
+                                                subject: 'Willkommen beim Bewertungsportal ' + user.username,
+                                                text: 'Herzlich willkommen ' + user.username + ', Ihr Account wurde erfolgreich erstellt. Besuchen Sie das Bewertungsportal über folgende Adresse: ' + hostAdress,
+                                                html: 'Herzlich willkommen ' + user.username + ',<br/><br/>Ihr Account wurde erfolgreich erstellt. Besuchen Sie das Bewertungsportal über folgende Adresse:<br/><a href="' + hostAdress + '">' + hostAdress + '</a>'
+                                            };
+
+                                            transporter.sendMail(mailOptions, function (error, info) {
+                                                logger.debug(mailOptions, "user.postRegisterUser");
+                                                if (error) {
+                                                    logger.error(error, "user.postRegisterUser");
+                                                }
+                                                else {
+                                                    logger.debug('Welcome mail sent: ' + info.response, "user.postRegisterUser");
+                                                    mysql.updateUserCandidateSent(token, function(results) {});
+                                                }
+                                            });
+
+                                            req.flash('succMessage', 'Registrierung erfolgreich, bitte melden Sie sich an.');
+                                            res.redirect('/login');
+                                        } else {
+                                            req.flash('errMessage', 'Server Error');
+                                            res.redirect('/registration/' + token);
+                                        }
+                                    });
+                                } else {
+                                    req.flash('errMessage', 'Server Error');
+                                    res.redirect('/registration/' + token);
+                                }
+                            });
+                        }
+                        else {
+                            req.flash('errMessage', 'Nutzerdaten nicht valide');
+                            res.redirect('/registration/' + token);
+                        }
+                    }
+                    else {
+                        req.flash('errMessage', 'Passwörter müssen übereinstimmen');
+                        res.redirect('/registration/' + token);
+                    }
+                }
+                else {
+                    req.flash('errMessage', 'Username bereits registriert');
+                    res.redirect('/registration/' + token);
+                }
+            });
+        }
+        else {
+            req.flash('errMessage', 'Ungültiger Username');
+            res.redirect('/registration/' + token);
+        }
+    }
+    else {
+        req.flash('errMessage', 'Ungültiger Token');
+        res.redirect('/');
+    }
+};
+exports.postRegisterUser = postRegisterUser;
+
+
+
+/*
+Authentication functions
+ */
+
 var basicAuth = function (req, res, next) {
     if (req.body.username && req.body.password) {
-        mysql.selectUserForUsername(req, res, next, req.body.username, basicAuthCallback)
+        mysql.getUserForUsername(req, res, next, req.body.username, basicAuthCallback)
     }
     else {
         logger.debug("No body data");
@@ -144,8 +269,7 @@ var verifyToken = function (authCookie, callback) {
     }
 
     if (decoded && decoded.username) {
-        logger.debug("search user", "user.verifyToken");
-        mysql.selectUserForUsername(null, null, null, decoded.username, function (req, res, next, user) {
+        mysql.getUserForUsername(null, null, null, decoded.username, function (req, res, next, user) {
             if (user && user.username) {
                 callback(user)
             }
@@ -189,11 +313,6 @@ var isUserRole = function (req, res, next, isRole) {
 };
 exports.isUserRole = isUserRole;
 
-
-
-/*
- Functions
- */
 var initializeUserRoles = function (callback) {
     var userRoleNames = config.configs.dataConfig.userRoleNames;
     var userRoles = {publicUser: null, privateUser: null, admin: null, auditor: null, expert: null};
@@ -231,3 +350,44 @@ var initializeUserRoles = function (callback) {
     });
 };
 exports.initializeUserRoles = initializeUserRoles;
+
+
+
+/*
+Validation
+ */
+
+var validateUser = function(user) {
+    logger.debug(user, "user.validateUser");
+    if (!user.email || !user.user_role_id || !user.username || !user.password1 || !user.password2) {
+        logger.warn("Required fields not found", "user.validateUser");
+        return null;
+    }
+
+    user.user_role_id = helper.tryParseInt(user.user_role_id);
+    if (!user.user_role_id) {
+        logger.warn("user_role_id invalid", "user.validateUser");
+        return false;
+    }
+
+    if (user.password1 != user.password2) {
+        logger.warn("passwords do not match", "user.validateUser");
+        return false;
+    }
+    else {
+        user.password = bcrypt.hashSync(user.password1);
+        delete user.password1;
+        delete user.password2;
+        delete user.token;
+    }
+
+    var validKeys = ["email", "user_role_id", "username", "password"];
+    for (var key in user) {
+        if (validKeys.indexOf(key) < 0) {
+            logger.warn("Found unknown Key: ", key, user[key], "user.validateUser");
+            delete(user[key])
+        }
+    }
+
+    return user;
+};

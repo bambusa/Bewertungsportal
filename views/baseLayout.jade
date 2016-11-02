@@ -1,0 +1,16 @@
+extends baseDoc
+
+block body
+
+    include ./includes/head
+
+    div#main
+        include ./includes/left
+
+        div#middle.floatLeft
+            div.padding
+                block middle
+
+        include ./includes/right
+
+    include ./includes/bottom

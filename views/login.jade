@@ -1,55 +1,14 @@
-extends layout
+extends baseLayout
 
-block content
+block middle
 
-    div#head
-        //p Header
-        h1 Nutzer erstellen
-        if user
-            p Hallo #{user.username}
-            a(href='/logout') Logout
 
-        if errMessage && errMessage.length > 0
-            div.errMessage
-                p.errMessage= errMessage
-
-        if succMessage && succMessage.length > 0
-            div.succMessage
-                p.succMessage= succMessage
-
-    div#main
-        //p Main
-        div#left.floatLeft
-            div.padding
-                div#mainMenu
-                    h3 Main Menu
-                    ul
-                        if user.user_role_id == userRoles.admin.id
-                            li
-                                a(href="/") Start
-                            li
-                                b Nutzer erstellen
-                            li
-                                a(href="/admin/createUserGroup") Nutzergruppe erstellen
-                            li
-                                a(href="/admin/manageUserGroups") Nutzer zu Gruppen zuordnen
-
-        div#middle.floatLeft
-            div.padding
-                div#content
-                    form(action="/login", method="post")
-                        p Username:
-                            input(type="text", name="username")
-                        p Passwort
-                            input(type="text", name="password")
-                        br
-                        br
-                        button(type="submit") Anmelden
-
-        div#right.floatLeft
-            div.padding
-                div#contextMenu
-                    h3 Context Menu
-
-    div#bottom
-        //p Bottom
+            div#content
+                form(action="/login", method="post")
+                    p Username:
+                        input(type="text", name="username")
+                    p Passwort
+                        input(type="text", name="password")
+                    br
+                    br
+                    button(type="submit") Anmelden

@@ -1,0 +1,18 @@
+div#head
+    //p Header
+    h1= title
+    if user
+        div#user
+            p Hallo #{user.username}
+            a(href='/logout') Logout
+    else
+        div#login
+            a(href='/login') Login
+
+    if errMessage && errMessage.length > 0
+        div.errMessage
+            p.errMessage= errMessage
+
+    if succMessage && succMessage.length > 0
+        div.succMessage
+            p.succMessage= succMessage

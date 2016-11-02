@@ -66,6 +66,7 @@ div > div.padding {
 div.errMessage {
     border: 1px solid #880000;
     padding: 10px;
+    padding-bottom: 0;
 }
 
 p.errMessage {
@@ -76,6 +77,7 @@ p.errMessage {
 div.succMessage {
     border-bottom: 1px solid #00A000;
     padding: 10px;
+    padding-bottom: 0;
 }
 
 p.succMessage {

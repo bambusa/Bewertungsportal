@@ -1,67 +1,20 @@
-extends layout
+extends baseLayout
 
-block content
+block middle
 
-    div#head
-        //p Header
-        h1= title
-        if user
-            div#user
-                p Hallo #{user.username}
-                a(href='/logout') Logout
-        else
-            div#login
-                a(href='/login') Login
-
-        if errMessage && errMessage.length > 0
-            div.errMessage
-                p.errMessage= errMessage
-
-        if succMessage && succMessage.length > 0
-            div.succMessage
-                p.succMessage= succMessage
-
-    div#main
-        //p Main
-        div#left.floatLeft
-            div.padding
-                div#mainMenu
-                    h3 Main Menu
-                    if user && userRoles
+    div#groupData
+        h3 Group Data
+        if groupData
+            if groupData.users
+                h2 Neueste Benutzer
+                div#users.groupDataTable
                     ul
-                        if user.user_role_id == userRoles.admin.id
-                            li
-                                b Start
-                            li
-                                a(href="/admin/createUserCandidate") Nutzer erstellen
-                            li
-                                a(href="/admin/createUserGroup") Nutzergruppe erstellen
-                            li
-                                a(href="/admin/manageUserGroups") Nutzer zu Gruppen zuordnen
+                        each user in groupData.users
+                            li= user.username
 
-        div#middle.floatLeft
-            div.padding
-                div#groupData
-                    h3 Group Data
-                    if groupData
-                        if groupData.users
-                            h2 Neueste Benutzer
-                            div#users.groupDataTable
-                                ul
-                                    each user in groupData.users
-                                        li= user.username
-
-                        if groupData.userGroups
-                            h2 Neueste Nutzergruppen
-                            div#userGroups.groupDataTable
-                                ul
-                                    each group in groupData.userGroups
-                                        li= group.name
-
-        div#right.floatLeft
-            div.padding
-                div#contextMenu
-                    h3 Context Menu
-
-    div#bottom
-        //p Bottom
+            if groupData.userGroups
+                h2 Neueste Nutzergruppen
+                div#userGroups.groupDataTable
+                    ul
+                        each group in groupData.userGroups
+                            li= group.name
