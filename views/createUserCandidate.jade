@@ -5,12 +5,12 @@ block middle
     div#content
         form(action="/admin/createUserCandidate", method="post")
             div
-                p Nutzer-Rolle:
+                p Nutzer-Rolle*:
                 select(name = "user_role_id")
                     each role, key in userRoles
                         option(value=role.id) #{role.name}
             div
-                p Email:
+                p Email*:
                     input(type="text", name="email")
             //div
             //    p Nutzergruppe

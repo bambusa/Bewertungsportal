@@ -5,11 +5,11 @@ block middle
         div#content
             form(action="/admin/createUserGroup", method="post")
                 div
-                    p Name:
+                    p Name*:
                         input(type="text", name="name")
                 div
                     p Beschreibung:
-                        input(type="text", name="description")
+                        textarea(id="description")
                 br
                 br
                 button(type="submit") Speichern

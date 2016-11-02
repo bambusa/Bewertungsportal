@@ -15,24 +15,25 @@ var helper = require('../helper');
 /*
  Start Page
  */
+
 var getIndex = function (req, res) {
     var user = verifyToken(req.cookies.auth, function (user) {
         if (user) {
             //logger.debug("user: ", user, "user.getIndex");
-            //logger.debug("userRoles: ", userRoles, "user.getIndex");
-            if (user.user_role_id == userRoles.publicUser.id || user.user_role_id == userRoles.privateUser.id || user.user_role_id == userRoles.admin.id || user.user_role_id == userRoles.auditor.id || user.user_role_id == userRoles.expert.id) {
+            //logger.debug("USER_ROLES: ", USER_ROLES, "user.getIndex");
+            if (user.user_role_id == USER_ROLES.publicUser.id || user.user_role_id == USER_ROLES.privateUser.id || user.user_role_id == USER_ROLES.admin.id || user.user_role_id == USER_ROLES.auditor.id || user.user_role_id == USER_ROLES.expert.id) {
                 var userRole;
 
-                if (user.user_role_id == userRoles.admin.id) {
-                    userRole = userRoles.admin;
-                } else if (user.user_role_id == userRoles.expert.id) {
-                    userRole = userRoles.expert;
-                } else if (user.user_role_id == userRoles.auditor.id) {
-                    userRole = userRoles.auditor;
-                } else if (user.user_role_id == userRoles.privateUser.id) {
-                    userRole = userRoles.privateUser;
-                } else if (user.user_role_id == userRoles.publicUser.id) {
-                    userRole = userRoles.publicUser;
+                if (user.user_role_id == USER_ROLES.admin.id) {
+                    userRole = USER_ROLES.admin;
+                } else if (user.user_role_id == USER_ROLES.expert.id) {
+                    userRole = USER_ROLES.expert;
+                } else if (user.user_role_id == USER_ROLES.auditor.id) {
+                    userRole = USER_ROLES.auditor;
+                } else if (user.user_role_id == USER_ROLES.privateUser.id) {
+                    userRole = USER_ROLES.privateUser;
+                } else if (user.user_role_id == USER_ROLES.publicUser.id) {
+                    userRole = USER_ROLES.publicUser;
                 }
 
                 if (userRole)  {
@@ -41,8 +42,7 @@ var getIndex = function (req, res) {
                 }
 
                 mysql.getStartPageData(user, function (groupData) {
-                    logger.debug(groupData)
-                    res.render('index', {title: 'Start' + userRoleTitle, user: user, userRoles: userRoles, groupData: groupData, errMessage: req.flash('errMessage'), succMessage: req.flash('succMessage')});
+                    res.render('index', {title: 'Start' + userRoleTitle, user: user, userRoles: USER_ROLES, groupData: groupData, errMessage: req.flash('errMessage'), succMessage: req.flash('succMessage')});
                 });
             }
             else {
@@ -63,6 +63,7 @@ exports.getIndex = getIndex;
 /*
  Frontend Rendering
  */
+
 var getLogin = function (req, res) {
     res.render('login', {title: "Login", errMessage: req.flash('errMessage'), succMessage: req.flash('succMessage')});
 };
@@ -264,21 +265,9 @@ var verifyToken = function (authCookie, callback) {
     var decoded = false;
     try {
         decoded = jwt.verify(authCookie, config.configs.serverConfig.secret, {algorithms: "HS256"})
+        callback(decoded)
     } catch (err) {
         logger.error(err, "user.verifyToken")
-    }
-
-    if (decoded && decoded.username) {
-        mysql.getUserForUsername(null, null, null, decoded.username, function (req, res, next, user) {
-            if (user && user.username) {
-                callback(user)
-            }
-            else {
-                callback(false)
-            }
-        })
-    }
-    else {
         callback(false)
     }
 };
@@ -286,10 +275,10 @@ exports.verifyToken = verifyToken;
 
 var isUserRole = function (req, res, next, isRole) {
     if (isRole && isRole.id) {
-        var user = verifyToken(req.cookies.auth, function (user) {
+        verifyToken(req.cookies.auth, function (user) {
             if (user) {
-                req.user = user;
                 if (user.user_role_id == isRole.id) {
+                    req.user = user;
                     next(req, res)
                 }
                 else {
@@ -340,7 +329,7 @@ var initializeUserRoles = function (callback) {
                     }
                 }
             });
-            //logger.debug(userRoles)
+            //logger.debug(USER_ROLES)
             callback(userRoles);
         }
         else {
@@ -360,7 +349,7 @@ Validation
 var validateUser = function(user) {
     logger.debug(user, "user.validateUser");
     if (!user.email || !user.user_role_id || !user.username || !user.password1 || !user.password2) {
-        logger.warn("Required fields not found", "user.validateUser");
+        logger.warn("Required fields not found", user, "user.validateUser");
         return null;
     }
 
@@ -391,3 +380,4 @@ var validateUser = function(user) {
 
     return user;
 };
+exports.validateUser = validateUser;

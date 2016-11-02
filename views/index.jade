@@ -5,16 +5,37 @@ block middle
     div#groupData
         h3 Group Data
         if groupData
+
+            // Admin
             if groupData.users
                 h2 Neueste Benutzer
                 div#users.groupDataTable
                     ul
                         each user in groupData.users
-                            li= user.username
+                            li
+                                a(href="/admin/manageUser/"+user.user_id) #{user.username}
 
             if groupData.userGroups
                 h2 Neueste Nutzergruppen
                 div#userGroups.groupDataTable
                     ul
                         each group in groupData.userGroups
-                            li= group.name
+                            li
+                                a(href="/admin/manageUserGroup/"+group.user_group_id) #{group.name}
+
+            // Experte
+            if groupData.sets
+                h2 Indikatoren-Sets
+                div#userGroups.groupDataTable
+                    ul
+                        each set in groupData.sets
+                            li
+                                a(href="/expert/manageSet/"+set.indicator_set_id) #{set.name}
+
+            if groupData.indicators
+                h2 Indikatoren
+                div#users.groupDataTable
+                    ul
+                        each indicator in groupData.indicators
+                            li
+                                a(href="/expert/manageIndicator/"+indicator.indicator_id) #{indicator.name}

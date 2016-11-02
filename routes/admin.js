@@ -9,6 +9,7 @@ var mysql = require('../mysql');
 var logger = require('../logger');
 var config = require('../config');
 var helper = require('../helper');
+var userModule = require('./user');
 
 
 
@@ -21,7 +22,7 @@ Admin Pages
  */
 var getCreateUserCandidate = function(req, res) {
     mysql.selectAllUserGroupsByDate(function(userGroups) {
-        res.render('createUserCandidate', {title: "Neuen Nutzer erstellen", user: req.user, userRoles: userRoles, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
+        res.render('createUserCandidate', {title: "Neuen Nutzer erstellen", user: req.user, userRoles: USER_ROLES, userGroups: userGroups, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
     });
 };
 exports.getCreateUserCandidate = getCreateUserCandidate;
@@ -30,7 +31,7 @@ exports.getCreateUserCandidate = getCreateUserCandidate;
  * Post function from user candidate form, validate user candidate data and save to database
  */
 var postCreateUserCandidate = function(req, res) {
-    var candidate = validateUserCandidate(req.body);
+    var candidate = user.validate(req.body);
     if (candidate) {
         mysql.insertUserCandidate(candidate, function(results) {
             if (results) {
@@ -50,8 +51,57 @@ var postCreateUserCandidate = function(req, res) {
 };
 exports.postCreateUserCandidate = postCreateUserCandidate;
 
+var getManageUser = function(req, res) {
+    if (req.params.userId) {
+        mysql.selectUserForUserId(req.params.userId, function(user) {
+            if (user) {
+                res.render('manageUser', {title: "Nutzer bearbeiten", user: req.user, userRoles: USER_ROLES, manageUser: user, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
+            }
+            else {
+                req.flash('errMessage', 'User nicht gefunden');
+                res.redirect('/');
+            }
+        })
+    }
+    else {
+        req.flash('errMessage', 'User ID ungültig');
+        res.redirect('/');
+    }
+};
+exports.getManageUser = getManageUser;
+
+var postManageUser = function(req, res) {
+    if (req.params.userId) {
+        var user = req.body;
+        if (user.password == "") delete user.password;
+        user.user_id = req.params.userId;
+
+        if (user) {
+            mysql.updateUser(user, function(results) {
+                if (results) {
+                    logger.info("User updated", user, "admin.postManageUser");
+                    req.flash('succMessage', 'Nutzer gespeichert...');
+                    res.redirect('/');
+                } else {
+                    req.flash('errMessage', 'Server Error');
+                    res.redirect('/admin/manageUser/'+req.params.userId);
+                }
+            })
+        }
+        else {
+            req.flash('errMessage', 'Nutzerdaten nicht valide');
+            res.redirect('/admin/manageUser/'+req.params.userId);
+        }
+    }
+    else {
+        req.flash('errMessage', 'User ID ungültig');
+        res.redirect('/');
+    }
+};
+exports.postManageUser = postManageUser;
+
 var getCreateUserGroup = function(req, res) {
-    res.render('createUserGroup', {title: "Neue Nutzergruppe erstellen", succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
+    res.render('createUserGroup', {title: "Neue Nutzergruppe erstellen", user: req.user, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
 };
 exports.getCreateUserGroup = getCreateUserGroup;
 
@@ -60,7 +110,7 @@ var postCreateUserGroup = function(req, res) {
         if (!results) {
             var userGroup = validateUserGroup(req.body);
             if (userGroup) {
-                mysql.deleteUserInGroup(userGroup, function (results) {
+                mysql.insertUserGroup(userGroup, function (results) {
                     if (results) {
                         logger.info("New user group created", userGroup, "admin.postCreateUserGroup");
                         req.flash('succMessage', 'Nutzergruppe erstellt');
@@ -92,7 +142,7 @@ var getManageUserGroup = function(req, res) {
                 logger.debug(userGroup, "admin.getManageUserGroup");
                 mysql.selectAllUsersNotInGroup(id, function (otherUsers) {
                     mysql.selectAllUsersInGroup(id, function (groupUsers) {
-                        res.render('manageUserGroup', {title: "Nutzergruppe verwalten", userGroup: userGroup, otherUsers: otherUsers, groupUsers: groupUsers, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
+                        res.render('manageUserGroup', {title: "Nutzergruppe verwalten", user: req.user, userGroup: userGroup, otherUsers: otherUsers, groupUsers: groupUsers, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
                     });
                 });
             }
@@ -112,13 +162,29 @@ exports.getManageUserGroup = getManageUserGroup;
 var postManageUserGroup = function(req, res) {
     var id = req.params.userGroupId;
     if (id) {
-        var userGroup = {name: req.body.name, description: req.body.description};
-        updateUserGroup(userGroup, function(result) {
-            addUsersToGroup(id, req.body.addUser, function(result) {
-                removeUsersFromGroup(id, req.body.removeUsers, function(result) {
-
+        var userGroup = {name: req.body.name, description: req.body.description, user_group_id: id};
+        updateUserGroup(id, userGroup, function(result) {
+            if (result) {
+                addUsersToGroup(id, req.body.addUser, function (result) {
+                    if (result) {
+                        removeUsersFromGroup(id, req.body.removeUser, function (result) {
+                            if (result) {
+                                req.flash('succMessage', 'Nutzergruppe gespeichert');
+                                res.redirect('/');
+                            } else {
+                                    req.flash('errMessage', 'Server Error');
+                                    res.redirect('/admin/manageUserGroup/'+id);
+                                }
+                        });
+                    } else {
+                        req.flash('errMessage', 'Server Error');
+                        res.redirect('/admin/manageUserGroup/'+id);
+                    }
                 });
-            });
+            } else {
+                req.flash('errMessage', 'Server Error');
+                res.redirect('/admin/manageUserGroup/'+id);
+            }
         });
     }
     else {
@@ -134,15 +200,22 @@ exports.postManageUserGroup = postManageUserGroup;
 Helper functions
  */
 
-var updateUserGroup = function(userGroup, callback) {
+var updateUserGroup = function(userGroupId, userGroup, callback) {
     if (userGroup && (userGroup.name || userGroup.description)) {
-        logger.debug("Change user group data: ", userGroup, "admin.updateUserGroup");
-        mysql.updateUserGroup(userGroup, function(results) {
-            if (results) {
-                callback(true);
+        mysql.selectUserGroupForId(userGroupId, function(dbGroup) {
+            if (dbGroup.name != userGroup.name || dbGroup.description != userGroup.description) {
+                logger.debug("Change user group data: ", userGroup, "admin.updateUserGroup");
+                mysql.updateUserGroup(userGroup, function(results) {
+                    if (results) {
+                        callback(true);
+                    }
+                    else {
+                        callback(false);
+                    }
+                });
             }
             else {
-                callback(false);
+                callback(true);
             }
         });
     }
@@ -153,8 +226,8 @@ var updateUserGroup = function(userGroup, callback) {
 
 var addUsersToGroup = function(userGroupId, addUsers, callback) {
     if (addUsers && addUsers.length > 0) {
-        logger.debug("Add otherUsers: ", addUsers, "admin.addUsersToGroup");
-        var is = 1;
+        logger.debug("Add users: ", addUsers, "admin.addUsersToGroup");
+        var is = 0;
         var should = addUsers.length;
         for (key in addUsers) {
             mysql.insertUserInGroup(userGroupId, addUsers[key], function(results) {
@@ -171,10 +244,10 @@ var addUsersToGroup = function(userGroupId, addUsers, callback) {
 var removeUsersFromGroup = function(userGroupId, removeUsers, callback) {
     if (removeUsers && removeUsers.length > 0) {
         logger.debug("Remove users: ", removeUsers, "admin.removeUsersFromGroup");
-        var is = 1;
+        var is = 0;
         var should = removeUsers.length;
         for (key in removeUsers) {
-            mysql.deleteUsersFromGroup(userGroupId, removeUsers[key], function(results) {
+            mysql.deleteUserFromGroup(userGroupId, removeUsers[key], function(results) {
                 is++;
                 if (should == is) callback(true);
             })
@@ -183,7 +256,7 @@ var removeUsersFromGroup = function(userGroupId, removeUsers, callback) {
     else {
         callback(true);
     }
-}
+};
 
 
 
@@ -233,7 +306,7 @@ Validation
 var validateUserCandidate = function(candidate) {
     //logger.debug(candidate, "admin.validateUserCandidate");
     if (!candidate.email || !candidate.user_role_id) {
-        logger.warn("Required fields not found", "admin.validateUserCandidate");
+        logger.warn("Required fields not found", candidate, "admin.validateUserCandidate");
         return null;
     }
 
@@ -259,7 +332,7 @@ var validateUserCandidate = function(candidate) {
 var validateUserGroup = function(userGroup) {
     //logger.debug(candidate, "admin.validateUserCandidate");
     if (!userGroup.name) {
-        logger.warn("Required fields not found", "admin.validateUserGroup");
+        logger.warn("Required fields not found", userGroup, "admin.validateUserGroup");
         return null;
     }
 

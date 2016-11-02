@@ -61,7 +61,7 @@ var server = app.listen(app.get('port'), function (err) {
     logger.info(message, "app.listen");
     global.dbConnection = mysql.initializeConnection();
     user.initializeUserRoles(function(userRoles) {
-        global.userRoles = userRoles;
+        global.USER_ROLES = userRoles;
     });
 
     var verificationExpirationCheck = setInterval(admin.checkNewUserCandidates, config.configs.serverConfig.verificationTimer)

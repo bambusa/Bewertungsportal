@@ -1,0 +1,105 @@
+extends baseLayout
+
+block middle
+
+    div#content
+        form(action="/expert/createIndicatorSet", method="post")
+            input(type="hidden", name="user_id", value=user.user_id)
+            if user.user_group_id
+                input(type="hidden", name="user_group_id", value=user.user_group_id)
+
+            div.formBlock
+                h5 Indikatoren-Set
+                div
+                    p Name*:
+                        input(type="text", name="name")
+                div
+                    p Beschreibung:
+                        textarea(id="description")
+            div.formBlock
+                h5 MMEI-Matrix (optional)
+                div
+                    table
+                        thead
+                            tr
+                                th
+                                th Konzeptionell
+                                th Technologisch
+                                th Organisational
+                        tbody
+                            tr
+                                td
+                                    b Geschäftlich
+                                td
+                                    p Dokumentierte Geschäfts-Strategien und -Politik
+                                    input(type="radio", name="mmei_cell_id" value="8")
+                                td
+                                    p Grundlegende ICT Infrastruktur und Plattform
+                                    input(type="radio", name="mmei_cell_id" value="12")
+                                td
+                            tr
+                                td
+                                    b Prozess
+                                td
+                                    p Dokumentierte Prozesse
+                                    input(type="radio", name="mmei_cell_id" value="9")
+                                td
+                                    p ICT Support für Prozesse, der ad hoc Prozess-Informationsaustausch ermöglicht
+                                    input(type="radio", name="mmei_cell_id" value="13")
+                                td
+                                    p Definierte und etablierte Organisationsstrukturen, sowie identifizierte Verantwortlichkeiten und Authoritäten
+                                    input(type="radio", name="mmei_cell_id" value="16")
+                            tr
+                                td
+                                    b Dienste
+                                td
+                                    p Dokumentierte Dienste
+                                    input(type="radio", name="mmei_cell_id" value="10")
+                                td
+                                    p Verknüpfbare Dienste und Applilkationen, die ad hoc Informationsaustausch ermöglichen
+                                    input(type="radio", name="mmei_cell_id" value="14")
+                                td
+                                    p Definierte und etablierte Organisationsstrukturen, sowie identifizierte Verantwortlichkeiten und Authoritäten
+                                    input(type="radio", name="mmei_cell_id" value="17")
+                            tr
+                                td
+                                    b Daten
+                                td
+                                    p Dokumentierte Datenmodelle
+                                    input(type="radio", name="mmei_cell_id" value="11")
+                                td
+                                    p Verknüpfbare Datenspeicherung, die einfachen elektronischen Austausch ermöglicht
+                                    input(type="radio", name="mmei_cell_id" value="15")
+                                td
+                                    p Definierte und etablierte Organisationsstrukturen, sowie identifizierte Verantwortlichkeiten und Authoritäten
+                                    input(type="radio", name="mmei_cell_id" value="18")
+
+                div
+                    p Reifegrad:
+                        input(type="text", name="maturity_level")
+
+            div.formBlock
+                h5 Status (optional)
+                div
+                    p Bearbeitungsstand:
+                    select(name="state_id")
+                        option(value=1) Entwurf
+                        option(value=2) Wird geprüft
+                        option(value=3) Ungeprüft
+                        option(value=4) Geprüft
+
+                div
+                    p Sichtbarkeit:
+                    select(name="visibility_id")
+                        option(value=1) Nicht sichtbar
+                        option(value=2) Öffentlich
+
+                //if sets
+                //    div
+                //        p Indikatoren-Set:
+                //                each set, key in sets
+                //                    div= set.name
+                //                        input(type="checkbox", name="sets", value=set.indicator_set_id)
+
+            div.formBlock.submit
+                button(type="submit") Speichern

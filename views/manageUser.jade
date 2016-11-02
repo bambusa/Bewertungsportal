@@ -1,0 +1,31 @@
+extends baseLayout
+
+block middle
+
+    div#content
+        h5 Nutzerdaten ändern:
+            form(action="/admin/manageUser/"+manageUser.user_id, method="post")
+                div
+                    p Username:
+                        input(type="text", name="username", value=manageUser.username)
+
+                div
+                    p Passwort ändern:
+                        input(type="password", name="password")
+
+                div
+                    p Nutzer-Rolle:
+                    select(name = "user_role_id")
+                        each role, key in userRoles
+                            if role.id == manageUser.user_role_id
+                                option(value=role.id selected) #{role.name}
+                            else
+                                option(value=role.id) #{role.name}
+
+                div
+                    p Email:
+                        input(type="text", name="email", value=manageUser.email)
+
+                br
+                br
+                button(type="submit") Speichern

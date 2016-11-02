@@ -3,16 +3,16 @@ div#mainMenu
         if user && userRoles
             ul
                 li
-                    b Start
+                    a(href="/") Start
 
                 if user.user_role_id == userRoles.admin.id
                     li
                         a(href="/admin/createUserCandidate") Nutzer erstellen
                     li
                         a(href="/admin/createUserGroup") Nutzergruppe erstellen
-                    li
-                        a(href="/admin/manageUserGroups") Nutzergruppen verwalten
 
                 if user.user_role_id == userRoles.expert.id
                     li
                         a(href="/expert/createIndicator") Indikator erstellen
+                    li
+                        a(href="/expert/createIndicatorSet") Indikatoren-Set erstellen

@@ -8,26 +8,27 @@ block middle
                 p Beschreibung: #{userGroup.description}
 
             form(action="/admin/manageUserGroup/"+userGroup.user_group_id, method="post")
-                input(type="hidden", name="userGroupId", value=userGroup.user_group_id)
+                h5 Daten:
+                div
+                    p Name:
+                        input(type="text", name="name", value=userGroup.name)
+                div
+                    p Beschreibung:
+                        textarea(id="description")
 
-                div
-                    p Name ändern:
-                        input(type="text", name="name")
-                div
-                    p Beschreibung ändern:
-                        input(type="text", name="description")
                 if otherUsers && otherUsers.length > 0
                     div
-                        p Nutzer hinzufügen:
-                            select(name = "addUser[]", multiple)
-                                each user, key in otherUsers
-                                    option(value=user.id) #{user.username}
+                        h5 Nutzer hinzufügen:
+                        each user, key in otherUsers
+                            div= user.username
+                                input(type="checkbox", name="addUser", value=user.user_id)
+
                 if groupUsers && groupUsers.length > 0
                     div
-                        p Nutzer entfernen:
-                            select(name = "removeUser[]", multiple)
-                                each user, key in groupUsers
-                                    option(value=user.id) #{user.username}
+                        h5 Nutzer entfernen:
+                        each user, key in groupUsers
+                            div= user.username
+                                input(type="checkbox", name="removeUser", value=user.user_id)
 
                 br
                 br
