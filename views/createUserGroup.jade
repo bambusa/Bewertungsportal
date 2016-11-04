@@ -2,14 +2,14 @@ extends baseLayout
 
 block middle
 
-        div#content
-            form(action="/admin/createUserGroup", method="post")
-                div
-                    p Name*:
-                        input(type="text", name="name")
-                div
-                    p Beschreibung:
-                        textarea(id="description")
-                br
-                br
-                button(type="submit") Speichern
+    div#content
+        form(action="/admin/createUserGroup", method="post")
+            div
+                p Name*:
+                    input(type="text", name="name")
+            div
+                p Beschreibung:
+                    textarea(name="description")
+            br
+            br
+            button(type="submit") Speichern

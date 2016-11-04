@@ -9,7 +9,6 @@ var mysql = require('../mysql');
 var logger = require('../logger');
 var config = require('../config');
 var helper = require('../helper');
-var userModule = require('./user');
 
 
 
@@ -31,23 +30,18 @@ exports.getCreateUserCandidate = getCreateUserCandidate;
  * Post function from user candidate form, validate user candidate data and save to database
  */
 var postCreateUserCandidate = function(req, res) {
-    var candidate = user.validate(req.body);
-    if (candidate) {
-        mysql.insertUserCandidate(candidate, function(results) {
-            if (results) {
-                logger.info("New user candidate created", candidate, "admin.postCreateUserCandidate");
-                req.flash('succMessage', 'Nutzer gespeichert und wird benachrichtigt...');
-                res.redirect('/admin/createUserCandidate');
-            } else {
-                req.flash('errMessage', 'Server Error');
-                res.redirect('/admin/createUserCandidate');
-            }
-        })
-    }
-    else {
-        req.flash('errMessage', 'Nutzerdaten nicht valide');
-        res.redirect('/admin/createUserCandidate');
-    }
+    var candidate = req.body;
+    candidate.token = uuid.v4();
+    mysql.insertUserCandidate(candidate, function(results) {
+        if (results) {
+            logger.info("New user candidate created", candidate, "admin.postCreateUserCandidate");
+            req.flash('succMessage', 'Nutzer gespeichert und wird benachrichtigt...');
+            res.redirect('/admin/createUserCandidate');
+        } else {
+            req.flash('errMessage', 'Server Error');
+            res.redirect('/admin/createUserCandidate');
+        }
+    });
 };
 exports.postCreateUserCandidate = postCreateUserCandidate;
 

@@ -52,16 +52,18 @@ var getIndex = function (req, res) {
         }
         else {
             logger.debug("no user authenticated", "user.getIndex");
-            res.render('index', {title: 'Start', user: user, errMessage: req.flash('errMessage'), succMessage: req.flash('succMessage')});
+            mysql.getStartPageData(null, function (groupData) {
+                res.render('index', {title: 'Start', groupData: groupData, errMessage: req.flash('errMessage'), succMessage: req.flash('succMessage')});
+            });
         }
-    })
+    });
 };
 exports.getIndex = getIndex;
 
 
 
 /*
- Frontend Rendering
+ User Pages
  */
 
 var getLogin = function (req, res) {
@@ -140,7 +142,7 @@ exports.getRegisterUser = getRegisterUser;
 
 var postRegisterUser = function(req, res) {
     var token = req.body.token;
-    logger.debug(token)
+    logger.debug(token);
     if (token) {
         if (req.body.username) {
             var user = mysql.selectUserForUsername(req.body.username, function (user) {
@@ -217,6 +219,40 @@ var postRegisterUser = function(req, res) {
 };
 exports.postRegisterUser = postRegisterUser;
 
+var getPublicAssessment = function(req, res) {
+    var assessmentId = req.params.assessmentId;
+    if (assessmentId) {
+        mysql.selectAssessmentForId(assessmentId, function(assessment) {
+            mysql.selectSetsAndIndicatorsForAssessmentByMmei(assessmentId, function(indicators) {
+                //logger.debug(indicators, "indicators")
+                var cells = {c11: [], c12: [], c13: [], c14: [], c21: [], c22: [], c23: [], c24: [], c31: [], c32: [], c33: [], c34: []};
+                for (var key in indicators) {
+                    var indicator = indicators[key];
+                    //logger.debug(indicator, "indicator");
+                    var cellName = "c";
+                    cellName += indicator.mmei_x;
+                    cellName += indicator.mmei_y;
+                    if (cells.hasOwnProperty(cellName)) {
+                        cells[cellName].push(indicator);
+                    }
+                    else {
+                        logger.error("Unknown cellName ", cellName, "user.getPublicAssessment");
+                    }
+                }
+                logger.debug(cells, "cells")
+                var results = getAggregation(cells);
+                logger.debug(results, "results")
+                res.render('viewAssessment', {title: "Bewertung", user: req.user, userRoles: USER_ROLES, assessment: assessment, strategies: config.configs.assessmentStrategies, assessmentResults: results, indicators: indicators, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')})
+            });
+        });
+    }
+    else {
+        req.flash('errMessage', 'Assessment ID ungültig');
+        res.redirect('/');
+    }
+};
+exports.getPublicAssessment = getPublicAssessment;
+
 
 
 /*
@@ -262,13 +298,21 @@ var tokenAuth = function (req, res, next) {
 exports.tokenAuth = tokenAuth;
 
 var verifyToken = function (authCookie, callback) {
-    var decoded = false;
-    try {
-        decoded = jwt.verify(authCookie, config.configs.serverConfig.secret, {algorithms: "HS256"})
-        callback(decoded)
-    } catch (err) {
-        logger.error(err, "user.verifyToken")
-        callback(false)
+    if (authCookie) {
+        var decoded = false;
+        try {
+            decoded = jwt.verify(authCookie, config.configs.serverConfig.secret, {algorithms: "HS256"});
+            mysql.selectUserGroupsForUserId(decoded.user_id, function (user_groups) {
+                if (user_groups && user_groups.length > 0) decoded.user_group_id = user_groups[0].user_group_id;
+                callback(decoded);
+            });
+        } catch (err) {
+            logger.error(err, "user.verifyToken");
+            callback(null);
+        }
+    }
+    else {
+        callback(null);
     }
 };
 exports.verifyToken = verifyToken;
@@ -279,7 +323,7 @@ var isUserRole = function (req, res, next, isRole) {
             if (user) {
                 if (user.user_role_id == isRole.id) {
                     req.user = user;
-                    next(req, res)
+                    next(req, res);
                 }
                 else {
                     logger.warn("Wrong user role", user, isRole, "user.isUserRole");
@@ -329,16 +373,91 @@ var initializeUserRoles = function (callback) {
                     }
                 }
             });
-            //logger.debug(USER_ROLES)
+            //logger.debug(userRoles)
             callback(userRoles);
         }
         else {
-            logger.error("No user roles found", "user.initializeUserRoles")
+            logger.error("No user roles found", "user.initializeUserRoles");
             callback(false);
         }
     });
 };
 exports.initializeUserRoles = initializeUserRoles;
+
+
+
+/*
+Assessment Strategy Functions
+ */
+
+var getAggregation = function(cells) {
+    var str = config.configs.assessmentStrategies;
+    var results = {c11: null, c12: null, c13: null, c14: null, c21: null, c22: null, c23: null, c24: null, c31: null, c32: null, c33: null, c34: null};
+    for (var key in cells) {
+        var cell = cells[key];
+        if (cell && cell.length > 0) {
+            var strategy = cell[0].set_strategy;
+            logger.debug(cell, strategy, "cell")
+
+            switch (strategy) {
+                case str.relative.id:
+                    results[key] = aggregateRelative(cell);
+                    break;
+                case str.contributive.id:
+                    results[key] = aggregateContributive(cell);
+                    break;
+                case str.events.id:
+                    results[key] = aggregateEvents(cell);
+                    break;
+                default:
+                    logger.error("Unknown strategy", strategy, "user.getAggregation");
+                    results[key] = null;
+            }
+        }
+    }
+    return results;
+};
+
+var aggregateRelative = function(cell) {
+    var weights = 0;
+    var grade = 0;
+    for (var it in cell) {
+        var assessment = cell[it];
+        weights += assessment.indi_target_factor;
+        if (assessment.grade_grade) grade += (assessment.grade_grade * assessment.indi_target_factor);
+        //logger.debug(assessment.grade_grade, assessment.indi_target_factor, (assessment.grade_grade * assessment.indi_target_factor), "grade")
+    }
+    var result = grade / weights;
+    if (isNaN(result)) return "-";
+    else return (Math.floor(result * 100) + "%");
+    //logger.debug(grade, weights, results[key], "result")
+};
+
+var aggregateContributive = function(cell) {
+    var grade = 0;
+    for (var it in cell) {
+        var assessment = cell[it];
+        if (assessment.grade_grade) grade += (assessment.grade_grade * assessment.indi_target_factor);
+    }
+    if (isNaN(grade)) return "-";
+    else {
+        var percentage = Math.floor(grade * 100);
+        if (percentage > 100) percentage = 100;
+    } return (percentage + "%");
+};
+
+var aggregateEvents = function(cell) {
+    var grade = 0;
+    for (var it in cell) {
+        var assessment = cell[it];
+        if (assessment.grade_grade && assessment.grade_grade > 0) grade += assessment.indi_target_factor;
+    }
+    if (isNaN(grade)) return "-";
+    else {
+        var percentage = Math.floor(grade * 100);
+        if (percentage > 100) percentage = 100;
+    } return (percentage + "%");
+};
 
 
 

@@ -2,13 +2,23 @@ extends baseLayout
 
 block middle
 
+    div#content
+        form(action="/login", method="post")
+            p Username:
+                input(type="text", name="username")
+            p Passwort
+                input(type="text", name="password")
+            br
+            br
+            button(type="submit") Anmelden
 
-            div#content
-                form(action="/login", method="post")
-                    p Username:
-                        input(type="text", name="username")
-                    p Passwort
-                        input(type="text", name="password")
-                    br
-                    br
-                    button(type="submit") Anmelden
+    div
+        br
+        br
+        br
+        br
+        br
+        h4 Demo User
+        p Admin / Admin
+        p Experte / Experte
+        p Auditor / Auditor

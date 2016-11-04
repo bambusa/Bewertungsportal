@@ -2,23 +2,23 @@ extends baseLayout
 
 block middle
 
-        div#content
-            h4 Ihre Daten:
-            p Email: #{userCandidate.email}
-            p Nutzerrolle: #{roleName}
-            h4 Bitte wählen:
-            form(action="/registration/"+token, method="post")
-                input(type="hidden", name="token", value=token)
-                input(type="hidden", name="email", value=userCandidate.email)
-                input(type="hidden", name="user_role_id", value=userCandidate.user_role_id)
-                div
-                    p Username*:
-                    input(type="text", name="username")
-                div
-                    p Passwort*:
-                    input(type="password", name="password1")
-                    p Passwort wiederholen*:
-                    input(type="password", name="password2")
-                br
-                br
-                button(type="submit") Absenden
+    div#content
+        h4 Ihre Daten:
+        p Email: #{userCandidate.email}
+        p Nutzerrolle: #{roleName}
+        h4 Bitte wählen:
+        form(action="/registration/"+token, method="post")
+            input(type="hidden", name="token", value=token)
+            input(type="hidden", name="email", value=userCandidate.email)
+            input(type="hidden", name="user_role_id", value=userCandidate.user_role_id)
+            div
+                p Username*:
+                input(type="text", name="username")
+            div
+                p Passwort*:
+                input(type="password", name="password1")
+                p Passwort wiederholen*:
+                input(type="password", name="password2")
+            br
+            br
+            button(type="submit") Absenden

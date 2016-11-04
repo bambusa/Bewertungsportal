@@ -2,34 +2,35 @@ extends baseLayout
 
 block middle
 
-        div#content
-            p Nutzergruppe: #{userGroup.name}
-            if userGroup.description
-                p Beschreibung: #{userGroup.description}
+    div#content
+        p Nutzergruppe: #{userGroup.name}
+        if userGroup.description
+            p Beschreibung: #{userGroup.description}
 
-            form(action="/admin/manageUserGroup/"+userGroup.user_group_id, method="post")
-                h5 Daten:
+        form(action="/admin/manageUserGroup/"+userGroup.user_group_id, method="post")
+            h5 Daten:
+            div
+                p Name:
+                    input(type="text", name="name", value=userGroup.name)
+            div
+                p Beschreibung:
+                    textarea(name="description")
+                        | #{userGroup.description}
+
+            if otherUsers && otherUsers.length > 0
                 div
-                    p Name:
-                        input(type="text", name="name", value=userGroup.name)
+                    h5 Nutzer hinzufügen:
+                    each user, key in otherUsers
+                        div= user.username
+                            input(type="checkbox", name="addUser", value=user.user_id)
+
+            if groupUsers && groupUsers.length > 0
                 div
-                    p Beschreibung:
-                        textarea(id="description")
+                    h5 Nutzer entfernen:
+                    each user, key in groupUsers
+                        div= user.username
+                            input(type="checkbox", name="removeUser", value=user.user_id)
 
-                if otherUsers && otherUsers.length > 0
-                    div
-                        h5 Nutzer hinzufügen:
-                        each user, key in otherUsers
-                            div= user.username
-                                input(type="checkbox", name="addUser", value=user.user_id)
-
-                if groupUsers && groupUsers.length > 0
-                    div
-                        h5 Nutzer entfernen:
-                        each user, key in groupUsers
-                            div= user.username
-                                input(type="checkbox", name="removeUser", value=user.user_id)
-
-                br
-                br
-                button(type="submit") Speichern
+            br
+            br
+            button(type="submit") Speichern

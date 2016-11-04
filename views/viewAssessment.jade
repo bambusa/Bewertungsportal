@@ -1,0 +1,101 @@
+extends baseLayout
+
+block middle
+
+    div#content
+        div.formBlock
+            h3 Bewertungsprojekt
+            div
+                b= assessment.name
+            div
+                p= assessment.description
+            br
+            br
+            br
+            br
+            br
+
+            h3 Bewertungsergebnis
+            div.formBlock
+                table
+                    thead
+                        tr
+                            th
+                            th Konzeptionell
+                            th Technologisch
+                            th Organisational
+                    tbody
+                        tr
+                            td.noBorder
+                                b Geschäftlich
+                            td
+                                p= assessmentResults.c11
+                            td
+                                p= assessmentResults.c21
+                            td
+                                p= assessmentResults.c31
+                        tr
+                            td.noBorder
+                                b Prozess
+                            td
+                                p= assessmentResults.c12
+                            td
+                                p= assessmentResults.c22
+                            td
+                                p= assessmentResults.c32
+                        tr
+                            td.noBorder
+                                b Dienste
+                            td
+                                p= assessmentResults.c13
+                            td
+                                p= assessmentResults.c23
+                            td
+                                p= assessmentResults.c33
+                        tr
+                            td.noBorder
+                                b Daten
+                            td
+                                p= assessmentResults.c14
+                            td
+                                p= assessmentResults.c24
+                            td
+                                p= assessmentResults.c34
+            br
+            br
+            br
+            br
+            br
+
+            h3 Detailergebnis
+            div.formBlock
+                - var lastSet
+                table
+                    each indi, key in indicators
+                        if (indi.set_name != lastSet)
+                            th
+                                - lastSet = indi.set_name
+                                h3 Set: #{indi.set_name}
+                                if indi.set_description
+                                    p Beschreibung: #{indi.set_description}
+                                p MMEI-Zelle: #{indi.mmei_x} / #{indi.mmei_y}
+                                p Reifegrad: #{indi.set_maturity_level}
+                                each strategy in strategies
+                                    if strategy.id == indi.set_strategy
+                                        p Aggregations-Strategie: #{strategy.name}
+
+                            tr
+                                td
+                                    b Indikator
+                                td
+                                    b Beschreibung
+                                td
+                                    b Zielerreichungsfaktor
+                                td
+                                    b Bewertung
+
+                        tr
+                            td= indi.indi_name
+                            td= indi.indi_description
+                            td= indi.indi_target_factor
+                            td #{indi.grade_name} (#{indi.grade_description})

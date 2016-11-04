@@ -37,6 +37,11 @@ var configs = {
             user: 'schwarz_dev@gmx.de',
             pass: '%jtTckIgD7jw'
         }
+    },
+    assessmentStrategies: {
+        relative: {id: 1, name: "Relative Contribution Strategie"},
+        contributive: {id: 2, name: "Contributive Strategie"},
+        events: {id: 3, name: "Non-Disjunctive Events Strategie"}
     }
 };
 module.exports.configs = configs;

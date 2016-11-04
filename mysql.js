@@ -299,6 +299,33 @@ var selectAllIndicatorsInSet = function (setId, callback) {
 exports.selectAllIndicatorsInSet = selectAllIndicatorsInSet;
 
 /**
+ * Get all indicator sets in database that are registered in the specified assessment
+ * @param callback gets called with query result rows
+ */
+var selectAllIndicatorSetsInAssessment = function (assessmentId, callback) {
+    if (assessmentId && typeof assessmentId != "function") {
+        dbConnection.query("SELECT * FROM set_in_assessment LEFT JOIN indicator_set ON set_in_assessment.indicator_set_id = indicator_set.indicator_set_id " +
+            "WHERE set_in_assessment.assessment_id = ? ORDER BY indicator_set.name ASC", [assessmentId], function (err, rows, fields) {
+            if (err) {
+                logger.error(err, "mysql.selectAllIndicatorSetsInAssessment");
+                callback(null);
+            } else if (rows.length == 0) {
+                logger.warn("No results found", assessmentId, "mysql.selectAllIndicatorSetsInAssessment");
+                callback(null);
+            } else {
+                if (logSql) logger.debug(rows, "mysql.selectAllIndicatorSetsInAssessment");
+                callback(rows);
+            }
+        });
+    }
+    else {
+        logger.error("No assessmentId provided", "mysql.selectAllIndicatorSetsInAssessment");
+        callback(null);
+    }
+};
+exports.selectAllIndicatorSetsInAssessment = selectAllIndicatorSetsInAssessment;
+
+/**
  * Get all indicators in database that are not registered in the specified set
  * @param callback gets called with query result rows
  */
@@ -333,7 +360,6 @@ exports.selectAllIndicatorsNotInSet = selectAllIndicatorsNotInSet;
 var selectUserGroupForId = function (userGroupId, callback) {
     if (userGroupId && typeof userGroupId != "function") {
         dbConnection.query("SELECT * FROM user_group WHERE user_group_id = ?", [userGroupId], function (err, rows, fields) {
-            logger.debug(rows, "mysql.selectUserGroupForId");
             if (err) {
                 logger.error(err, "mysql.selectUserGroupForId");
                 callback(null);
@@ -352,32 +378,6 @@ var selectUserGroupForId = function (userGroupId, callback) {
     }
 };
 exports.selectUserGroupForId = selectUserGroupForId;
-
-/**
- * Look for user group in database for given id
- * @param callback gets called with query result rows
- */
-var selectUserGroupForName = function (name, callback) {
-    if (name && typeof name != "function") {
-        dbConnection.query("SELECT * FROM user_group WHERE name = ?", [name], function (err, rows, fields) {
-            if (err) {
-                logger.error(err, "mysql.selectUserGroupForId");
-                callback(null);
-            } else if (rows.length == 0) {
-                logger.warn("No results found", name, "mysql.selectUserGroupForId");
-                callback(null);
-            } else {
-                if (logSql) logger.debug(rows[0], "mysql.selectUserGroupForId");
-                callback(rows[0]);
-            }
-        });
-    }
-    else {
-        logger.error("No name provided", "mysql.selectUserGroupForName");
-        callback(null);
-    }
-};
-exports.selectUserGroupForName = selectUserGroupForName;
 
 /**
  * Get all user candidate entries without an email sent timestamp
@@ -455,7 +455,7 @@ var selectAllIndicatorSetsByName = function (user_id, user_group_id, callback) {
         var where = "";
         if (user_id) where = "WHERE user_id = " + user_id;
         if (user_group_id) where = "WHERE user_group_id = " + user_group_id;
-        dbConnection.query("SELECT * FROM indicator_set " + where + " ORDER BY created DESC", function (err, rows, fields) {
+        dbConnection.query("SELECT * FROM indicator_set " + where + " ORDER BY created ASC", function (err, rows, fields) {
             if (err) {
                 logger.error(err, "mysql.selectAllIndicatorSetsByName");
                 callback(null);
@@ -482,7 +482,6 @@ exports.selectAllIndicatorSetsByName = selectAllIndicatorSetsByName;
 var selectIndicatorSetForId = function (setId, callback) {
         if (setId && typeof setId != "function") {
             dbConnection.query("SELECT * FROM indicator_set WHERE indicator_set_id = ?", [setId], function (err, rows, fields) {
-                logger.debug(rows, "mysql.selectIndicatorSetForId");
                 if (err) {
                     logger.error(err, "mysql.selectIndicatorSetForId");
                     callback(null);
@@ -503,13 +502,62 @@ var selectIndicatorSetForId = function (setId, callback) {
 exports.selectIndicatorSetForId = selectIndicatorSetForId;
 
 /**
+ * Look for all indicator sets in database for given mmei cell id
+ * @param callback gets called with query result rows
+ */
+var selectAllIndicatorSetsForCell = function (mmeiId, callback) {
+    var where = "WHERE mmei_cell_id IS NULL";
+    if (mmeiId && typeof mmeiId != "function") {
+        where = "WHERE mmei_cell_id = ?";
+    }
+    dbConnection.query("SELECT * FROM indicator_set "+where, [mmeiId], function (err, rows, fields) {
+        if (err) {
+            logger.error(err, "mysql.selectAllIndicatorSetsForCell");
+            callback(null);
+        } else if (rows.length == 0) {
+            logger.warn("No results found", rows, mmeiId, "mysql.selectAllIndicatorSetsForCell");
+            callback(null);
+        } else {
+            if (logSql) logger.debug(rows, "mysql.selectAllIndicatorSetsForCell");
+            callback(rows);
+        }
+    });
+};
+exports.selectAllIndicatorSetsForCell = selectAllIndicatorSetsForCell;
+
+/**
+ * Look for all indicator sets in database for given mmei cell id and not in assessment
+ * @param callback gets called with query result rows
+ */
+var selectAllIndicatorSetsForCellNotInAssessment = function (mmeiId, assessmentId, callback) {
+    var where = "AND mmei_cell_id IS NULL";
+    if (mmeiId && typeof mmeiId != "function") {
+        where = "AND mmei_cell_id = ?";
+    }
+    dbConnection.query("SELECT * FROM indicator_set WHERE NOT EXISTS " +
+        "(SELECT indicator_set_id FROM set_in_assessment WHERE set_in_assessment.assessment_id = ? AND set_in_assessment.indicator_set_id = indicator_set.indicator_set_id) " +
+        where, [assessmentId, mmeiId], function (err, rows, fields) {
+        if (err) {
+            logger.error(err, "mysql.selectAllIndicatorSetsForCellNotInAssessment");
+            callback(null);
+        } else if (rows.length == 0) {
+            logger.warn("No results found", rows, mmeiId, "mysql.selectAllIndicatorSetsForCellNotInAssessment");
+            callback(null);
+        } else {
+            if (logSql) logger.debug(rows, "mysql.selectAllIndicatorSetsForCellNotInAssessment");
+            callback(rows);
+        }
+    });
+};
+exports.selectAllIndicatorSetsForCellNotInAssessment = selectAllIndicatorSetsForCellNotInAssessment;
+
+/**
  * Look for indicator in database for given id
  * @param callback gets called with query result rows
  */
 var selectIndicatorForId = function (indicatorId, callback) {
     if (indicatorId && typeof indicatorId != "function") {
         dbConnection.query("SELECT * FROM indicator WHERE indicator_id = ?", [indicatorId], function (err, rows, fields) {
-            logger.debug(rows, "mysql.selectIndicatorForId");
             if (err) {
                 logger.error(err, "mysql.selectIndicatorForId");
                 callback(null);
@@ -528,6 +576,109 @@ var selectIndicatorForId = function (indicatorId, callback) {
     }
 };
 exports.selectIndicatorForId = selectIndicatorForId;
+
+var selectAllAssessmentsByName = function (user_id, user_group_id, callback) {
+    if (typeof user_id != "function" && typeof user_group_id != "function") {
+        var where = "";
+        if (user_id) where = "WHERE user_id = " + user_id;
+        if (user_group_id) where = "WHERE user_group_id = " + user_group_id;
+        dbConnection.query("SELECT * FROM assessment " + where + " ORDER BY name ASC", function (err, rows, fields) {
+            if (err) {
+                logger.error(err, "mysql.selectAllAssessmentsByName");
+                callback(null);
+            } else if (rows.length == 0) {
+                logger.warn("No results found", "mysql.selectAllAssessmentsByName");
+                callback(null);
+            } else {
+                if (logSql) logger.debug(rows, "mysql.selectAllAssessmentsByName");
+                callback(rows);
+            }
+        });
+    }
+    else {
+        logger.error("No user provided", "mysql.selectAllAssessmentsByName");
+        callback(null);
+    }
+};
+exports.selectAllAssessmentsByName = selectAllAssessmentsByName;
+
+var selectPublicAssessmentsByName = function (callback) {
+    if (typeof user_id != "function" && typeof user_group_id != "function") {
+        dbConnection.query("SELECT * FROM assessment ORDER BY name ASC", function (err, rows, fields) {
+            if (err) {
+                logger.error(err, "mysql.selectPublicAssessmentsByName");
+                callback(null);
+            } else if (rows.length == 0) {
+                logger.warn("No results found", "mysql.selectPublicAssessmentsByName");
+                callback(null);
+            } else {
+                if (logSql) logger.debug(rows, "mysql.selectPublicAssessmentsByName");
+                callback(rows);
+            }
+        });
+    }
+    else {
+        logger.error("No user provided", "mysql.selectPublicAssessmentsByName");
+        callback(null);
+    }
+};
+exports.selectPublicAssessmentsByName = selectPublicAssessmentsByName;
+
+var selectAssessmentForId = function (assessmentId, callback) {
+    if (assessmentId && typeof assessmentId != "function") {
+        dbConnection.query("SELECT * FROM assessment WHERE assessment_id = ?", [assessmentId], function (err, rows, fields) {
+            if (err) {
+                logger.error(err, "mysql.selectAssessmentForId");
+                callback(null);
+            } else if (rows.length == 0) {
+                logger.warn("No results found", "mysql.selectAssessmentForId");
+                callback(null);
+            } else {
+                if (logSql) logger.debug(rows[0], "mysql.selectAssessmentForId");
+                callback(rows[0]);
+            }
+        });
+    }
+    else {
+        logger.error("No user provided", "mysql.selectAssessmentForId");
+        callback(null);
+    }
+};
+exports.selectAssessmentForId = selectAssessmentForId;
+
+var selectSetsAndIndicatorsForAssessmentByMmei = function (assessmentId, callback) {
+    if (assessmentId && typeof assessmentId != "function") {
+        dbConnection.query("SELECT iset.name AS set_name, iset.description AS set_description, iset.maturity_level AS set_maturity_level, iset.strategy AS set_strategy, " +
+            "mmei_matrix.x AS mmei_x, mmei_matrix.y AS mmei_y, " +
+            "indi.name AS indi_name, indi.description AS indi_description, indi.target_factor AS indi_target_factor, indi.indicator_id AS indi_indicator_id, " +
+            "iass.grade_id AS iass_grade_id, grade.name AS grade_name, grade.description AS grade_description, grade.grade AS grade_grade FROM set_in_assessment " +
+            "LEFT JOIN indicator_set iset ON set_in_assessment.indicator_set_id = iset.indicator_set_id " +
+            "LEFT JOIN indicator_in_set ON iset.indicator_set_id = indicator_in_set.indicator_set_id " +
+            "LEFT JOIN indicator indi ON indicator_in_set.indicator_id = indi.indicator_id " +
+            "LEFT JOIN mmei_matrix ON iset.mmei_cell_id = mmei_matrix.mmei_cell_id " +
+            "LEFT JOIN indicator_assessment iass ON iass.assessment_id = ? AND iass.indicator_id = indi.indicator_id " +
+            "LEFT JOIN grade ON iass.grade_id = grade.grade_id " +
+            "WHERE set_in_assessment.assessment_id = ? AND iset.visibility_id = 2 AND (iset.state_id = 3 OR iset.state_id = 4) " +
+            "ORDER BY mmei_matrix.x, mmei_matrix.y, iset.name, indi.name", [assessmentId, assessmentId], function (err, rows, fields) {
+            if (err) {
+                logger.error(err, "mysql.selectSetsAndIndicatorsForAssessmentByMmei");
+                callback(null);
+            } else if (rows.length == 0) {
+                logger.warn("No results found", rows, assessmentId, "mysql.selectSetsAndIndicatorsForAssessmentByMmei");
+                callback(null);
+            } else {
+                if (logSql) logger.debug(rows, "mysql.selectSetsAndIndicatorsForAssessmentByMmei");
+                callback(rows);
+            }
+        });
+    }
+    else {
+        logger.error("No indicatorId provided", "mysql.selectSetsAndIndicatorsForAssessmentByMmei");
+        callback(null);
+    }
+};
+exports.selectSetsAndIndicatorsForAssessmentByMmei = selectSetsAndIndicatorsForAssessmentByMmei;
+
 
 
 /*
@@ -623,7 +774,7 @@ var insertUserInGroup = function (userGroupId, userId, callback) {
 };
 exports.insertUserInGroup = insertUserInGroup;
 
-var insertIndicatorInSet = function (indicatorId, setId, callback) {
+var insertIndicatorInSet = function (setId, indicatorId, callback) {
     if (indicatorId && typeof indicatorId != "function" && setId && typeof setId != "function") {
         var indicatorInSet = {indicator_id: indicatorId, indicator_set_id: setId};
         dbConnection.query("INSERT INTO indicator_in_set SET ?", indicatorInSet, function (err, results) {
@@ -645,6 +796,30 @@ var insertIndicatorInSet = function (indicatorId, setId, callback) {
     }
 };
 exports.insertIndicatorInSet = insertIndicatorInSet;
+
+
+var insertSetInAssessment = function (setId, assessmentId, callback) {
+    if (setId && typeof setId != "function" && assessmentId && typeof assessmentId != "function") {
+        var setInAssessment = {indicator_set_id: setId, assessment_id: assessmentId};
+        dbConnection.query("INSERT INTO set_in_assessment SET ?", setInAssessment, function (err, results) {
+            if (err) {
+                logger.error(err, "mysql.insertSetInAssessment");
+                callback(null);
+            } else if (!results.affectedRows || results.affectedRows == 0) {
+                logger.warn("Nothing got inserted", results, "mysql.insertSetInAssessment");
+                callback(null);
+            } else {
+                if (logSql) logger.debug(results, "mysql.insertSetInAssessment");
+                callback(results);
+            }
+        });
+    }
+    else {
+        logger.error("No setId or assessmentId provided", "mysql.insertSetInAssessment");
+        callback(null);
+    }
+};
+exports.insertSetInAssessment = insertSetInAssessment;
 
 var insertIndicator = function (indicator, callback) {
     if (indicator && typeof indicator != "function") {
@@ -668,6 +843,28 @@ var insertIndicator = function (indicator, callback) {
 };
 exports.insertIndicator = insertIndicator;
 
+var insertIndicatorAssessment = function (assessment, callback) {
+    if (assessment && typeof assessment != "function") {
+        dbConnection.query("INSERT INTO indicator_assessment SET ?", assessment, function (err, results) {
+            if (err) {
+                logger.error(err, "mysql.insertIndicatorAssessment");
+                callback(null);
+            } else if (results.affectedRows == 0) {
+                logger.warn("Nothing got inserted", results, "mysql.insertIndicatorAssessment");
+                callback(null);
+            } else {
+                if (logSql) logger.debug(results, "mysql.insertIndicatorAssessment");
+                callback(results);
+            }
+        });
+    }
+    else {
+        logger.error("No userCandidate provided", "mysql.insertIndicatorAssessment");
+        callback(null);
+    }
+};
+exports.insertIndicatorAssessment = insertIndicatorAssessment;
+
 var insertIndicatorSet = function (indicator_set, callback) {
     if (indicator_set && typeof indicator_set != "function") {
         dbConnection.query("INSERT INTO indicator_set SET ?", indicator_set, function (err, results) {
@@ -689,6 +886,28 @@ var insertIndicatorSet = function (indicator_set, callback) {
     }
 };
 exports.insertIndicatorSet = insertIndicatorSet;
+
+var insertAssessment = function (assessment, callback) {
+    if (assessment && typeof assessment != "function") {
+        dbConnection.query("INSERT INTO assessment SET ?", assessment, function (err, results) {
+            if (err) {
+                logger.error(err, "mysql.insertAssessment");
+                callback(null);
+            } else if (results.affectedRows == 0) {
+                logger.warn("Nothing got inserted", results, "mysql.insertAssessment");
+                callback(null);
+            } else {
+                if (logSql) logger.debug(results, "mysql.insertAssessment");
+                callback(results);
+            }
+        });
+    }
+    else {
+        logger.error("No userCandidate provided", "mysql.insertAssessment");
+        callback(null);
+    }
+};
+exports.insertAssessment = insertAssessment;
 
 
 
@@ -717,7 +936,7 @@ var deleteUserFromGroup = function (userGroupId, userId, callback) {
 };
 exports.deleteUserFromGroup = deleteUserFromGroup;
 
-var deleteIndicatorFromSet = function (indicatorId, setId, callback) {
+var deleteIndicatorFromSet = function (setId, indicatorId, callback) {
     if (indicatorId && typeof indicatorId != "function" && setId && typeof setId != "function") {
         dbConnection.query("DELETE FROM indicator_in_set WHERE indicator_id = ? AND indicator_set_id = ?", [indicatorId, setId], function (err, results) {
             if (err) {
@@ -738,6 +957,50 @@ var deleteIndicatorFromSet = function (indicatorId, setId, callback) {
     }
 };
 exports.deleteIndicatorFromSet = deleteIndicatorFromSet;
+
+var deleteSetFromAssessment = function (setId, assessmentId, callback) {
+    if (assessmentId && typeof assessmentId != "function" && setId && typeof setId != "function") {
+        dbConnection.query("DELETE FROM set_in_assessment WHERE assessment_id = ? AND indicator_set_id = ?", [assessmentId, setId], function (err, results) {
+            if (err) {
+                logger.error(err, "mysql.deleteSetFromAssessment");
+                callback(null);
+            } else if (!results.affectedRows || results.affectedRows == 0) {
+                logger.warn("Nothing got deleted", results, "mysql.deleteSetFromAssessment");
+                callback(null);
+            } else {
+                if (logSql) logger.debug(results, "mysql.deleteSetFromAssessment");
+                callback(results);
+            }
+        });
+    }
+    else {
+        logger.error("No assessmentId or setId provided", "mysql.deleteSetFromAssessment");
+        callback(null);
+    }
+};
+exports.deleteSetFromAssessment = deleteSetFromAssessment;
+
+var deleteIndicatorAssessment = function (assessment, callback) {
+    if (assessment && typeof assessment != "function") {
+        dbConnection.query("DELETE FROM indicator_assessment WHERE assessment_id = ? AND indicator_id = ?", [assessment.assessment_id, assessment.indicator_id], function (err, results) {
+            if (err) {
+                logger.error(err, "mysql.deleteIndicatorAssessment");
+                callback(null);
+            } else if (results.changedRows == 0) {
+                logger.warn("Nothing got updated", results, "mysql.deleteIndicatorAssessment");
+                callback(null);
+            } else {
+                if (logSql) logger.debug(results, "mysql.deleteIndicatorAssessment");
+                callback(results);
+            }
+        });
+    }
+    else {
+        logger.error("No assessment provided", "mysql.deleteIndicatorAssessment");
+        callback(null);
+    }
+};
+exports.deleteIndicatorAssessment = deleteIndicatorAssessment;
 
 
 
@@ -866,7 +1129,53 @@ var updateIndicatorSet = function (set, callback) {
 };
 exports.updateIndicatorSet = updateIndicatorSet;
 
+var updateIndicatorAssessment = function (assessment, callback) {
+    if (assessment && typeof assessment != "function") {
+        dbConnection.query("UPDATE indicator_assessment SET ? WHERE assessment_id = ? AND indicator_id = ?", [assessment, assessment.assessment_id, assessment.indicator_id], function (err, results) {
+            if (err) {
+                logger.error(err, "mysql.updateIndicatorAssessment");
+                callback(null);
+            } else if (results.changedRows == 0) {
+                logger.warn("Nothing got updated", results, "mysql.updateIndicatorAssessment");
+                callback(null);
+            } else {
+                if (logSql) logger.debug(results, "mysql.updateIndicatorAssessment");
+                callback(results);
+            }
+        });
+    }
+    else {
+        logger.error("No assessment provided", "mysql.updateIndicatorAssessment");
+        callback(null);
+    }
+};
+exports.updateIndicatorAssessment = updateIndicatorAssessment;
+
+var updateAssessment = function (assessment, callback) {
+    logger.debug(assessment, "assessment")
+    if (assessment && typeof assessment != "function") {
+        dbConnection.query("UPDATE assessment SET ? WHERE assessment_id = ?", [assessment, assessment.assessment_id], function (err, results) {
+            if (err) {
+                logger.error(err, "mysql.updateAssessment");
+                callback(null);
+            } else if (results.changedRows == 0) {
+                logger.warn("Nothing got updated", results, "mysql.updateAssessment");
+                callback(null);
+            } else {
+                if (logSql) logger.debug(results, "mysql.updateAssessment");
+                callback(results);
+            }
+        });
+    }
+    else {
+        logger.error("No assessment provided", "mysql.updateAssessment");
+        callback(null);
+    }
+};
+exports.updateAssessment = updateAssessment;
+
 var updateIndicator = function (indicator, callback) {
+    logger.debug
     if (indicator && typeof indicator != "function") {
         dbConnection.query("UPDATE indicator SET ? WHERE indicator_id = ?", [indicator, indicator.indicator_id], function (err, results) {
             if (err) {
@@ -946,13 +1255,33 @@ var getStartPageData = function (user, callback) {
                 });
                 break;
 
+            case USER_ROLES.auditor.id:
+                selectAllAssessmentsByName(user.user_id, user.user_group_id, function(assessments) {
+                    var groupData = {assessments: assessments};
+                    if (logSql) logger.debug(groupData, "mysql.getStartPageData");
+                    callback(groupData);
+                });
+                break;
+
+            case USER_ROLES.privateUser.id:
+                selectPublicAssessmentsByName(function(assessments) {
+                    var groupData = {publicAssessments: assessments};
+                    if (logSql) logger.debug(groupData, "mysql.getStartPageData");
+                    callback(groupData);
+                });
+                break;
+
             default:
                 callback(null);
                 break;
         }
     }
     else {
-        callback(null);
+        selectPublicAssessmentsByName(function(assessments) {
+            var groupData = {publicAssessments: assessments};
+            if (logSql) logger.debug(groupData, "mysql.getStartPageData");
+            callback(groupData);
+        });
     }
 };
 exports.getStartPageData = getStartPageData;

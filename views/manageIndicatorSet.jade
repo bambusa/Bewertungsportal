@@ -1,0 +1,119 @@
+extends baseLayout
+
+block middle
+
+    div#content
+        form(action="/expert/manageIndicatorSet/"+manageSet.indicator_set_id, method="post")
+
+            div.formBlock
+                h5 Indikatoren-Set
+                div
+                    p Name*:
+                        input(type="text", name="name", value=manageSet.name)
+                div
+                    p Beschreibung:
+                        textarea(name="description")
+                            | #{manageSet.description}
+                div
+                    p Aggregations-Strategie:
+                        select(name="strategy")
+                            for strategy in strategies
+                                option(value=strategy.id, selected=(manageSet.strategy == strategy.id ? "selected" : undefined)) #{strategy.name}
+
+            div.formBlock
+                h5 MMEI-Matrix (optional)
+                div
+                    table
+                        thead
+                            tr
+                                th
+                                th Konzeptionell
+                                th Technologisch
+                                th Organisational
+                        tbody
+                            tr
+                                td.noBorder
+                                    b Geschäftlich
+                                td
+                                    //p Dokumentierte Geschäfts-Strategien und -Politik
+                                    input(type="radio", name="mmei_cell_id" value="8", checked=(manageSet.mmei_cell_id == 8 ? "checked" : undefined))
+                                td
+                                    //p Grundlegende ICT Infrastruktur und Plattform
+                                    input(type="radio", name="mmei_cell_id" value="12", checked=(manageSet.mmei_cell_id == 12 ? "checked" : undefined))
+                                td
+                                    input(type="radio", name="mmei_cell_id" value="19", checked=(manageSet.mmei_cell_id == 19 ? "checked" : undefined))
+                            tr
+                                td.noBorder
+                                    b Prozess
+                                td
+                                    //p Dokumentierte Prozesse
+                                    input(type="radio", name="mmei_cell_id" value="9", checked=(manageSet.mmei_cell_id == 9 ? "checked" : undefined))
+                                td
+                                    //p ICT Support für Prozesse, der ad hoc Prozess-Informationsaustausch ermöglicht
+                                    input(type="radio", name="mmei_cell_id" value="13", checked=(manageSet.mmei_cell_id == 13 ? "checked" : undefined))
+                                td
+                                    //p Definierte und etablierte Organisationsstrukturen, sowie identifizierte Verantwortlichkeiten und Authoritäten
+                                    input(type="radio", name="mmei_cell_id" value="16", checked=(manageSet.mmei_cell_id == 16 ? "checked" : undefined))
+                            tr
+                                td.noBorder
+                                    b Dienste
+                                td
+                                    //p Dokumentierte Dienste
+                                    input(type="radio", name="mmei_cell_id" value="10", checked=(manageSet.mmei_cell_id == 10 ? "checked" : undefined))
+                                td
+                                    //p Verknüpfbare Dienste und Applilkationen, die ad hoc Informationsaustausch ermöglichen
+                                    input(type="radio", name="mmei_cell_id" value="14", checked=(manageSet.mmei_cell_id == 14 ? "checked" : undefined))
+                                td
+                                    //p Definierte und etablierte Organisationsstrukturen, sowie identifizierte Verantwortlichkeiten und Authoritäten
+                                    input(type="radio", name="mmei_cell_id" value="17", checked=(manageSet.mmei_cell_id == 17 ? "checked" : undefined))
+                            tr
+                                td.noBorder
+                                    b Daten
+                                td
+                                    //p Dokumentierte Datenmodelle
+                                    input(type="radio", name="mmei_cell_id" value="11", checked=(manageSet.mmei_cell_id == 11 ? "checked" : undefined))
+                                td
+                                    //p Verknüpfbare Datenspeicherung, die einfachen elektronischen Austausch ermöglicht
+                                    input(type="radio", name="mmei_cell_id" value="15", checked=(manageSet.mmei_cell_id == 15 ? "checked" : undefined))
+                                td
+                                    //p Definierte und etablierte Organisationsstrukturen, sowie identifizierte Verantwortlichkeiten und Authoritäten
+                                    input(type="radio", name="mmei_cell_id" value="18", checked=(manageSet.mmei_cell_id == 18 ? "checked" : undefined))
+
+                div
+                    p Reifegrad:
+                        input(type="text", name="maturity_level", value=manageSet.maturity_level)
+
+            div.formBlock
+                h5 Status (optional)
+                div
+                    p Bearbeitungsstand:
+                    select(name="state_id")
+                        option(value=1, selected=(manageSet.state_id == 1 ? "selected" : undefined)) Entwurf
+                        option(value=2, selected=(manageSet.state_id == 2 ? "selected" : undefined)) Wird geprüft
+                        option(value=3, selected=(manageSet.state_id == 3 ? "selected" : undefined)) Ungeprüft
+                        option(value=4, selected=(manageSet.state_id == 4 ? "selected" : undefined)) Geprüft
+
+                div
+                    p Sichtbarkeit:
+                    select(name="visibility_id")
+                        option(value=1, selected=(manageSet.visibility_id == 1 ? "selected" : undefined)) Nicht sichtbar
+                        option(value=2, selected=(manageSet.visibility_id == 2 ? "selected" : undefined)) Öffentlich
+
+            div.formBlock
+                div
+                    if otherIndicators && otherIndicators.length > 0
+                        div
+                            h5 Indikatoren hinzufügen
+                            each indicator, key in otherIndicators
+                                div= indicator.name
+                                    input(type="checkbox", name="addIndicators", value=indicator.indicator_id)
+
+                    if setIndicators && setIndicators.length > 0
+                        div
+                            h5 Indikatoren entfernen
+                            each indicator, key in setIndicators
+                                div= indicator.name
+                                    input(type="checkbox", name="removeIndicators", value=indicator.indicator_id)
+
+            div.formBlock.submit
+                button(type="submit") Speichern

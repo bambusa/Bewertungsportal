@@ -4,7 +4,7 @@ winston.emitErrs = true;
 
 var logger = new winston.Logger({
     transports: [
-        new winston.transports.File({
+       /* new winston.transports.File({
             name: 'info',
             level: 'info',
             filename: config.configs.serverConfig.baseDir + "/log/info.log",
@@ -23,7 +23,7 @@ var logger = new winston.Logger({
             maxsize: 5242880, //5MB
             maxFiles: 5,
             colorize: false
-        }),
+        }),*/
         new winston.transports.Console({
             level: config.configs.debugConfig.consoleLevel,
             handleExceptions: true,

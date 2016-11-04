@@ -1,18 +1,21 @@
 div#mainMenu
     h3 Main Menu
-        if user && userRoles
             ul
                 li
                     a(href="/") Start
+                if user && userRoles
+                    if user.user_role_id == userRoles.admin.id
+                        li
+                            a(href="/admin/createUserCandidate") Nutzer erstellen
+                        li
+                            a(href="/admin/createUserGroup") Nutzergruppe erstellen
 
-                if user.user_role_id == userRoles.admin.id
-                    li
-                        a(href="/admin/createUserCandidate") Nutzer erstellen
-                    li
-                        a(href="/admin/createUserGroup") Nutzergruppe erstellen
+                    if user.user_role_id == userRoles.expert.id
+                        li
+                            a(href="/expert/createIndicator") Indikator erstellen
+                        li
+                            a(href="/expert/createIndicatorSet") Indikatoren-Set erstellen
 
-                if user.user_role_id == userRoles.expert.id
-                    li
-                        a(href="/expert/createIndicator") Indikator erstellen
-                    li
-                        a(href="/expert/createIndicatorSet") Indikatoren-Set erstellen
+                    if user.user_role_id == userRoles.auditor.id
+                        li
+                            a(href="/auditor/createAssessment") Bewertung starten

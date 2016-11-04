@@ -4,6 +4,7 @@ var logger = require('../logger');
 var user = require('./user');
 var admin = require('./admin');
 var expert = require('./expert');
+var auditor = require('./auditor');
 
 
 
@@ -48,10 +49,23 @@ router.route('/expert/manageIndicatorSet/:setId')
     .get(function(req, res) {user.isUserRole(req, res, expert.getManageIndicatorSet, USER_ROLES.expert)})
     .post(function(req, res) {user.isUserRole(req, res, expert.postManageIndicatorSet, USER_ROLES.expert)});
 
+// Auditor
+router.route('/auditor/createAssessment')
+    .get(function(req, res) {user.isUserRole(req, res, auditor.getCreateAssessment, USER_ROLES.auditor)})
+    .post(function(req, res) {user.isUserRole(req, res, auditor.postCreateAssessment, USER_ROLES.auditor)});
+router.route('/auditor/manageAssessment/:assessmentId')
+    .get(function(req, res) {user.isUserRole(req, res, auditor.getManageAssessment, USER_ROLES.auditor)})
+    .post(function(req, res) {user.isUserRole(req, res, auditor.postManageAssessment, USER_ROLES.auditor)});
+router.route('/auditor/assessAssessment/:assessmentId')
+    .get(function(req, res) {user.isUserRole(req, res, auditor.getAssessAssessment, USER_ROLES.auditor)})
+    .post(function(req, res) {user.isUserRole(req, res, auditor.postAssessAssessment, USER_ROLES.auditor)});
+
 // Nutzer
 router.route('/registration/:token')
     .get(user.getRegisterUser)
     .post(user.postRegisterUser);
+router.route('/user/viewAssessment/:assessmentId')
+    .get(user.getPublicAssessment);
 
 
 

@@ -84,3 +84,15 @@ p.succMessage {
     color: #00A000;
     padding: 0;
 }
+
+table td {
+    border: 1px solid #c0c0c0;
+}
+
+table td.noBorder {
+    border: 0;
+}
+
+table th {
+    text-align: left;
+}

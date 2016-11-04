@@ -1,0 +1,121 @@
+extends baseLayout
+
+block middle
+
+    div#content
+        form(action="/auditor/createAssessment", method="post")
+            input(type="hidden", name="user_id", value=user.user_id)
+            if user.user_group_id
+                input(type="hidden", name="user_group_id", value=user.user_group_id)
+
+            div.formBlock
+                h3 Bewertungsprojekt
+                div
+                    p Name*:
+                        input(type="text", name="name")
+                div
+                    p Beschreibung:
+                        textarea(name="description")
+
+            div.formBlock
+                h3 Indikatoren-Sets
+                div
+                    if mmeiSets.other
+                        h5 Allgemeine Indikatoren-Sets hinzufügen:
+                        if mmeiSets.other
+                            each set, key in mmeiSets.other
+                                div= set.name
+                                    input(type="checkbox", name="addSets", value=set.indicator_set_id)
+
+                div
+                    h5 MMEI Indikatoren-Sets hinzufügen:
+                        table
+                            thead
+                                tr
+                                    th
+                                    th Konzeptionell
+                                    th Technologisch
+                                    th Organisational
+                            tbody
+                                tr
+                                    td.noBorder
+                                        b Geschäftlich
+                                    td
+                                        if mmeiSets.c11
+                                            each set, key in mmeiSets.c11
+                                                div= set.name
+                                                    input(type="checkbox", name="addSets", value=set.indicator_set_id)
+                                    td
+                                        if mmeiSets.c21
+                                            each set, key in mmeiSets.c21
+                                                div= set.name
+                                                    input(type="checkbox", name="addSets", value=set.indicator_set_id)
+                                    td
+                                        if mmeiSets.c31
+                                            each set, key in mmeiSets.c31
+                                                div= set.name
+                                                    input(type="checkbox", name="addSets", value=set.indicator_set_id)
+                                tr
+                                    td.noBorder
+                                        b Prozess
+                                    td
+                                        if mmeiSets.c12
+                                            each set, key in mmeiSets.c12
+                                                div= set.name
+                                                    input(type="checkbox", name="addSets", value=set.indicator_set_id)
+                                    td
+                                        if mmeiSets.c22
+                                            each set, key in mmeiSets.c22
+                                                div= set.name
+                                                    input(type="checkbox", name="addSets", value=set.indicator_set_id)
+                                    td
+                                        if mmeiSets.c32
+                                            each set, key in mmeiSets.c32
+                                                div= set.name
+                                                    input(type="checkbox", name="addSets", value=set.indicator_set_id)
+                                tr
+                                    td.noBorder
+                                        b Dienste
+                                    td
+                                        if mmeiSets.c13
+                                            each set, key in mmeiSets.c13
+                                                div= set.name
+                                                    input(type="checkbox", name="addSets", value=set.indicator_set_id)
+                                    td
+                                        if mmeiSets.c23
+                                            each set, key in mmeiSets.c23
+                                                div= set.name
+                                                    input(type="checkbox", name="addSets", value=set.indicator_set_id)
+                                    td
+                                        if mmeiSets.c33
+                                            each set, key in mmeiSets.c33
+                                                div= set.name
+                                                    input(type="checkbox", name="addSets", value=set.indicator_set_id)
+                                tr
+                                    td.noBorder
+                                        b Daten
+                                    td
+                                        if mmeiSets.c14
+                                            each set, key in mmeiSets.c14
+                                                div= set.name
+                                                    input(type="checkbox", name="addSets", value=set.indicator_set_id)
+                                    td
+                                        if mmeiSets.c24
+                                            each set, key in mmeiSets.c24
+                                                div= set.name
+                                                    input(type="checkbox", name="addSets", value=set.indicator_set_id)
+                                    td
+                                        if mmeiSets.c34
+                                            each set, key in mmeiSets.c34
+                                                div= set.name
+                                                    input(type="checkbox", name="addSets", value=set.indicator_set_id)
+
+                div
+                    if assessmentSets
+                        h5 Indikatoren-Sets entfernen:
+                        each set, key in assessmentSets
+                            div= set.name
+                                input(type="checkbox", name="removeSets", value=set.indicator_set_id)
+
+            div.formBlock.submit
+                button(type="submit") Speichern

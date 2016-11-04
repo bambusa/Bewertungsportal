@@ -3,29 +3,28 @@ extends baseLayout
 block middle
 
     div#content
-        form(action="/expert/createIndicator", method="post")
-            input(type="hidden", name="user_id", value=user.user_id)
-            if user.user_group_id
-                input(type="hidden", name="user_group_id", value=user.user_group_id)
+        form(action="/expert/manageIndicator/"+manageIndicator.indicator_id, method="post")
 
             div.formBlock
                 h5 Indikator
                 div
                     p Name*:
-                        input(type="text", name="name")
+                        input(type="text", name="name", value=manageIndicator.name)
                 div
                     p Beschreibung:
-                        textarea(id="description")
+                        textarea(name="description")
+                            | #{manageIndicator.description}
             div.formBlock
                 h5 Bewertungsfaktor
                 div
                     p Zielerreichungsfaktor*:
-                        input(type="text", name="target_factor")
+                        input(type="text", name="target_factor", value=manageIndicator.target_factor)
             div.formBlock
                 h5 Details (optional)
                 div
                     p Quellenverweis:
-                        textarea(id="source")
+                        textarea(name="source")
+                            | #{manageIndicator.source}
                 //if sets
                 //    div
                 //        p Indikatoren-Set:

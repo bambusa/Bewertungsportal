@@ -3,7 +3,7 @@ extends baseLayout
 block middle
 
     div#groupData
-        h3 Group Data
+        //h3 Group Data
         if groupData
 
             // Admin
@@ -30,7 +30,7 @@ block middle
                     ul
                         each set in groupData.sets
                             li
-                                a(href="/expert/manageSet/"+set.indicator_set_id) #{set.name}
+                                a(href="/expert/manageIndicatorSet/"+set.indicator_set_id) #{set.name}
 
             if groupData.indicators
                 h2 Indikatoren
@@ -39,3 +39,23 @@ block middle
                         each indicator in groupData.indicators
                             li
                                 a(href="/expert/manageIndicator/"+indicator.indicator_id) #{indicator.name}
+
+            // Auditor
+            if groupData.assessments
+                h2 Bewertungsprojekte
+                div#userGroups.groupDataTable
+                    ul
+                        each assessment in groupData.assessments
+                            li
+                                a(href="/auditor/assessAssessment/" + assessment.assessment_id) #{assessment.name}
+                                ="   "
+                                a(href="/auditor/manageAssessment/" + assessment.assessment_id) (ändern)
+
+            // Öffentlicher Endnutzer
+            if groupData.publicAssessments
+                h2 Bewertungen
+                div#userGroups.groupDataTable
+                    ul
+                        each assessment in groupData.publicAssessments
+                            li
+                                a(href="/user/viewAssessment/" + assessment.assessment_id) #{assessment.name}

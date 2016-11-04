@@ -1,0 +1,59 @@
+extends baseLayout
+
+block middle
+
+    div#content
+        div.formBlock
+            h3 Bewertungsprojekt
+            div
+                b= assessment.name
+            div
+                p= assessment.description
+
+        form(action="/auditor/assessAssessment/"+assessment.assessment_id, method="post")
+            input(type="hidden", name="user_id", value=user.user_id)
+            if user.user_group_id
+                input(type="hidden", name="user_group_id", value=user.user_group_id)
+
+            div.formBlock
+                - var lastSet
+                table
+                    each indi, key in indicators
+                        if (indi.set_name != lastSet)
+                            th
+                                - lastSet = indi.set_name
+                                h3 Set: #{indi.set_name}
+                                if indi.set_description
+                                    p Beschreibung: #{indi.set_description}
+                                p MMEI-Zelle: #{indi.mmei_x} / #{indi.mmei_y}
+                                p Reifegrad: #{indi.set_maturity_level}
+                                each strategy in strategies
+                                    if strategy.id == indi.set_strategy
+                                        p Aggregations-Strategie: #{strategy.name}
+
+                            tr
+                                td
+                                    b Indikator
+                                td
+                                    b Beschreibung
+                                td
+                                    b Zielerreichungsfaktor
+                                td
+                                    b Bewertung
+
+                        tr
+                            td= indi.indi_name
+                            td= indi.indi_description
+                            td= indi.indi_target_factor
+                            td
+                                select(name="indiAssessment[]")
+                                    option(value=JSON.stringify({indicator_id: indi.indi_indicator_id, grade_id: "NULL", previous: indi.iass_grade_id})) Unbewertet
+                                    option(value=JSON.stringify({indicator_id: indi.indi_indicator_id, grade_id: 6, previous: indi.iass_grade_id}), selected=(indi.iass_grade_id == 6 ? "selected" : undefined)) A (Komplett)
+                                    option(value=JSON.stringify({indicator_id: indi.indi_indicator_id, grade_id: 7, previous: indi.iass_grade_id}), selected=(indi.iass_grade_id == 7 ? "selected" : undefined)) B (Gut)
+                                    option(value=JSON.stringify({indicator_id: indi.indi_indicator_id, grade_id: 8, previous: indi.iass_grade_id}), selected=(indi.iass_grade_id == 8 ? "selected" : undefined)) C (Teilweise)
+                                    option(value=JSON.stringify({indicator_id: indi.indi_indicator_id, grade_id: 9, previous: indi.iass_grade_id}), selected=(indi.iass_grade_id == 9 ? "selected" : undefined)) D (Grundlegend)
+                                    option(value=JSON.stringify({indicator_id: indi.indi_indicator_id, grade_id: 10, previous: indi.iass_grade_id}), selected=(indi.iass_grade_id == 10 ? "selected" : undefined)) N (Nicht implementiert)
+                                    option(value=JSON.stringify({indicator_id: indi.indi_indicator_id, grade_id: 11, previous: indi.iass_grade_id}), selected=(indi.iass_grade_id == 11 ? "selected" : undefined)) U (Nicht relevant)
+
+            div.formBlock.submit
+                button(type="submit") Speichern

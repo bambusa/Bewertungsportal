@@ -16,8 +16,7 @@ Expert Pages
  */
 
 var getCreateIndicator = function(req, res) {
-    res.render('createIndicator', {title: "Neuen Indikator erstellen", user: req.user, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
-
+    res.render('createIndicator', {title: "Neuen Indikator erstellen", user: req.user, userRoles: USER_ROLES, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
 };
 exports.getCreateIndicator = getCreateIndicator;
 
@@ -50,7 +49,7 @@ var postCreateIndicator = function(req, res) {
 exports.postCreateIndicator = postCreateIndicator;
 
 var getCreateIndicatorSet = function(req, res) {
-    res.render('createIndicatorSet', {title: "Neues Indikatoren-Set erstellen", user: req.user, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
+    res.render('createIndicatorSet', {title: "Neues Indikatoren-Set erstellen", user: req.user, userRoles: USER_ROLES, strategies: config.configs.assessmentStrategies, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
 };
 exports.getCreateIndicatorSet = getCreateIndicatorSet;
 
@@ -77,10 +76,11 @@ var postCreateIndicatorSet = function(req, res) {
 exports.postCreateIndicatorSet = postCreateIndicatorSet;
 
 var getManageIndicator = function(req, res) {
-    if (req.params.indicatorId) {
-        mysql.selectIndicatorForId(req.params.indicatorId, function(indicator) {
+    var id = req.params.indicatorId;
+    if (id) {
+        mysql.selectIndicatorForId(id, function(indicator) {
             if (indicator) {
-                res.render('manageIndicator', {title: "Indikator bearbeiten", user: req.user, manageIndicator: indicator, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
+                res.render('manageIndicator', {title: "Indikator bearbeiten", user: req.user, userRoles: USER_ROLES, manageIndicator: indicator, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
             }
             else {
                 req.flash('errMessage', 'Indikator nicht gefunden');
@@ -96,8 +96,10 @@ var getManageIndicator = function(req, res) {
 exports.getManageIndicator = getManageIndicator;
 
 var postManageIndicator = function(req, res) {
-    if (req.params.indicatorId) {
+    var id = req.params.indicatorId;
+    if (id) {
         var indicator = req.body;
+        indicator.indicator_id = id;
 
         if (indicator) {
             mysql.updateIndicator(indicator, function(results) {
@@ -107,13 +109,13 @@ var postManageIndicator = function(req, res) {
                     res.redirect('/');
                 } else {
                     req.flash('errMessage', 'Server Error');
-                    res.redirect('/expert/manageIndicator/'+req.params.indicatorId);
+                    res.redirect('/expert/manageIndicator/'+id);
                 }
             })
         }
         else {
             req.flash('errMessage', 'Daten nicht valide');
-            res.redirect('/expert/manageIndicator/'+req.params.indicatorId);
+            res.redirect('/expert/manageIndicator/'+id);
         }
     }
     else {
@@ -131,7 +133,7 @@ var getManageIndicatorSet = function(req, res) {
                 logger.debug(set, "expert.getManageIndicatorSet");
                 mysql.selectAllIndicatorsNotInSet(id, function (otherIndicators) {
                     mysql.selectAllIndicatorsInSet(id, function (setIndicators) {
-                        res.render('manageIndicatorSet', {title: "Nutzergruppe verwalten", user: req.user, set: set, otherIndicators: otherIndicators, setIndicators: setIndicators, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
+                        res.render('manageIndicatorSet', {title: "Nutzergruppe verwalten", user: req.user, userRoles: USER_ROLES, strategies: config.configs.assessmentStrategies, manageSet: set, otherIndicators: otherIndicators, setIndicators: setIndicators, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
                     });
                 });
             }
@@ -152,6 +154,7 @@ var postManageIndicatorSet = function(req, res) {
     var id = req.params.setId;
     if (id) {
         var set = req.body;
+        set.indicator_set_id = id;
         var addIndicators = req.body.addIndicators;
         var removeIndicators = req.body.removeIndicators;
         delete set.addIndicators;
@@ -160,24 +163,23 @@ var postManageIndicatorSet = function(req, res) {
         updateIndicatorSet(id, set, function(result) {
             if (result) {
                 addIndicatorsToSet(id, addIndicators, function (result) {
-                    if (result) {
-                        removeIndicatorsFromSet(id, removeIndicators, function (result) {
-                            if (result) {
-                                req.flash('succMessage', 'Nutzergruppe gespeichert');
-                                res.redirect('/');
-                            } else {
-                                req.flash('errMessage', 'Server Error');
-                                res.redirect('/admin/manageUserGroup/'+id);
-                            }
-                        });
-                    } else {
-                        req.flash('errMessage', 'Server Error');
-                        res.redirect('/admin/manageUserGroup/'+id);
-                    }
+                    removeIndicatorsFromSet(id, removeIndicators, function (result) {
+                        req.flash('succMessage', 'Nutzergruppe gespeichert');
+                        res.redirect('/');
+                    });
                 });
             } else {
-                req.flash('errMessage', 'Server Error');
-                res.redirect('/admin/manageUserGroup/'+id);
+                addIndicatorsToSet(id, addIndicators, function (addResult) {
+                    removeIndicatorsFromSet(id, removeIndicators, function (removeResult) {
+                        if (addResult || removeResult) {
+                            req.flash('succMessage', 'Nutzergruppe gespeichert');
+                            res.redirect('/');
+                        } else {
+                            req.flash('errMessage', 'Keine Änderung gespeichert');
+                            res.redirect('/admin/manageUserGroup/'+id);
+                        }
+                    });
+                });
             }
         });
     }
@@ -200,6 +202,7 @@ var addIndicatorsToSet = function(setId, addIndicators, callback) {
         var is = 0;
         var should = addIndicators.length;
         for (key in addIndicators) {
+            logger.debug(addIndicators[key], setId, "addIndicators[key]")
             mysql.insertIndicatorInSet(addIndicators[key], setId, function(results) {
                 is++;
                 if (should == is) callback(true);
@@ -238,7 +241,7 @@ var updateIndicatorSet = function(setId, set, callback) {
     if (set && (set.name || set.description)) {
         mysql.selectIndicatorSetForId(setId, function(dbSet) {
                 logger.debug("Change indicator set data: ", set, "admin.updateIndicatorSet");
-                mysql.update(set, function(results) {
+                mysql.updateIndicatorSet(set, function(results) {
                     if (results) {
                         callback(true);
                     }
@@ -324,10 +327,15 @@ var validateIndicatorSet = function(set) {
         return null;
     }
 
-    set.mmei_cell_id = helper.tryParseInt(set.mmei_cell_id);
-    if (!set.mmei_cell_id) {
-        logger.warn("mmei_cell_id invalid", "admin.validateIndicatorSet");
-        return false;
+    if (set.mmei_cell_id) {
+        set.mmei_cell_id = helper.tryParseInt(set.mmei_cell_id);
+        if (!set.mmei_cell_id) {
+            logger.warn("mmei_cell_id invalid", "admin.validateIndicatorSet");
+            return false;
+        }
+    }
+    else {
+        delete set.mmei_cell_id;
     }
 
     set.visibility_id = helper.tryParseInt(set.visibility_id);
@@ -342,13 +350,18 @@ var validateIndicatorSet = function(set) {
         return false;
     }
 
-    set.maturity_level = helper.tryParseInt(set.maturity_level);
-    if (!set.maturity_level) {
-        logger.warn("maturity_level invalid", "admin.validateIndicatorSet");
-        return false;
+    if (set.mmei_cell_id) {
+        set.mmei_cell_id = helper.tryParseInt(set.mmei_cell_id);
+        if (!set.mmei_cell_id) {
+            logger.warn("mmei_cell_id invalid", "admin.validateIndicatorSet");
+            return false;
+        }
+    }
+    else {
+        delete set.mmei_cell_id;
     }
 
-    var validKeys = ["user_id", "user_group_id", "name", "description", "mmei_cell_id", "visibility_id", "state_id", "maturity_level"];
+    var validKeys = ["user_id", "user_group_id", "name", "description", "mmei_cell_id", "visibility_id", "state_id", "mmei_cell_id"];
     for (var key in set) {
         if (validKeys.indexOf(key) < 0) {
             logger.warn("Found unknown Key: ", key, set[key], "admin.validateIndicatorSet");
