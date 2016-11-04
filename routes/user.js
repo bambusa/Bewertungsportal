@@ -16,6 +16,9 @@ var helper = require('../helper');
  Start Page
  */
 
+/**
+ * Render start page, prepare indivdual group data for user role and group
+ */
 var getIndex = function (req, res) {
     var user = verifyToken(req.cookies.auth, function (user) {
         if (user) {
@@ -66,11 +69,17 @@ exports.getIndex = getIndex;
  User Pages
  */
 
+/**
+ * Render view with login form
+ */
 var getLogin = function (req, res) {
     res.render('login', {title: "Login", errMessage: req.flash('errMessage'), succMessage: req.flash('succMessage')});
 };
 exports.getLogin = getLogin;
 
+/**
+ * Post function of login form, check username and password and sign authentication cookie
+ */
 var postLogin = function (req, res, next) {
     if (req.body.username && req.body.password) {
         mysql.getUserForUsername(req, res, next, req.body.username, function (req, res, next, result) {
@@ -108,12 +117,18 @@ var postLogin = function (req, res, next) {
 };
 exports.postLogin = postLogin;
 
+/**
+ * Destroy session, clear authantication cookie and redirect to index page
+ */
 var getLogout = function (req, res) {
     res.clearCookie('auth');
     res.redirect('/')
 };
 exports.getLogout = getLogout;
 
+/**
+ * Render confirmation page for new user candidates
+ */
 var getRegisterUser = function(req, res) {
     res.clearCookie('auth');
     var token = req.params.token;
@@ -140,6 +155,9 @@ var getRegisterUser = function(req, res) {
 };
 exports.getRegisterUser = getRegisterUser;
 
+/**
+ * Post function of confirmation page, save new user and mark user candidate as registered, finally send confirmation mail to user
+ */
 var postRegisterUser = function(req, res) {
     var token = req.body.token;
     logger.debug(token);
@@ -219,6 +237,9 @@ var postRegisterUser = function(req, res) {
 };
 exports.postRegisterUser = postRegisterUser;
 
+/**
+ * Render page with assessment details, prepare indicators and assessment for assessment id, precalculate grade aggregation for sets
+ */
 var getPublicAssessment = function(req, res) {
     var assessmentId = req.params.assessmentId;
     if (assessmentId) {
@@ -259,6 +280,10 @@ exports.getPublicAssessment = getPublicAssessment;
 Authentication functions
  */
 
+/**
+ * Get user from database for login data
+ * @param next callback function gets called, if user was found
+ */
 var basicAuth = function (req, res, next) {
     if (req.body.username && req.body.password) {
         mysql.getUserForUsername(req, res, next, req.body.username, basicAuthCallback)
@@ -270,6 +295,10 @@ var basicAuth = function (req, res, next) {
 };
 exports.basicAuth = basicAuth;
 
+/**
+ * Verify authentication cookie from user session and append user object to request object
+ * @param next callback function gets called if cookie got verified
+ */
 var tokenAuth = function (req, res, next) {
     if (req && req.cookies && req.cookies.auth) {
         var token = req.cookies.auth;
@@ -297,6 +326,11 @@ var tokenAuth = function (req, res, next) {
 };
 exports.tokenAuth = tokenAuth;
 
+/**
+ * Decode verification token and get user group for decoded user
+ * @param authCookie authentication cookie from user session, contains JSON Web Token
+ * @param callback gets called with decoded user object
+ */
 var verifyToken = function (authCookie, callback) {
     if (authCookie) {
         var decoded = false;
@@ -317,6 +351,13 @@ var verifyToken = function (authCookie, callback) {
 };
 exports.verifyToken = verifyToken;
 
+/**
+ * Check if authenticated user has required user role
+ * @param req contains authenticated user object
+ * @param res
+ * @param next callback function gets called if user has required role
+ * @param isRole required role
+ */
 var isUserRole = function (req, res, next, isRole) {
     if (isRole && isRole.id) {
         verifyToken(req.cookies.auth, function (user) {
@@ -346,6 +387,9 @@ var isUserRole = function (req, res, next, isRole) {
 };
 exports.isUserRole = isUserRole;
 
+/**
+ * Prepare globale user roles object from database on server startup
+ */
 var initializeUserRoles = function (callback) {
     var userRoleNames = config.configs.dataConfig.userRoleNames;
     var userRoles = {publicUser: null, privateUser: null, admin: null, auditor: null, expert: null};
@@ -390,6 +434,9 @@ exports.initializeUserRoles = initializeUserRoles;
 Assessment Strategy Functions
  */
 
+/**
+ * Aggregate grade if indicatore assessment sets
+ */
 var getAggregation = function(cells) {
     var str = config.configs.assessmentStrategies;
     var results = {c11: null, c12: null, c13: null, c14: null, c21: null, c22: null, c23: null, c24: null, c31: null, c32: null, c33: null, c34: null};
@@ -465,6 +512,11 @@ var aggregateEvents = function(cell) {
 Validation
  */
 
+/**
+ * Validate mandatory and number fields
+ * @param user
+ * @returns user if validated successfully
+ */
 var validateUser = function(user) {
     logger.debug(user, "user.validateUser");
     if (!user.email || !user.user_role_id || !user.username || !user.password1 || !user.password2) {

@@ -425,6 +425,10 @@ var selectUserCandidateForToken = function (token, callback) {
 };
 exports.selectUserCandidateForToken = selectUserCandidateForToken;
 
+/**
+ * Get all indicators for given user group
+ * @param callback gets called with query result rows
+ */
 var selectAllIndicatorsByName = function (user_id, user_group_id, callback) {
     if (typeof user_id != "function" && typeof user_group_id != "function") {
         var where = "";
@@ -450,6 +454,10 @@ var selectAllIndicatorsByName = function (user_id, user_group_id, callback) {
 };
 exports.selectAllIndicatorsByName = selectAllIndicatorsByName;
 
+/**
+ * Get all indicator sets for given user group
+ * @param callback gets called with query result rows
+ */
 var selectAllIndicatorSetsByName = function (user_id, user_group_id, callback) {
     if (typeof user_id != "function" && typeof user_group_id != "function") {
         var where = "";
@@ -577,6 +585,10 @@ var selectIndicatorForId = function (indicatorId, callback) {
 };
 exports.selectIndicatorForId = selectIndicatorForId;
 
+/**
+ * Get all assessments for given user group
+ * @param callback gets called with query result rows
+ */
 var selectAllAssessmentsByName = function (user_id, user_group_id, callback) {
     if (typeof user_id != "function" && typeof user_group_id != "function") {
         var where = "";
@@ -602,6 +614,10 @@ var selectAllAssessmentsByName = function (user_id, user_group_id, callback) {
 };
 exports.selectAllAssessmentsByName = selectAllAssessmentsByName;
 
+/**
+ * Get all assessments for public user
+ * @param callback gets called with query result rows
+ */
 var selectPublicAssessmentsByName = function (callback) {
     if (typeof user_id != "function" && typeof user_group_id != "function") {
         dbConnection.query("SELECT * FROM assessment ORDER BY name ASC", function (err, rows, fields) {
@@ -624,6 +640,10 @@ var selectPublicAssessmentsByName = function (callback) {
 };
 exports.selectPublicAssessmentsByName = selectPublicAssessmentsByName;
 
+/**
+ * Get assessment from database for provided id
+ * @param callback gets called with query result rows
+ */
 var selectAssessmentForId = function (assessmentId, callback) {
     if (assessmentId && typeof assessmentId != "function") {
         dbConnection.query("SELECT * FROM assessment WHERE assessment_id = ?", [assessmentId], function (err, rows, fields) {
@@ -646,6 +666,10 @@ var selectAssessmentForId = function (assessmentId, callback) {
 };
 exports.selectAssessmentForId = selectAssessmentForId;
 
+/**
+ * Get all sets in given assessement, join with indicators, mmei_matrix and grade, order by
+ * @param callback gets called with query result rows
+ */
 var selectSetsAndIndicatorsForAssessmentByMmei = function (assessmentId, callback) {
     if (assessmentId && typeof assessmentId != "function") {
         dbConnection.query("SELECT iset.name AS set_name, iset.description AS set_description, iset.maturity_level AS set_maturity_level, iset.strategy AS set_strategy, " +
@@ -685,6 +709,10 @@ exports.selectSetsAndIndicatorsForAssessmentByMmei = selectSetsAndIndicatorsForA
  INSERT
  */
 
+/**
+ * Inser new user candidate in database
+ * @param callback gets called with success result or error
+ */
 var insertUserCandidate = function (userCandidate, callback) {
     if (userCandidate && typeof userCandidate != "function") {
         dbConnection.query("INSERT INTO user_candidate SET ?", userCandidate, function (err, results) {
@@ -707,6 +735,10 @@ var insertUserCandidate = function (userCandidate, callback) {
 };
 exports.insertUserCandidate = insertUserCandidate;
 
+/**
+ * Inser new user in database
+ * @param callback gets called with success result or error
+ */
 var insertUser = function (user, callback) {
     if (user && typeof user != "function") {
         dbConnection.query("INSERT INTO user SET ?", user, function (err, results) {
@@ -729,6 +761,10 @@ var insertUser = function (user, callback) {
 };
 exports.insertUser = insertUser;
 
+/**
+ * Inser new user group in database
+ * @param callback gets called with success result or error
+ */
 var insertUserGroup = function (userGroup, callback) {
     if (userGroup && typeof userGroup != "function") {
         dbConnection.query("INSERT INTO user_group SET ?", userGroup, function (err, results) {
@@ -751,6 +787,10 @@ var insertUserGroup = function (userGroup, callback) {
 };
 exports.insertUserGroup = insertUserGroup;
 
+/**
+ * Inser new user in group
+ * @param callback gets called with success result or error
+ */
 var insertUserInGroup = function (userGroupId, userId, callback) {
     if (userGroupId && typeof userGroupId != "function" && userId && typeof userId != "function") {
         var userInGroup = {user_group_id: userGroupId, user_id: userId};
@@ -774,6 +814,10 @@ var insertUserInGroup = function (userGroupId, userId, callback) {
 };
 exports.insertUserInGroup = insertUserInGroup;
 
+/**
+ * Inser new indicator in set
+ * @param callback gets called with success result or error
+ */
 var insertIndicatorInSet = function (setId, indicatorId, callback) {
     if (indicatorId && typeof indicatorId != "function" && setId && typeof setId != "function") {
         var indicatorInSet = {indicator_id: indicatorId, indicator_set_id: setId};
@@ -797,7 +841,10 @@ var insertIndicatorInSet = function (setId, indicatorId, callback) {
 };
 exports.insertIndicatorInSet = insertIndicatorInSet;
 
-
+/**
+ * Inser new set in assessment
+ * @param callback gets called with success result or error
+ */
 var insertSetInAssessment = function (setId, assessmentId, callback) {
     if (setId && typeof setId != "function" && assessmentId && typeof assessmentId != "function") {
         var setInAssessment = {indicator_set_id: setId, assessment_id: assessmentId};
@@ -821,6 +868,10 @@ var insertSetInAssessment = function (setId, assessmentId, callback) {
 };
 exports.insertSetInAssessment = insertSetInAssessment;
 
+/**
+ * Inser new indicator in database
+ * @param callback gets called with success result or error
+ */
 var insertIndicator = function (indicator, callback) {
     if (indicator && typeof indicator != "function") {
         dbConnection.query("INSERT INTO indicator SET ?", indicator, function (err, results) {
@@ -843,6 +894,10 @@ var insertIndicator = function (indicator, callback) {
 };
 exports.insertIndicator = insertIndicator;
 
+/**
+ * Inser new indicator assessment in database
+ * @param callback gets called with success result or error
+ */
 var insertIndicatorAssessment = function (assessment, callback) {
     if (assessment && typeof assessment != "function") {
         dbConnection.query("INSERT INTO indicator_assessment SET ?", assessment, function (err, results) {
@@ -865,6 +920,10 @@ var insertIndicatorAssessment = function (assessment, callback) {
 };
 exports.insertIndicatorAssessment = insertIndicatorAssessment;
 
+/**
+ * Inser new indicator set in database
+ * @param callback gets called with success result or error
+ */
 var insertIndicatorSet = function (indicator_set, callback) {
     if (indicator_set && typeof indicator_set != "function") {
         dbConnection.query("INSERT INTO indicator_set SET ?", indicator_set, function (err, results) {
@@ -887,6 +946,10 @@ var insertIndicatorSet = function (indicator_set, callback) {
 };
 exports.insertIndicatorSet = insertIndicatorSet;
 
+/**
+ * Inser new assessment in database
+ * @param callback gets called with success result or error
+ */
 var insertAssessment = function (assessment, callback) {
     if (assessment && typeof assessment != "function") {
         dbConnection.query("INSERT INTO assessment SET ?", assessment, function (err, results) {
@@ -914,6 +977,11 @@ exports.insertAssessment = insertAssessment;
 /*
  DELETE
  */
+
+/**
+ * Remove user from group in database
+ * @param callback gets called with success result or error
+ */
 var deleteUserFromGroup = function (userGroupId, userId, callback) {
     if (userGroupId && typeof userGroupId != "function" && userId && typeof userId != "function") {
         dbConnection.query("DELETE FROM user_in_group WHERE user_group_id = ? AND user_id = ?", [userGroupId, userId], function (err, results) {
@@ -936,6 +1004,10 @@ var deleteUserFromGroup = function (userGroupId, userId, callback) {
 };
 exports.deleteUserFromGroup = deleteUserFromGroup;
 
+/**
+ * Remove indicator from set in database
+ * @param callback gets called with success result or error
+ */
 var deleteIndicatorFromSet = function (setId, indicatorId, callback) {
     if (indicatorId && typeof indicatorId != "function" && setId && typeof setId != "function") {
         dbConnection.query("DELETE FROM indicator_in_set WHERE indicator_id = ? AND indicator_set_id = ?", [indicatorId, setId], function (err, results) {
@@ -958,6 +1030,10 @@ var deleteIndicatorFromSet = function (setId, indicatorId, callback) {
 };
 exports.deleteIndicatorFromSet = deleteIndicatorFromSet;
 
+/**
+ * Remove set from assessment in database
+ * @param callback gets called with success result or error
+ */
 var deleteSetFromAssessment = function (setId, assessmentId, callback) {
     if (assessmentId && typeof assessmentId != "function" && setId && typeof setId != "function") {
         dbConnection.query("DELETE FROM set_in_assessment WHERE assessment_id = ? AND indicator_set_id = ?", [assessmentId, setId], function (err, results) {
@@ -980,6 +1056,10 @@ var deleteSetFromAssessment = function (setId, assessmentId, callback) {
 };
 exports.deleteSetFromAssessment = deleteSetFromAssessment;
 
+/**
+ * Delete indicator assessment from database
+ * @param callback gets called with success result or error
+ */
 var deleteIndicatorAssessment = function (assessment, callback) {
     if (assessment && typeof assessment != "function") {
         dbConnection.query("DELETE FROM indicator_assessment WHERE assessment_id = ? AND indicator_id = ?", [assessment.assessment_id, assessment.indicator_id], function (err, results) {
@@ -1035,6 +1115,11 @@ var updateUserCandidateSent = function (token, callback) {
 };
 exports.updateUserCandidateSent = updateUserCandidateSent;
 
+/**
+ * Update user group with data
+ * @param userGroup changes for user group
+ * @param callback gets called with query result rows
+ */
 var updateUserGroup = function (userGroup, callback) {
     if (userGroup && typeof userGroup != "function") {
         dbConnection.query("UPDATE user_group SET ? WHERE user_group_id = ?", [userGroup, userGroup.user_group_id], function (err, results) {
@@ -1085,6 +1170,11 @@ var updateUserCandidateRegistered = function (token, callback) {
 };
 exports.updateUserCandidateRegistered = updateUserCandidateRegistered;
 
+/**
+ * Update user with data
+ * @param user changes for user
+ * @param callback gets called with query result rows
+ */
 var updateUser = function (user, callback) {
     if (user && typeof user != "function") {
         dbConnection.query("UPDATE user SET ? WHERE user_id = ?", [user, user.user_id], function (err, results) {
@@ -1107,6 +1197,11 @@ var updateUser = function (user, callback) {
 };
 exports.updateUser = updateUser;
 
+/**
+ * Update indicator set with data
+ * @param set changes for indicator set
+ * @param callback gets called with query result rows
+ */
 var updateIndicatorSet = function (set, callback) {
     if (set && typeof set != "function") {
         dbConnection.query("UPDATE indicator_set SET ? WHERE indicator_set_id = ?", [set, set.indicator_set_id], function (err, results) {
@@ -1129,6 +1224,11 @@ var updateIndicatorSet = function (set, callback) {
 };
 exports.updateIndicatorSet = updateIndicatorSet;
 
+/**
+ * Update indicator assessment with data
+ * @param assessment changes for indicator assessment
+ * @param callback gets called with query result rows
+ */
 var updateIndicatorAssessment = function (assessment, callback) {
     if (assessment && typeof assessment != "function") {
         dbConnection.query("UPDATE indicator_assessment SET ? WHERE assessment_id = ? AND indicator_id = ?", [assessment, assessment.assessment_id, assessment.indicator_id], function (err, results) {
@@ -1151,6 +1251,11 @@ var updateIndicatorAssessment = function (assessment, callback) {
 };
 exports.updateIndicatorAssessment = updateIndicatorAssessment;
 
+/**
+ * Update assessment with data
+ * @param assessment changes for asessment
+ * @param callback gets called with query result rows
+ */
 var updateAssessment = function (assessment, callback) {
     logger.debug(assessment, "assessment")
     if (assessment && typeof assessment != "function") {
@@ -1174,8 +1279,12 @@ var updateAssessment = function (assessment, callback) {
 };
 exports.updateAssessment = updateAssessment;
 
+/**
+ * Update indicator with data
+ * @param indicator changes for indicator
+ * @param callback gets called with query result rows
+ */
 var updateIndicator = function (indicator, callback) {
-    logger.debug
     if (indicator && typeof indicator != "function") {
         dbConnection.query("UPDATE indicator SET ? WHERE indicator_id = ?", [indicator, indicator.indicator_id], function (err, results) {
             if (err) {

@@ -15,11 +15,17 @@ var helper = require('../helper');
 Expert Pages
  */
 
+/**
+ * Render view with create indicator form, pass user
+ */
 var getCreateIndicator = function(req, res) {
     res.render('createIndicator', {title: "Neuen Indikator erstellen", user: req.user, userRoles: USER_ROLES, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
 };
 exports.getCreateIndicator = getCreateIndicator;
 
+/**
+ * Post function from create indicator form, validate indicator data and save to database
+ */
 var postCreateIndicator = function(req, res) {
     var indicator = req.body;
     var sets;
@@ -48,11 +54,17 @@ var postCreateIndicator = function(req, res) {
 };
 exports.postCreateIndicator = postCreateIndicator;
 
+/**
+ * Render view with create indicator set form, pass user
+ */
 var getCreateIndicatorSet = function(req, res) {
     res.render('createIndicatorSet', {title: "Neues Indikatoren-Set erstellen", user: req.user, userRoles: USER_ROLES, strategies: config.configs.assessmentStrategies, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
 };
 exports.getCreateIndicatorSet = getCreateIndicatorSet;
 
+/**
+ * Post function from create indicator set form and save to database
+ */
 var postCreateIndicatorSet = function(req, res) {
     logger.debug("postCreateIndicatorSet")
     var set = req.body;
@@ -75,6 +87,9 @@ var postCreateIndicatorSet = function(req, res) {
 };
 exports.postCreateIndicatorSet = postCreateIndicatorSet;
 
+/**
+ * Render view with change indicator form, pass user
+ */
 var getManageIndicator = function(req, res) {
     var id = req.params.indicatorId;
     if (id) {
@@ -95,6 +110,9 @@ var getManageIndicator = function(req, res) {
 };
 exports.getManageIndicator = getManageIndicator;
 
+/**
+ * Post function from change indicator form and save to database
+ */
 var postManageIndicator = function(req, res) {
     var id = req.params.indicatorId;
     if (id) {
@@ -125,6 +143,9 @@ var postManageIndicator = function(req, res) {
 };
 exports.postManageIndicator = postManageIndicator;
 
+/**
+ * Render view with change indicator set form, pass user, aggregation strategies, included sets, excluded sets
+ */
 var getManageIndicatorSet = function(req, res) {
     var id = req.params.setId;
     if (id) {
@@ -150,6 +171,9 @@ var getManageIndicatorSet = function(req, res) {
 };
 exports.getManageIndicatorSet = getManageIndicatorSet;
 
+/**
+ * Post function from change indicator set form and save to database and add or remove indicators from set
+ */
 var postManageIndicatorSet = function(req, res) {
     var id = req.params.setId;
     if (id) {
@@ -195,7 +219,14 @@ exports.postManageIndicatorSet = postManageIndicatorSet;
 /*
 Expert Functions
  */
+/*
 
+/!**
+ * Add new indicators to set, iterate through indicator array
+ * @param setId new set for indicators
+ * @param addIndicators array of indicators for set
+ * @param callback true after array is processed
+ *!/
 var addIndicatorsToSet = function(setId, addIndicators, callback) {
     if (addIndicators && addIndicators.length > 0) {
         logger.debug("Add indicators: ", addIndicators, "admin.addIndicatorsToSet");
@@ -214,6 +245,12 @@ var addIndicatorsToSet = function(setId, addIndicators, callback) {
     }
 };
 
+/!**
+ * Remove indicators from set, iterate through indicator array
+ * @param setId old set of indicators
+ * @param removeIndicators array of indicators for removal
+ * @param callback true after array is processed
+ *!/
 var removeIndicatorsFromSet = function(setId, removeIndicators, callback) {
     if (removeIndicators && removeIndicators.length > 0) {
         logger.debug("Remove indicators: ", removeIndicators, "admin.removeIndicatorsFromSet");
@@ -230,6 +267,7 @@ var removeIndicatorsFromSet = function(setId, removeIndicators, callback) {
         callback(true);
     }
 };
+*/
 
 
 
@@ -237,6 +275,12 @@ var removeIndicatorsFromSet = function(setId, removeIndicators, callback) {
  Helper functions
  */
 
+/**
+ * Check and save changes for indicator set
+ * @param setId set that should be changed
+ * @param set changes for set
+ * @param callback true if something was changed
+ */
 var updateIndicatorSet = function(setId, set, callback) {
     if (set && (set.name || set.description)) {
         mysql.selectIndicatorSetForId(setId, function(dbSet) {
@@ -256,6 +300,12 @@ var updateIndicatorSet = function(setId, set, callback) {
     }
 };
 
+/**
+ * Add new indicators to set, iterate through indicator array
+ * @param setId new set for indicators
+ * @param addIndicators array of indicators for set
+ * @param callback true after array is processed
+ */
 var addIndicatorsToSet = function(setId, addSets, callback) {
     if (addSets && addSets.length > 0) {
         logger.debug("Add indicators: ", addSets, "admin.addIndicatorsToSet");
@@ -273,6 +323,12 @@ var addIndicatorsToSet = function(setId, addSets, callback) {
     }
 };
 
+/**
+ * Remove indicators from set, iterate through indicator array
+ * @param setId old set of indicators
+ * @param removeIndicators array of indicators for removal
+ * @param callback true after array is processed
+ */
 var removeIndicatorsFromSet = function(setId, removeSets, callback) {
     if (removeSets && removeSets.length > 0) {
         logger.debug("Remove indicators: ", removeSets, "admin.removeIndicatorsFromSet");
@@ -296,6 +352,11 @@ var removeIndicatorsFromSet = function(setId, removeSets, callback) {
  Validation
  */
 
+/**
+ * Validate mandatory and number fields
+ * @param indicator
+ * @returns candidate if validated successfully
+ */
 var validateIndicator = function(indicator) {
     //logger.debug(indicator, "admin.validateUserCandidate");
     if (!indicator.user_id || !indicator.name || !indicator.target_factor) {
@@ -320,6 +381,11 @@ var validateIndicator = function(indicator) {
     return indicator;
 };
 
+/**
+ * Validate mandatory and number fields
+ * @param set
+ * @returns candidate if validated successfully
+ */
 var validateIndicatorSet = function(set) {
     logger.debug(set, "admin.validateIndicatorSet");
     if (!set.user_id || !set.name) {

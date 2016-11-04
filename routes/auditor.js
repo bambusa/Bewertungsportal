@@ -12,6 +12,9 @@ var helper = require('../helper');
  Auditor Pages
  */
 
+/**
+ * Render view with create assessment form, prepare indicators for each mmei cell
+ */
 var getCreateAssessment = function(req, res) {
     var mmeiSets = {other: null, c11: null, c12: null, c13: null, c14: null, c21: null, c22: null, c23: null, c24: null, c31: null, c32: null, c33: null, c34: null};
     mysql.selectAllIndicatorSetsForCellNotInAssessment(null, null, function(sets) {
@@ -57,6 +60,9 @@ var getCreateAssessment = function(req, res) {
 };
 exports.getCreateAssessment = getCreateAssessment;
 
+/**
+ * Post function from create assessment form, save to database and add sets to assessment
+ */
 var postCreateAssessment = function(req, res) {
     var assessment = req.body;
     var addSets = assessment.addSets;
@@ -101,6 +107,9 @@ var postCreateAssessment = function(req, res) {
 };
 exports.postCreateAssessment = postCreateAssessment;
 
+/**
+ * Render view with change assessment form, prepare indicators for each mmei cell
+ */
 var getManageAssessment = function(req, res) {
     if (req.params.assessmentId) {
         var assessmentId = req.params.assessmentId;
@@ -180,6 +189,9 @@ var getManageAssessment = function(req, res) {
 };
 exports.getManageAssessment = getManageAssessment;
 
+/**
+ * Post function from change assessment form, save to database and add or remove sets
+ */
 var postManageAssessment = function(req, res) {
     var assessmentId = req.params.assessmentId;
     var assessment = req.body;
@@ -223,6 +235,9 @@ var postManageAssessment = function(req, res) {
 };
 exports.postManageAssessment = postManageAssessment;
 
+/**
+ * Render view with assess assessment form, pass indicators in assessment
+ */
 var getAssessAssessment = function(req, res) {
     var assessmentId = req.params.assessmentId;
     if (assessmentId) {
@@ -239,6 +254,9 @@ var getAssessAssessment = function(req, res) {
 };
 exports.getAssessAssessment = getAssessAssessment;
 
+/**
+ * Post function from assess assessment form, save to database and add, remove or change indicator assessments
+ */
 var postAssessAssessment = function(req, res) {
     var assessmentId = req.params.assessmentId;
     if (assessmentId) {
@@ -303,6 +321,12 @@ exports.postAssessAssessment = postAssessAssessment;
  Expert Functions
  */
 
+/**
+ * Add sets to assessment, iterate through sets
+ * @param assessmentId new assessment for set
+ * @param addSets array of sets for assessment
+ * @param callback true after array is processed
+ */
 var addSetsToAssessment = function(assessmentId, addSets, callback) {
     if (addSets && addSets.length > 0) {
         logger.debug("Add sets: ", addSets, "auditor.addSetsToAssessment");
@@ -321,6 +345,12 @@ var addSetsToAssessment = function(assessmentId, addSets, callback) {
     }
 };
 
+/**
+ * Remove sets from assessment, iterate through sets
+ * @param assessmentId old assessment of sets
+ * @param removeSets array of sets for removal
+ * @param callback true after array is processed
+ */
 var removeSetsFromAssessment = function(assessmentId, removeSets, callback) {
     if (removeSets && removeSets.length > 0) {
         logger.debug("Remove sets: ", removeSets, assessmentId, "auditor.removeSetsFromAssessment");
@@ -344,6 +374,11 @@ var removeSetsFromAssessment = function(assessmentId, removeSets, callback) {
  Validation
  */
 
+/**
+ * Validate mandatory and number fields
+ * @param assessment
+ * @returns assessment if validated successfully
+ */
 var validateAssessment = function(assessment) {
     //logger.debug(assessment, "admin.validateUserCandidate");
     if (!assessment.user_id || !assessment.name) {

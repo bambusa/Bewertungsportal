@@ -45,6 +45,9 @@ var postCreateUserCandidate = function(req, res) {
 };
 exports.postCreateUserCandidate = postCreateUserCandidate;
 
+/**
+ * Render view with change user form, pass user and user roles
+ */
 var getManageUser = function(req, res) {
     if (req.params.userId) {
         mysql.selectUserForUserId(req.params.userId, function(user) {
@@ -64,6 +67,9 @@ var getManageUser = function(req, res) {
 };
 exports.getManageUser = getManageUser;
 
+/**
+ * Post function from change user form, validate user data and save to database
+ */
 var postManageUser = function(req, res) {
     if (req.params.userId) {
         var user = req.body;
@@ -94,11 +100,17 @@ var postManageUser = function(req, res) {
 };
 exports.postManageUser = postManageUser;
 
+/**
+ * Render view with create user group form, pass user
+ */
 var getCreateUserGroup = function(req, res) {
     res.render('createUserGroup', {title: "Neue Nutzergruppe erstellen", user: req.user, succMessage: req.flash('succMessage'), errMessage: req.flash('errMessage')});
 };
 exports.getCreateUserGroup = getCreateUserGroup;
 
+/**
+ * Post function from create user group form, validate group data and save to database
+ */
 var postCreateUserGroup = function(req, res) {
     mysql.selectUserGroupForId(req.body.name, function(results) {
         if (!results) {
@@ -128,6 +140,9 @@ var postCreateUserGroup = function(req, res) {
 };
 exports.postCreateUserGroup = postCreateUserGroup;
 
+/**
+ * Render view with change user group form, pass user, users in group and users not in group
+ */
 var getManageUserGroup = function(req, res) {
     var id = req.params.userGroupId;
     if (id) {
@@ -153,6 +168,9 @@ var getManageUserGroup = function(req, res) {
 };
 exports.getManageUserGroup = getManageUserGroup;
 
+/**
+ * Post function from change user group form, save changes to database and add or remove users
+ */
 var postManageUserGroup = function(req, res) {
     var id = req.params.userGroupId;
     if (id) {
@@ -194,6 +212,12 @@ exports.postManageUserGroup = postManageUserGroup;
 Helper functions
  */
 
+/**
+ * Check and save changes for user group
+ * @param userGroupId user group that should be changed
+ * @param userGroup changes for user group
+ * @param callback true if something was changed
+ */
 var updateUserGroup = function(userGroupId, userGroup, callback) {
     if (userGroup && (userGroup.name || userGroup.description)) {
         mysql.selectUserGroupForId(userGroupId, function(dbGroup) {
@@ -218,6 +242,12 @@ var updateUserGroup = function(userGroupId, userGroup, callback) {
     }
 };
 
+/**
+ * Add new users to user group, iterate through user array
+ * @param userGroupId new user group for users
+ * @param userGroup array of users for user group
+ * @param callback true after array is processed
+ */
 var addUsersToGroup = function(userGroupId, addUsers, callback) {
     if (addUsers && addUsers.length > 0) {
         logger.debug("Add users: ", addUsers, "admin.addUsersToGroup");
@@ -235,6 +265,12 @@ var addUsersToGroup = function(userGroupId, addUsers, callback) {
     }
 };
 
+/**
+ * Remove users from user group, iterate through user array
+ * @param userGroupId old user group for users
+ * @param userGroup array of users for removal
+ * @param callback true after array is processed
+ */
 var removeUsersFromGroup = function(userGroupId, removeUsers, callback) {
     if (removeUsers && removeUsers.length > 0) {
         logger.debug("Remove users: ", removeUsers, "admin.removeUsersFromGroup");
@@ -256,6 +292,10 @@ var removeUsersFromGroup = function(userGroupId, removeUsers, callback) {
 
 /*
 Admin Functions
+ */
+
+/**
+ * Check new user candidates, where no email was sent, and send welcome message to user
  */
 var checkNewUserCandidates = function() {
     mysql.selectNewUserCandidates(function(candidates) {
@@ -297,6 +337,11 @@ exports.checkNewUserCandidates = checkNewUserCandidates;
 Validation
  */
 
+/**
+ * Validate mandatory and number fields
+ * @param candidate
+ * @returns candidate if validated successfully
+ */
 var validateUserCandidate = function(candidate) {
     //logger.debug(candidate, "admin.validateUserCandidate");
     if (!candidate.email || !candidate.user_role_id) {
@@ -323,6 +368,11 @@ var validateUserCandidate = function(candidate) {
     return candidate;
 };
 
+/**
+ * Validate mandatory and number fields
+ * @param userGroup
+ * @returns userGroup if validated successfully
+ */
 var validateUserGroup = function(userGroup) {
     //logger.debug(candidate, "admin.validateUserCandidate");
     if (!userGroup.name) {
